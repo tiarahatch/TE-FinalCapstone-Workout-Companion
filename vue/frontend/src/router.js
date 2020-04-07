@@ -4,6 +4,8 @@ import auth from './auth'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
+import PremadeWorkouts from './views/PremadeWorkouts.vue'
+import Schedule from './views/Schedule.vue'
 
 Vue.use(Router)
 
@@ -25,7 +27,7 @@ const router = new Router({
       name: 'home',
       component: Home,
       meta: {
-        requiresAuth: true
+        requiresAuth: false //This was changed to move past login 
       }
     },
     {
@@ -40,6 +42,22 @@ const router = new Router({
       path: "/register",
       name: "register",
       component: Register,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/premade-workouts",
+      name: "premade-workouts",
+      component: PremadeWorkouts,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/schedule",
+      name: "schedule",
+      component: Schedule,
       meta: {
         requiresAuth: false
       }
