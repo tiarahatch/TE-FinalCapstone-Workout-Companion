@@ -11,6 +11,17 @@
 
 <script>
 export default {
-  name: 'schedule'
+  name: 'schedule',
+ 
+ data(){
+  return{
+    apiURL:"",
+    schedule: [],
+
+  };
+},
+
 }
+
+
 </script>
