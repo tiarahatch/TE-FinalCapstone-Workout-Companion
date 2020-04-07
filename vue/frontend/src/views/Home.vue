@@ -25,6 +25,9 @@ export default {
 div {
   text-align: center;
 }
+h1 {
+  color: blue;
+}
 
 
 
