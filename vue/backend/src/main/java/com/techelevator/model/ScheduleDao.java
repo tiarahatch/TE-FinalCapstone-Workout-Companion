@@ -13,6 +13,6 @@ public interface ScheduleDao {
 	
 	public List<Schedule> retrieveMonthSchedule();
 	
-	
+	public List<List<Schedule>> retreieveWeekScheduleByDay();
 	
 }

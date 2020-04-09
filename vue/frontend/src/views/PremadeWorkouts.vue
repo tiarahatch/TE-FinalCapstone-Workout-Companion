@@ -3,7 +3,7 @@
     <nav>
       <router-link to='/' tag='button'>Home</router-link>
       </nav>
-    <h1 style='text-align: center'>Please browse our premade-workouts</h1>
+    <h1 style='text-align: center'>Please Select a Category</h1>
    <!-- <p>You must be authenticated to see this</p> -->
 
      <div>
