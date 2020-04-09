@@ -16,8 +16,8 @@
       
       </div> 
   <h1>
-   <router-link to='/premade-workouts' tag='button'>Premade-workouts</router-link>
-    <router-link to='/schedule' tag='button'>Schedule</router-link>
+   <router-link to='/premade-workouts' tag='button'>Our Workouts</router-link>
+    <router-link to='/schedule' tag='button'>View Schedule</router-link>
   </h1> 
 </header> 
   </div>
