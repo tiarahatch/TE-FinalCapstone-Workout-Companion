@@ -4,110 +4,75 @@
       <router-link to='/' tag='button'>Home</router-link>
       </nav>
     <h1>Upcoming Events</h1>
-   <!-- <p>You must be authenticated to see this</p> -->
-  <div>
-   <button @click = 'dayView()' class='button-margin'> Day View </button>
-    <div id = 'dayList' class = 'show'>
-      <ul>
-        <li v-for= 'item in daySchedule' v-bind:key= 'item.classID' class='border'>
-           <p> {{item.className}} </p>
-           <p> {{item.date}}
-            {{timeSlotFormat(item.timeSlot)}} </p>
-           <p>Signed Up: {{item.reservedSpaces}}/{{item.maxOccupancy}}</p>
-        </li>
-      </ul>
-    </div>
-    </div>
-    <div>
-      <button @click = 'weekView()' class='button-margin'> Week View </button>
-      <div class='hidden' id='weekList'>
-      <ul>
-        
-        <li v-for= 'item in weekSchedule' v-bind:key= 'item.classID' class='border'>
-          <div>
-           <p> {{item.className}} </p>
-           <p> {{item.date}}
-            {{timeSlotFormat(item.timeSlot)}} </p>
-           <p>Signed Up: {{item.reservedSpaces}}/{{item.maxOccupancy}}</p>
-           </div>
-        </li>
-        
-      </ul>
-      </div>
-    </div>
-    <div>
-      <button @click = 'monthView()' class='button-margin'> Month View </button>
-      <div class='hidden' id='monthList'>
-      <ul>
-        <li v-for= 'item in monthSchedule' v-bind:key= 'item.classID' class='border'>
-          <div>
-           <p> {{item.className}} </p>
-           <p> {{item.date}}
-            {{timeSlotFormat(item.timeSlot)}} </p>
-           <p>Signed Up: {{item.reservedSpaces}}/{{item.maxOccupancy}}</p>
-           </div>
-        </li>
-      </ul>
-      </div>
-    </div>
+   
+   
+    
 
+   <!-- <p>You must be authenticated to see this</p> -->
+    <div id='scheduleHeading'>
+    <h2> This Week's Schedule</h2> 
+    <h3>{{getHeaderDates()[0]}} - {{getHeaderDates()[1]}} </h3>
+    </div>
+    <div>
+     <!-- <button @click = 'weekView()' class='button-margin'> Week View </button> -->
+      <div class='show' id='weekList'>
+      <ul>
+        
+        <li v-for= 'day in weekSchedule' :key = 'day.classID' class='border'>
+          
+          <schedule-day v-bind:daySchedule='day' ></schedule-day>
+         
+        </li>
+        
+      </ul>
+      </div>
+    </div>
+    
   </div>
 </template>
 
 
 
 <script>
+
+import ScheduleDay from  '@/components/ScheduleDay.vue'
+
 export default {
   name: 'schedule',
-
+  components:{
+      ScheduleDay
+    },
 
  data(){
   return{
-    daySchedule: [],
     weekSchedule: [],
-    monthSchedule: [],
-
+      
   };
 },
 computed:{
 
 },
 methods:{
- dayView(){
-    let dailyView = document.getElementById('dayList');
-    dailyView.className= 'show';
-    let monthView = document.getElementById('monthList');
-    monthView.className= 'hidden';
-    let weekView = document.getElementById('weekList');
-    weekView.className = 'hidden';
-   
 
+getHeaderDates(){
+  let todayArray = this.weekSchedule[0];
+  let today = todayArray[0].date;
+  let weekArray = this.weekSchedule[this.weekSchedule.length-1];
+  let week = weekArray[0].date;
+  let headerDates = [today, week];
 
-  },
+  return headerDates;
+},
 
-
-
-  weekView(){
-    let dailyView = document.getElementById('dayList');
-    dailyView.className= 'hidden';
-    let monthView = document.getElementById('monthList');
-    monthView.className= 'hidden';
-    let weekView = document.getElementById('weekList');
-    weekView.className = 'show';
-   
-
+  getDate(){
+   let todaysDate = new Date();
+    let currentMonth = todaysDate.getMonth();
+    let currentDay = todaysDate.getDate();
+    let currentDate = currentMonth+1 + " - " + currentDay;
+return currentDate;
 
   },
-  monthView(){
-    let dailyView = document.getElementById('dayList');
-    dailyView.className= 'hidden';
-    let weekView = document.getElementById('weekList');
-    weekView.className= 'hidden';
-    let monthList = document.getElementById('monthList')
-    monthList.className = 'show';
-    
-
-  },
+  
   dayOfWeek(dayInt){
     if(dayInt === 1){
       return "Monday"
@@ -135,15 +100,7 @@ methods:{
   }
 
 },
-  beforeCreate() {
-    fetch(`${process.env.VUE_APP_REMOTE_API}/api/dailyschedule`)
-      .then((response)=>{
-        return response.json();
-      })
-      .then((json)=>{
-       this.daySchedule = json;
-       console.log(this.dailySchedule)
-      })
+  created() {
 
       fetch(`${process.env.VUE_APP_REMOTE_API}/api/weeklyschedule`)
       .then((response)=>{
@@ -152,15 +109,6 @@ methods:{
       .then((json)=>{
        this.weekSchedule = json;
        console.log(this.weekSchedule)
-      })
-
-          fetch(`${process.env.VUE_APP_REMOTE_API}/api/monthlyschedule`)
-      .then((response)=>{
-        return response.json();
-      })
-      .then((json)=>{
-       this.monthSchedule = json;
-       console.log(this.monthSchedule)
       })
 
 
@@ -173,6 +121,10 @@ methods:{
 </script>
 
 <style scoped>
+#scheduleHeading{
+  text-align: center;
+  background-color: grey;
+}
 .show{
   display:block;
 }

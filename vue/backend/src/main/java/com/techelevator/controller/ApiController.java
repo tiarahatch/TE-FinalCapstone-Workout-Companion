@@ -81,8 +81,12 @@ public class ApiController {
 	}
 	
 	@GetMapping(path="/weeklyschedule")
-	public List<Schedule> getWeeklySchedule() {
-		List<Schedule> weeklySchedule = jdbcScheduleDao.retrieveWeekSchedule();
+	public List<List<Schedule>> getWeeklySchedule() {
+		
+		//List<Schedule> weeklySchedule = jdbcScheduleDao.retrieveWeekSchedule();
+		
+		List<List<Schedule>> weeklySchedule = jdbcScheduleDao.retreieveWeekScheduleByDay();
+		
 		
 		return weeklySchedule;
 	}
