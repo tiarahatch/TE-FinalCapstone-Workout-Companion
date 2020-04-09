@@ -125,3 +125,42 @@ VALUES ('2020-04-11', 6, 'Yoga', 8, 0), ('2020-04-11', 7, 'Water Aerobics', 15, 
 
 SELECT * FROM schedule
 
+drop table full_workout;
+drop table exercise_category;
+drop table workout_target;
+Create table exercise_category (
+category_id serial,
+category_name VARCHAR,
+
+constraint pk_exercise_category primary key (category_id)
+);
+
+insert into exercise_category(category_name)
+values ('Cardio'),('Strength'),('Flexibility'),('Crossfit');
+
+
+//(this is our premade workout
+create table workout_target (
+target_id serial,
+name varchar,
+
+constraint pk_workout_target primary key (target_id)
+);
+
+insert into workout_target (name)
+values('UpperBody'),('LowerBody'),('HIIT'),('Crossfit');
+
+create table full_workout (
+target_id int,
+exercise_id int
+);
+
+insert into full_workout (target_id, exercise_id)
+values (1,2),(1,4),(1,8),(1,10),(1,11),(1,13),
+(1,14),(1,15),(1,18),(1,19),(1,20),(2,1),(2,3),
+(2,5),(2,6),(2,7),(2,9),(2,12),(2,16),(2,17),
+(3,1),(3,2),(3,6),(3,7),(3,8),(3,9),(3,17),
+(4,1),(4,2),(4,3),(4,5),(4,10),(4,11),(4,12),(4,13),(4,19);
+
+
+select * from full_workout;
