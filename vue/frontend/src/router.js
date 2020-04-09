@@ -7,6 +7,7 @@ import Register from './views/Register.vue'
 import PremadeWorkouts from './views/PremadeWorkouts.vue'
 import Schedule from './views/Schedule.vue'
 
+
 Vue.use(Router)
 
 /**

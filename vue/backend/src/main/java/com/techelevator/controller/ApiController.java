@@ -72,6 +72,27 @@ public class ApiController {
 		return exercises;
 		
 	}
+	
+	@GetMapping(path="/dailyschedule")
+	public List<Schedule> getDailySchedule() {
+		List<Schedule> dailySchedule = jdbcScheduleDao.retrieveDaySchedule();
+		
+		return dailySchedule;
+	}
+	
+	@GetMapping(path="/weeklyschedule")
+	public List<Schedule> getWeeklySchedule() {
+		List<Schedule> weeklySchedule = jdbcScheduleDao.retrieveWeekSchedule();
+		
+		return weeklySchedule;
+	}
+	
+	@GetMapping(path="/monthlyschedule")
+	public List<Schedule> getMonthlySchedule() {
+		List<Schedule> monthlySchedule = jdbcScheduleDao.retrieveMonthSchedule();
+		
+		return monthlySchedule;
+	}
     
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String authorizedOnly() throws UnauthorizedException {

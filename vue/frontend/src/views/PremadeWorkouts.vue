@@ -1,16 +1,19 @@
 <template>
   <div>
+    <nav>
+      <router-link to='/' tag='button'>Home</router-link>
+      </nav>
     <h1>Please browse our premade-workouts</h1>
    <!-- <p>You must be authenticated to see this</p> -->
 
      <div>
       <ul>
-        <li v-for='workout in workouts' v-bind:key='workout.workoutID'>
+        <li v-for='workout in workouts' v-bind:key='workout.workoutID' class='padding-workouts'>
             {{workout.name}}
             <button v-on:click='displayExercises(workout.workoutID)' v-on:dblclick='hideall'/>
             
               <ul v-bind:id='workout.workoutID' class='hidden'>
-              <li v-for='exercise in exercises' v-bind:key='exercise.exerciseID'>
+              <li v-for='exercise in exercises' v-bind:key='exercise.exerciseID' class='border'>
                {{exercise.name}}
                </li> 
             </ul> 
@@ -101,4 +104,15 @@ hideall() {
   display: block;
 }
 
+.border {
+  border: 1px solid black;
+  margin-top: 2px;
+  padding-left: 5px;
+}
+li {
+  list-style: none;
+}
+.padding-workouts {
+  padding-bottom: 12px;
+}
 </style>
