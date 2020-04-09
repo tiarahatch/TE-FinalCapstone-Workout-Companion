@@ -1,10 +1,13 @@
 package com.techelevator.model;
 
+import java.sql.Date;
+import java.time.LocalDate;
+
 public class Schedule {
 
 	private int classID;
 	private String className;
-	private int dayOfTheWeek;
+	private String date;
 	private int timeSlot;
 	private int maxOccupancy;
 	private int reservedSpaces;
@@ -28,11 +31,11 @@ public class Schedule {
 	public void setClassName(String className) {
 		this.className = className;
 	}
-	public int getDayOfTheWeek() {
-		return dayOfTheWeek;
+	public String getDate() {
+		return date;
 	}
-	public void setDayOfTheWeek(int dayOfTheWeek) {
-		this.dayOfTheWeek = dayOfTheWeek;
+	public void setDate(String date) {
+		this.date = date;
 	}
 	public int getTimeSlot() {
 		return timeSlot;
@@ -54,47 +57,6 @@ public class Schedule {
 	}
 	
 	
-	
-	
-	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + classID;
-		result = prime * result + ((className == null) ? 0 : className.hashCode());
-		result = prime * result + dayOfTheWeek;
-		result = prime * result + maxOccupancy;
-		result = prime * result + reservedSpaces;
-		result = prime * result + timeSlot;
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Schedule other = (Schedule) obj;
-		if (classID != other.classID)
-			return false;
-		if (className == null) {
-			if (other.className != null)
-				return false;
-		} else if (!className.equals(other.className))
-			return false;
-		if (dayOfTheWeek != other.dayOfTheWeek)
-			return false;
-		if (maxOccupancy != other.maxOccupancy)
-			return false;
-		if (reservedSpaces != other.reservedSpaces)
-			return false;
-		if (timeSlot != other.timeSlot)
-			return false;
-		return true;
-	}
 	
 	
 	
