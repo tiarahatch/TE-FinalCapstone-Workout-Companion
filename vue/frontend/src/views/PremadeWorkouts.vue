@@ -3,17 +3,16 @@
     <nav>
       <router-link to='/' tag='button'>Home</router-link>
       </nav>
-    <h1>Please browse our premade-workouts</h1>
+    <h1 style='text-align: center'>Please browse our premade-workouts</h1>
    <!-- <p>You must be authenticated to see this</p> -->
 
      <div>
-      <ul>
-        <li v-for='workout in workouts' v-bind:key='workout.workoutID' class='padding-workouts'>
-            {{workout.name}}
-            <button v-on:click='displayExercises(workout.workoutID)' v-on:dblclick='hideall'/>
-            
-              <ul v-bind:id='workout.workoutID' class='hidden'>
-              <li v-for='exercise in exercises' v-bind:key='exercise.exerciseID' class='border'>
+      <ul class='container'>
+
+        <li v-for='workout in workouts' v-bind:key='workout.workoutID' class='box'  @mouseover='displayExercises(workout.workoutID);' @mouseleave='hideall'>
+            {{workout.name}}  
+              <ul v-bind:id='workout.workoutID' class='hidden li'>
+              <li v-for='exercise in exercises' v-bind:key='exercise.exerciseID'>
                {{exercise.name}}
                </li> 
             </ul> 
@@ -41,7 +40,6 @@ export default {
   };
 },
 methods:{
-
 displayExercises(id) {
    fetch(`${process.env.VUE_APP_REMOTE_API}/api/exercise/${id}`,{
      method: 'GET',
@@ -110,9 +108,38 @@ hideall() {
   padding-left: 5px;
 }
 li {
-  list-style: none;
+  list-style: circle;
 }
-.padding-workouts {
-  padding-bottom: 12px;
+
+.container{
+  margin: 20px auto;
+  width:400px;
+  height:400px;
+  background-color:#fff;
+  display:grid;
+  grid-template-columns: 200px 200px;
+  grid-row: auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  
 }
+  .box{
+    background-color:#777;
+    color: #7ac1ff;
+    padding:20px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    
+  
+  }
+
+.grow { 
+  
+  transition: all .2s ease-in-out;
+  transform: scale(1.1);
+ }
+
+
 </style>
