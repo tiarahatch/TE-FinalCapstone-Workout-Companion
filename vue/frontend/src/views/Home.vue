@@ -17,7 +17,7 @@
       </div> 
   <h1>
    <router-link to='/premade-workouts' tag='button'>Our Workouts</router-link>
-    <router-link to='/schedule' tag='button'>View Schedule</router-link>
+    <router-link to='/schedule' tag='button'>View Class Schedule</router-link>
   </h1> 
 </header> 
   </div>
@@ -74,12 +74,13 @@ router-link {
 }
 button {
   text-align: center;
-  font-size: 28px;
-  margin:105px;
-  border: 2px solid gray;
-  width: 250px;
+  font-size: 14px;
+  margin:95px;
+  border: none;
+  width: 200px;
   background-color: black;
   color: white;
+  
 }
 .topnav {
   overflow: hidden;
