@@ -145,8 +145,24 @@ export default {
 li {
   list-style: none;
 }
-
+button {
+  text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  margin:95px;
+  border: none;
+  width: 200px;
+  background-color: black;
+  color: #7ac1ff;
+  border-radius: 25px;
+}
 .button-margin {
   margin-bottom: 20px;
+}
+h1, h2 {
+  text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+  color: #7ac1ff;
 }
 </style>

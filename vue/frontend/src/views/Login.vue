@@ -16,7 +16,7 @@
       <input
         type="text"
         id="username"
-        class="form-control"
+        class="fm-txt"
         placeholder="Username"
         v-model="user.username"
         required
@@ -86,5 +86,16 @@ export default {
 </script>
 
 <style>
-
+button {
+  text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  margin:95px;
+  border: none;
+  width: 200px;
+  background-color: black;
+  color: #7ac1ff;
+  border-radius: 25px;
+}
 </style>

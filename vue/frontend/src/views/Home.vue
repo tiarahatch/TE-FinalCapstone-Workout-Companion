@@ -1,14 +1,18 @@
 <template>
 
   <div class="home">
-    <nav>
+    
 
       <router-link to='/register' tag='button'>Sign Up</router-link>
       <router-link to='/login' tag='button'>Login</router-link>
-      <img src="../img/workoutdude.jpg" alt="Gym logo">
+      <p> HSG FITNESS. WHERE YOU TURN FAT INTO FINE! </p>
+       <h1>
+   <router-link to='/premade-workouts' tag='button'>Our Workouts</router-link>
+    <router-link to='/schedule' tag='button'>View Class Schedule</router-link>
+  </h1> 
+      <img src="../img/logo.png" alt="Gym logo">
     
-</nav>
-  
+
     
     <div class="fullscreen-bg">>
       <!-- <img src ="../img/workout.jpeg"> -->
@@ -17,15 +21,15 @@
       </video>
      <header class="viewport-header">
        <div class="container">
-     
+     <p>Welcome to our Gym!</p>
       
-      </div> 
-  <h1>
+       </div> 
+  <!-- <h1>
    <router-link to='/premade-workouts' tag='button'>Our Workouts</router-link>
     <router-link to='/schedule' tag='button'>View Class Schedule</router-link>
-  </h1> 
+  </h1>  -->
 </header> 
-  </div>
+  </div> 
   </div>
     
 </template>
@@ -79,6 +83,9 @@ router-link {
 }
 button {
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 25px;
   font-size: 14px;
   margin:95px;
   border: none;
@@ -97,12 +104,21 @@ button {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 img {
   width:128px;
   height:128px;
-  background-color: none;
-  opacity: 5.5;
+  justify-content: center;
+  position:sticky;
+  outline-color: #7ac1ff;
+}
+p {
+  color: #7ac1ff;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 </style>

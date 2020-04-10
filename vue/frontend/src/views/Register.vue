@@ -5,7 +5,7 @@
       </nav>
   <div id="register" class="text-center">
     <form class="form-register" @submit.prevent="register">
-      <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
+      <h1 class="h3 mb-3 font-weight-normal"></h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         There were problems registering this user.
       </div>
@@ -86,4 +86,17 @@ export default {
 </script>
 
 <style>
+button {
+  text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  margin:95px;
+  border: none;
+  width: 200px;
+  background-color: black;
+  color: #7ac1ff;
+  border-radius: 25px;
+}
+
 </style>

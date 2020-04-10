@@ -5,7 +5,7 @@
       <router-link to="/" tag="button">Home</router-link>
       <router-link to="/login" tag="button">Login</router-link>
       <router-link to="/register" tag="button">Sign-Up</router-link>
-      <img src="../img/OurGym.jpg" alt="Gym logo">
+     <img src="../img/logo.png" alt="Gym logo">
 
     
 
@@ -160,20 +160,25 @@ li {
  }
 button {
    text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   font-size: 14px;
   margin:95px;
   border: none;
   width: 200px;
   background-color: black;
   color: #7ac1ff;
+  border-radius: 25px;
 }
 h1 {
   color:  #7ac1ff;
   justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 img {
-  width:128px;
-  height:128px;
+  width:150px;
+  height:150px;
 }
 template{
   background-color: black;
