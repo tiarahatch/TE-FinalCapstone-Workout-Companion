@@ -5,16 +5,13 @@
         <ul>
             <li>
                 {{categories[id - 1].name}}
-                </li>
-        <ul>
-            <li v-for='workout in workouts' v-bind:key='workout.workoutID'>
+              <ul>
+            <!-- <li v-for='workout in workouts' v-bind:key='workout.workoutID'>
                 {{workout.name}}
-                </li>
+                </li> -->
+                {{workouts}}
             </ul>
-            <!-- <li v-for='category in categories' v-bind:key='category.categoryID' class='box'>
-        
-            {{category.name}} 
-             </li> -->
+            </li>
         </ul>
         </div> 
     </div>
@@ -24,45 +21,29 @@
 <script>
 export default {
     name: 'category-workouts',
+    
     data() {
        return {
-        workouts: [],
         categories: [],
         category: '',
+        displayName: '',
     }
 },
 props: {
-id: {
-    type: String,
-    required: false,
-}
+    id: String,
+// id: {
+//     type: Number,
+//     required: false,
+// },
+    workouts: Array,
 },
 
 methods: {
-displayWorkouts(id) {
- fetch(`${process.env.VUE_APP_REMOTE_API}/api/workouts/${id}`,{
-     method: 'GET',
-     headers: {
-       "Content-Type": "application/json"
-     },
-   
-     
-   })
-   
-    .then((response)=> {
-      if(response.ok) {
-        return response.json();
-        
-        
-      } 
-
-    }) 
-    .then((json) => {
-      this.workouts = json;
-      console.log(this.workouts)
-    }) 
 },
-
+computed: {
+    displayCategory(id) {
+        return this.categories[id - 1].name;
+    }
 },
  created() {
       fetch(`${process.env.VUE_APP_REMOTE_API}/api/categories`)
@@ -71,16 +52,12 @@ displayWorkouts(id) {
       })
       .then((json)=>{
        this.categories = json;
-       console.log(json);
       })
+      
      
-       for(let i = 0; i < this.categories.length; i++) {
-           if (this.categories[i].categoryID == this.id) {
-               this.category = this.categories[i].name;
-           }
-       }
-   
+       
   }
+   
 }
 
 </script>

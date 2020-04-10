@@ -8,12 +8,13 @@
 
      <div>
       <ul class='container'>
-          <router-link :to="{ name: 'category-details', params: {id: this.id } }" tag='li' class='container'> 
-        <li v-for='category in categories' v-bind:key='category.categoryID' class='box' @click='id = category.categoryID'>
-          
+          <router-link :to="{ name: 'category-details', params: {id: id } }" tag='li' class='container' > 
+        <li v-for='category in categories' v-bind:key='category.categoryID' class='box' @click='id = category.categoryID, setWorkouts(id)'>
+            
             {{category.name}} 
              </li>
-             <category-workouts v-bind:id = 'this.id' class='hidden'></category-workouts>
+             
+             <category-workouts v-bind:id = 'this.id' :v-bind:workouts = 'this.workouts' class='hidden'></category-workouts>
               </router-link> 
                
               <!-- <ul v-bind:id='workout.workoutID' class='hidden li'>
@@ -46,11 +47,12 @@ export default {
     categories: [],
     id: '',
     
+    
   };
 },
 methods:{
-displayExercises(id) {
-   fetch(`${process.env.VUE_APP_REMOTE_API}/api/exercise/${id}`,{
+setWorkouts(id) {
+   fetch(`${process.env.VUE_APP_REMOTE_API}/api/workouts/${id}`,{
      method: 'GET',
      headers: {
        "Content-Type": "application/json"
@@ -59,15 +61,16 @@ displayExercises(id) {
      
    })
     .then((response)=> {
-      if(response.ok) {
+     
         return response.json();
         
         
-      } 
+       
 
     }) 
     .then((json) => {
-      this.exercises = json;
+      this.workouts = json;
+      console.log(this.workouts)
     }) 
   let showElements = document.getElementsByClassName('show');
   for (let i = 0; i < showElements.length; i++) {
@@ -93,7 +96,6 @@ hideall() {
       })
       .then((json)=>{
        this.categories = json;
-       console.log(json);
       })
   
   }

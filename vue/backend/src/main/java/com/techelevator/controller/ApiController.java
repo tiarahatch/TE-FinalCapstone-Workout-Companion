@@ -55,7 +55,7 @@ public class ApiController {
 		return fullSchedule;
 	}
 	
-	@GetMapping(path = "/workouts/{id}", produces = "application/json")
+	@GetMapping(path = "/workouts/{id}")
     public List<Workout> getWorkoutsByCategory(@PathVariable String id) {
 		int categoryIDInt = Integer.parseInt(id);
 		

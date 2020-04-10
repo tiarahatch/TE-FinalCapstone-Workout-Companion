@@ -8,7 +8,6 @@ import PremadeWorkouts from './views/PremadeWorkouts.vue'
 import Schedule from './views/Schedule.vue'
 import CategoryDetails from './views/CategoryDetails.vue'
 
-
 Vue.use(Router)
 
 /**
@@ -76,6 +75,7 @@ const router = new Router({
         requiresAuth: false
       }
     }
+
   ]
 })
 

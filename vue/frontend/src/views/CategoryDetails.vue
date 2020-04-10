@@ -1,7 +1,7 @@
 <template>
 <div>
     <category-navigation></category-navigation>
-    <category-workouts v-bind:id = 'this.id'></category-workouts>
+    <category-workouts v-bind:id = 'this.id' v-bind:workouts = 'this.workouts'></category-workouts>
 </div>
 </template>
 
@@ -13,10 +13,12 @@ import CategoryWorkouts from '@/components/Category_Detail_Page/CategoryWorkouts
 export default {
 
     props: {
-        id: {
-            type: Number,
-            required: false,
-        }
+        id: String,
+        // id: {
+        //     type: Number,
+        //     required: false,
+        // }
+        workouts: Array,
     },
     name: 'category-details',
     components: {

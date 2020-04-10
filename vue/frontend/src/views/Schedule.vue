@@ -46,14 +46,14 @@
 <script>
 // import SimpleModal from 'simple-modal-vue'
 import ScheduleDay from "../components/ScheduleDay.vue";
-import ScheduleClassDetails from "../components/ScheduleClassDetails.vue";
+//import ScheduleClassDetails from "../components/ScheduleClassDetails.vue";
 
 export default {
   name: "schedule",
   components: {
     ScheduleDay,
-    ScheduleClassDetails,
-    SimpleModal
+    //ScheduleClassDetails,
+    //SimpleModal
   },
 
   data() {

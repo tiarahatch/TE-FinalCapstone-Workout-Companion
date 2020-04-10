@@ -43,7 +43,7 @@ public List<Category> retrieveCategories() {
 	public List<Workout> retrieveWorkoutsByCategory(int categoryID) {
 		List<Workout> workouts = new ArrayList<Workout>();
 		
-		String sqlRetrieveWorkoutsByCategory = "SELECT premade_workout.name " +
+		String sqlRetrieveWorkoutsByCategory = "SELECT * " +
 				"FROM premade_workout " +
 				"JOIN category_workout ON premade_workout.workout_id = category_workout.workout_id " +
 				"JOIN category ON category.category_id = category_workout.category_id " +
