@@ -18,6 +18,9 @@
 
     <nav>
       <router-link to="/" tag="button">Home</router-link>
+      <router-link to="/login" tag="button">Login</router-link>
+      <router-link to="/register" tag="button">Sign-Up</router-link>
+
     </nav>
     <h1>Upcoming Events</h1>
 

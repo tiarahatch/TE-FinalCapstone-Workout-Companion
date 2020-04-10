@@ -1,17 +1,19 @@
 <template>
 
   <div class="home">
-    <div class="topnav">
+    <nav>
 
       <router-link to='/register' tag='button'>Sign Up</router-link>
       <router-link to='/login' tag='button'>Login</router-link>
-
+      <img src="../img/workoutdude.jpg" alt="Gym logo">
+    
+</nav>
   
-    </div>
+    
     <div class="fullscreen-bg">>
       <!-- <img src ="../img/workout.jpeg"> -->
       <video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
-        <source src="../img/clip.mp4" type="video/mp4">
+        <source src="../img/clip.webm" type="video/webm">
       </video>
      <header class="viewport-header">
        <div class="container">
@@ -82,7 +84,7 @@ button {
   border: none;
   width: 200px;
   background-color: black;
-  color: white;
+  color: #7ac1ff;
   
 }
 .topnav {
@@ -95,6 +97,12 @@ button {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+}
+img {
+  width:128px;
+  height:128px;
+  background-color: none;
+  opacity: 5.5;
 }
 
 </style>
