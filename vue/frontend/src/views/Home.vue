@@ -1,29 +1,35 @@
 <template>
 
   <div class="home">
-    <div class="topnav">
+    
 
       <router-link to='/register' tag='button'>Sign Up</router-link>
       <router-link to='/login' tag='button'>Login</router-link>
-
-  
-    </div>
-    <div class="fullscreen-bg">>
-      <!-- <img src ="../img/workout.jpeg"> -->
-      <video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
-        <source src="../img/clip.mp4" type="video/mp4">
-      </video>
-     <header class="viewport-header">
-       <div class="container">
-     
-      
-      </div> 
-  <h1>
+      <p> HSG FITNESS. WHERE YOU TURN FAT INTO FINE! </p>
+       <h1>
    <router-link to='/premade-workouts' tag='button'>Our Workouts</router-link>
     <router-link to='/schedule' tag='button'>View Class Schedule</router-link>
   </h1> 
+      <img src="../img/logo.png" alt="Gym logo">
+    
+
+    
+    <div class="fullscreen-bg">>
+      <!-- <img src ="../img/workout.jpeg"> -->
+      <video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
+        <source src="../img/clip.webm" type="video/webm">
+      </video>
+     <header class="viewport-header">
+       <div class="container">
+     <p>Welcome to our Gym!</p>
+      
+       </div> 
+  <!-- <h1>
+   <router-link to='/premade-workouts' tag='button'>Our Workouts</router-link>
+    <router-link to='/schedule' tag='button'>View Class Schedule</router-link>
+  </h1>  -->
 </header> 
-  </div>
+  </div> 
   </div>
     
 </template>
@@ -77,12 +83,15 @@ router-link {
 }
 button {
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 25px;
   font-size: 14px;
   margin:95px;
   border: none;
   width: 200px;
   background-color: black;
-  color: white;
+  color: #7ac1ff;
   
 }
 .topnav {
@@ -95,6 +104,21 @@ button {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+img {
+  width:128px;
+  height:128px;
+  justify-content: center;
+  position:sticky;
+  outline-color: #7ac1ff;
+}
+p {
+  color: #7ac1ff;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 </style>

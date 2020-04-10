@@ -1,45 +1,46 @@
 <template>
   <div>
+   <!-- <h4 v-on:click="changeIsShow"> click for details </h4>  -->
     <h3>{{daySchedule[0].date}}</h3>
     <br />
-    <ul class="daySchedule">
-      <li v-for="item in daySchedule" v-bind:key="item.classID" class="class">
+    <div class="daySchedule">
+      
+      <li v-for="item in daySchedule" v-bind:key="item.classID" >
+       <button  v-on:click="changeIsShow">
         <p>{{item.className}}</p>
         <p>{{timeSlotFormat(item.timeSlot)}}</p>
         <p>Signed Up: {{item.reservedSpaces}}/{{item.maxOccupancy}}</p>
+        <!-- <h4 v-on:click= 'changeIsShow'> click for details </h4> -->
+        </button>
       </li>
 
-      <simple-modal v-model="isShow" title="Modal Header">
-        <template slot="body">
-          <h2>My modal</h2>
-          <input />
-          <p>Hello you</p>
-        </template>
-        <template slot="footer">
-          <button>OK</button>
-        </template>
-      </simple-modal>
-      <button @click="isShow = !isShow">on off button</button>
-    </ul>
+     
+    </div>
   </div>
 </template>
 
 <script>
-import SimpleModal from 'simple-modal-vue'
+
 export default {
+  
   name: "schedule-day",
+  event: 'change',
+//   prop: 'isShow',
+
   props: {
     daySchedule: {
       type: Array,
       required: false
     },
-    components: {
-        SimpleModal
-    }
+
+   isShow: {
+       type: Boolean, 
+       
+   }
   },
   data(){
       return{
-          isShow:false
+          
       };
   },
 
@@ -50,17 +51,36 @@ export default {
       } else {
         return timeSlot + " PM";
       }
-    }
+    },
+
+    changeIsShow: function(){
+        if(this.isShow === false){
+             this.isShow === true;
+        }else{
+             this.isShow === false;
+        }
+        this.$emit('updateIsShow',true)
+    },
+
   }
 };
 </script>
 
 
 <style scoped>
+h3{
+    text-align: center;
+    background-color: lightgrey;
+}
 .class {
+    /* width: 10%; */
   border: 1px solid black;
 }
 .daySchedule {
+    padding-left: none;
+    list-style-type: none;
   display: flex;
+  justify-content: space-around;
+  padding-bottom: 2%;
 }
 </style>

@@ -1,4 +1,8 @@
 <template>
+ <div>
+     <nav>
+      <router-link to='/' tag='button'>Home</router-link>
+      </nav>
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
@@ -12,7 +16,7 @@
       <input
         type="text"
         id="username"
-        class="form-control"
+        class="fm-txt"
         placeholder="Username"
         v-model="user.username"
         required
@@ -30,6 +34,7 @@
       <router-link :to="{ name: 'register' }">Need an account?</router-link>
       <button type="submit">Sign in</button>
     </form>
+  </div>
   </div>
 </template>
 
@@ -81,5 +86,16 @@ export default {
 </script>
 
 <style>
-
+button {
+  text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  margin:95px;
+  border: none;
+  width: 200px;
+  background-color: black;
+  color: #7ac1ff;
+  border-radius: 25px;
+}
 </style>
