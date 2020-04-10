@@ -3,7 +3,7 @@
   <div class="home">
     
 
-      <router-link to='/register' tag='button'>Sign Up</router-link>
+      <router-link to='/register' tag='button' class="homescreenbutton">Sign Up</router-link>
       <router-link to='/login' tag='button'>Login</router-link>
       <p> HSG FITNESS. WHERE YOU TURN FAT INTO FINE! </p>
        <h1>
@@ -85,7 +85,7 @@ button {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  border-radius: 25px;
+  
   font-size: 14px;
   margin:95px;
   border: none;

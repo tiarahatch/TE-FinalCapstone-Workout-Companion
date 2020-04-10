@@ -85,7 +85,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 button {
   text-align: center;
    font-family: Arial, Helvetica, sans-serif;
@@ -97,6 +97,7 @@ button {
   background-color: black;
   color: #7ac1ff;
   border-radius: 25px;
-}
+  opacity: .75;
+} 
 
 </style>
