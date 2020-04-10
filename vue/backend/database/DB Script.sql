@@ -77,7 +77,7 @@ VALUES ('2020-04-08', 6, 'Yoga', 10, 0), ('2020-04-09', 6, 'Yoga', 10, 0), ('202
 INSERT INTO schedule (date, timeslot, class_name, max_occupancy, reserved_spaces)
 VALUES ('2020-04-11', 6, 'Yoga', 8, 0), ('2020-04-11', 7, 'Water Aerobics', 15, 0), ('2020-04-11', 8, 'Spinning', 10, 0),
 ('2020-04-11', 9, 'Pilates', 8, 0), ('2020-04-11', 10, 'Kick Boxing', 5, 0), ('2020-04-11', 11, 'Kick Boxing', 5, 0), ('2020-04-11', 12, 'Spinning', 10, 0),
-('2020-04-12', 16, 'Kick Boxing', 5, 0),
+('2020-04-11', 16, 'Kick Boxing', 5, 0),
 
 ('2020-04-12', 6, 'Yoga', 8, 0), ('2020-04-12', 7, 'Water Aerobics', 15, 0), ('2020-04-12', 8, 'Spinning', 10, 0),
 ('2020-04-12', 9, 'Pilates', 8, 0), ('2020-04-12', 10, 'Kick Boxing', 5, 0), ('2020-04-12', 11, 'Kick Boxing', 5, 0), ('2020-04-12', 12, 'Spinning', 10, 0),

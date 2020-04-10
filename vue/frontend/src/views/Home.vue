@@ -2,8 +2,13 @@
 
   <div class="home">
     <div class="topnav">
+<<<<<<< HEAD
       <router-link to='/register' tag='button'>Sign Up</router-link>
       <router-link to='/login' tag='button'>Login</router-link>
+=======
+      <router-link to='/premade-workouts'>Sign Up</router-link>
+      <router-link to='/login'>Login</router-link>
+>>>>>>> ca9091fb42f4e11e7f6f63c44214136b58aebe99
     </div>
     <div class="fullscreen-bg">>
       <!-- <img src ="../img/workout.jpeg"> -->

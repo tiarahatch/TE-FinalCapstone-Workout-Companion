@@ -6,7 +6,7 @@ import Login from './views/Login.vue'
 import Register from './views/Register.vue'
 import PremadeWorkouts from './views/PremadeWorkouts.vue'
 import Schedule from './views/Schedule.vue'
-
+import CategoryDetails from './views/CategoryDetails.vue'
 
 Vue.use(Router)
 
@@ -61,8 +61,18 @@ const router = new Router({
       component: Schedule,
       meta: {
         requiresAuth: false
-      }
+      },
+     
     },
+    {
+      path: "/category-details",
+      name: "category-details",
+      component: CategoryDetails,
+      meta: {
+        requiresAuth: false
+      }
+    }
+
   ]
 })
 
