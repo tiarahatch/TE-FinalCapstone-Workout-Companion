@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import com.techelevator.authentication.AuthProvider;
 import com.techelevator.authentication.UnauthorizedException;
+import com.techelevator.model.Category;
 import com.techelevator.model.Exercise;
 import com.techelevator.model.JdbcScheduleDao;
 import com.techelevator.model.Schedule;
@@ -37,7 +38,15 @@ public class ApiController {
     
     @Autowired
     private WorkoutDao jdbcWorkoutDao;
-	
+    
+    
+    @GetMapping(path="/categories")
+	public List<Category> getCategories() {
+    	List<Category> categories = jdbcWorkoutDao.retrieveCategories();
+    	
+    	return categories;
+    }
+    
 	@GetMapping(path= "/schedule", produces = "application/json")
 	public List<Schedule> getSchedule() {
 
@@ -46,15 +55,16 @@ public class ApiController {
 		return fullSchedule;
 	}
 	
-	@GetMapping(path = "/getWorkouts", produces = "application/json")
-    public List<Workout> getWorkouts() {
+	@GetMapping(path = "/workouts/{id}", produces = "application/json")
+    public List<Workout> getWorkoutsByCategory(@PathVariable String id) {
+		int categoryIDInt = Integer.parseInt(id);
 		
-		List<Workout> workouts = jdbcWorkoutDao.retrieveWorkouts();
+		List<Workout> workouts = jdbcWorkoutDao.retrieveWorkoutsByCategory(categoryIDInt);
 		
 		return workouts;
 	}
 	
-	@GetMapping(path = "/getExercises", produces = "application/json")
+	@GetMapping(path = "/exercises", produces = "application/json")
 	public List<Exercise> getExercises() {
 		
 		List<Exercise> exercises = jdbcWorkoutDao.retrieveExercises();

@@ -5,7 +5,7 @@
 
       <router-link to='/register' tag='button'>Sign Up</router-link>
       <router-link to='/login' tag='button'>Login</router-link>
-=======
+
   
     </div>
     <div class="fullscreen-bg">>

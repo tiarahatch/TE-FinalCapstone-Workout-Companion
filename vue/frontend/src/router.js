@@ -65,9 +65,12 @@ const router = new Router({
      
     },
     {
-      path: "/category-details",
+      path: "/category-details/:id",
       name: "category-details",
       component: CategoryDetails,
+      props: 
+        true,
+      
       meta: {
         requiresAuth: false
       }

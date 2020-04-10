@@ -20,12 +20,35 @@ public class JdbcWorkoutDao implements WorkoutDao {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
+	
+
+@Override
+public List<Category> retrieveCategories() {
+	List<Category> categories = new ArrayList<Category>();
+	
+	String sqlRetrieveCategories = "SELECT * FROM category";
+	SqlRowSet results = jdbcTemplate.queryForRowSet(sqlRetrieveCategories);
+	
+	while(results.next()) {
+		Category category = new Category();
+		category.setCategoryID(results.getInt("category_id"));
+		category.setName(results.getString("name"));
+		categories.add(category);
+	}
+	return categories;
+}
+
+	
 	@Override
-	public List<Workout> retrieveWorkouts() {
+	public List<Workout> retrieveWorkoutsByCategory(int categoryID) {
 		List<Workout> workouts = new ArrayList<Workout>();
 		
-		String sqlRetrieveWorkouts = "SELECT * FROM premade_workout";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlRetrieveWorkouts);
+		String sqlRetrieveWorkoutsByCategory = "SELECT premade_workout.name " +
+				"FROM premade_workout " +
+				"JOIN category_workout ON premade_workout.workout_id = category_workout.workout_id " +
+				"JOIN category ON category.category_id = category_workout.category_id " +
+				"WHERE category_workout.category_id = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlRetrieveWorkoutsByCategory, categoryID);
 		
 		while(results.next()) {
 			
@@ -77,7 +100,6 @@ private Workout mapRowToWorkout(SqlRowSet results) {
 	Workout workout = new Workout();
 	workout.setWorkoutID(results.getInt("workout_id"));
 	workout.setName(results.getString("name"));
-	workout.setWorkoutTime(results.getInt("workout_time"));
 	return workout;
 }
 

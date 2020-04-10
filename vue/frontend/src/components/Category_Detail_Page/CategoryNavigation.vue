@@ -5,9 +5,9 @@
         </nav>
     <div>
         <ul class='container'>
-            <li v-for='workout in workouts' v-bind:key='workout.workoutID' class='box'>
+            <li v-for='category in categories' v-bind:key='category.categoryID' class='box'>
         
-            {{workout.name}} 
+            {{category.name}} 
              </li>
         </ul>
         </div>
@@ -20,18 +20,19 @@ name: 'category-navigation',
 data() {
     return {
         workouts: [],
+        categories: [],
     }
 },
 props: {
 
 },
  created() {
-    fetch(`${process.env.VUE_APP_REMOTE_API}/api/getWorkouts`)
+       fetch(`${process.env.VUE_APP_REMOTE_API}/api/categories`)
       .then((response)=>{
         return response.json();
       })
       .then((json)=>{
-       this.workouts = json;
+       this.categories = json;
        console.log(json);
       })
   }

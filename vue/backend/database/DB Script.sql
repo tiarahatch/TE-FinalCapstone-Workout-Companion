@@ -1,7 +1,19 @@
 DROP TABLE schedule;
+DROP TABLE category_workout;
 DROP TABLE workout_exercise;
 DROP TABLE exercise;
 DROP TABLE premade_workout;
+DROP TABLE category;
+
+Create table category (
+category_id serial,
+name VARCHAR,
+
+constraint pk_exercise_category primary key (category_id)
+);
+
+insert into category(name)
+values ('Strength'),('Cardio'),('Flexibility'),('Crossfit');
 
 CREATE TABLE schedule (
 class_id SERIAL,
@@ -14,12 +26,17 @@ CONSTRAINT pk_schedule PRIMARY KEY (class_id)
 );
 
 
-CREATE TABLE premade_workout (
-workout_id SERIAL,
-name VARCHAR,
-workout_time INT,
-CONSTRAINT pk_workout PRIMARY KEY (workout_id)
+create table premade_workout (
+workout_id serial,
+name varchar,
+
+constraint pk_premade_workout primary key (workout_id)
 );
+
+insert into premade_workout (name)
+
+values('Upper-Body'),('Lower-Body'), ('Back'), ('HIIT'), ('Various-Circuit'), ('At-Home Cardio'), ('Yoga'), 
+('Pilates'), ('Stretches'), ('Body Weight'), ('Push-Pull-Run'), ('Jumps and Lunges');
 
 
 CREATE TABLE exercise (
@@ -30,6 +47,12 @@ sets INT,
 CONSTRAINT pk_exercise PRIMARY KEY (exercise_id)
 );
 
+INSERT INTO exercise (name, reps, sets)
+VALUES ('Bicep Curls', 10, 3), ('Pull Ups', 3, 3), ('Dips', 10, 2), ('Squats', 5, 4), ('Lunges', 10, 4), ('Box Step Ups', 8, 3), ('Dead Lifts', 3, 2), ('Dumbbell Rows', 5, 3),
+('Seated Cable Rows', 10, 4), ('Bicycle Crunches', 20, 2), ('Tuck Ups', 7, 4), ('Mountain Climbers', 12, 3), ('Elliptical', 60, 3), ('Treadmill', 60, 2), ('Stair Stepper', 60, 2),
+('Air Squats', 15, 2), ('High Knees', 10, 2), ('Jump Lunges', 9, 4), ('Navasana', 60, 2), ('Vriksasana', 60, 2), ('Tadasana', 60, 1), ('Leg Circles', 15, 2), ('Single Leg Stretches', 12, 3),
+('Criss-Crosses', 9, 2), ('Calf Stretch', 60, 1), ('Lower Back Stretch', 60, 1), ('Hamstring Stretch', 60, 1), ('Push Ups', 10, 2), ('Sit Ups', 10, 2), ('Tuck Jumps', 9, 3), ('Jog', 60, 2);
+
 
 CREATE TABLE workout_exercise (
 workout_id INT,
@@ -38,21 +61,20 @@ CONSTRAINT fk_workout FOREIGN KEY (workout_id) REFERENCES premade_workout (worko
 CONSTRAINT fk_exercise FOREIGN KEY (exercise_id) REFERENCES exercise (exercise_id)
 );
 
-
-INSERT INTO exercise (name, reps, sets)
-VALUES ('Body Weight Squats', 10, 3), ('Elevated Push-ups', 10, 3), ('Backward Lunges', 10, 3), ('Plank', 10, 3), ('Side Lunges', 10, 3),
-('Jumping Jacks', 30, 4), ('Burpees', 10, 3), ('Situps', 25, 4), ('Mountain Climbers', 15, 6), ('Bench-press', 10, 3), ('Lat Pull-downs', 10, 3),
-('Leg Press', 10, 3), ('Bicep Curls', 10, 3), ('Incline Bench', 10, 3), ('Pushups', 10, 3), ('Leg Curls', 10, 3), ('Rows', 10, 3), ('Flys', 10, 3),
-('Pullups', 4, 3), ('Shoulder Press', 10, 3);   
-
-
-INSERT INTO premade_workout (name, workout_time)
-VALUES ('HIIT', 30), ('Cardio', 45), ('Strength', 60), ('Crossfit', 45);
-
 INSERT INTO workout_exercise (workout_id, exercise_id)
-VALUES (1, 4), (1, 6), (1, 9), (1, 1), (1, 7), (2, 7), (2, 6), (2, 8), (2, 10), (2, 15), (3, 14), 
-(3, 2), (3, 12), (3, 16), (3, 20), (4, 7), (4, 19), (4, 18), (4, 14), (4, 17);
+VALUES (1,1), (1,2), (1,3), (2,4), (2,5), (2,6), (3,7), (3,8), (3,9), (4,10), (4,11), (4,12), 
+(5,13), (5,14), (5,15), (6,16), (6,17), (6,18), (7,19), (7,20), (7,21), (8,22), (8,23), (8,24), (9,25), 
+(9,26), (9,27), (10,28), (10,29), (10,30), (11,28), (11,2), (11,31), (12,5), (12,18), (12,17);
 
+CREATE TABLE category_workout (
+category_id INT,
+workout_id INT,
+CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES category (category_id), 
+CONSTRAINT fk_workout FOREIGN KEY (workout_id) REFERENCES premade_workout (workout_id)
+);
+  
+INSERT INTO category_workout (category_id, workout_id)
+VALUES (1,1), (1,2), (1,3), (2,4), (2,5), (2,6), (3,7), (3,8), (3,9), (4,10), (4,11), (4,12);          
 
 INSERT INTO schedule (date, timeslot, class_name, max_occupancy, reserved_spaces)
 VALUES ('2020-04-08', 6, 'Yoga', 10, 0), ('2020-04-09', 6, 'Yoga', 10, 0), ('2020-04-10', 6, 'Yoga', 10, 0),
@@ -123,44 +145,3 @@ VALUES ('2020-04-11', 6, 'Yoga', 8, 0), ('2020-04-11', 7, 'Water Aerobics', 15, 
 ('2020-05-17', 9, 'Pilates', 8, 0), ('2020-05-17', 10, 'Kick Boxing', 5, 0), ('2020-05-17', 11, 'Kick Boxing', 5, 0), ('2020-05-17', 12, 'Spinning', 10, 0),
 ('2020-05-17', 16, 'Kick Boxing', 5, 0);
 
-SELECT * FROM schedule
-
-drop table full_workout;
-drop table exercise_category;
-drop table workout_target;
-Create table exercise_category (
-category_id serial,
-category_name VARCHAR,
-
-constraint pk_exercise_category primary key (category_id)
-);
-
-insert into exercise_category(category_name)
-values ('Cardio'),('Strength'),('Flexibility'),('Crossfit');
-
-
-//(this is our premade workout
-create table workout_target (
-target_id serial,
-name varchar,
-
-constraint pk_workout_target primary key (target_id)
-);
-
-insert into workout_target (name)
-values('UpperBody'),('LowerBody'),('HIIT'),('Crossfit');
-
-create table full_workout (
-target_id int,
-exercise_id int
-);
-
-insert into full_workout (target_id, exercise_id)
-values (1,2),(1,4),(1,8),(1,10),(1,11),(1,13),
-(1,14),(1,15),(1,18),(1,19),(1,20),(2,1),(2,3),
-(2,5),(2,6),(2,7),(2,9),(2,12),(2,16),(2,17),
-(3,1),(3,2),(3,6),(3,7),(3,8),(3,9),(3,17),
-(4,1),(4,2),(4,3),(4,5),(4,10),(4,11),(4,12),(4,13),(4,19);
-
-
-select * from full_workout;
