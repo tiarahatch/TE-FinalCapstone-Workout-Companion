@@ -8,16 +8,19 @@
 
      <div>
       <ul class='container'>
-
+         <router-link to='category-details' tag='li' class='container'>
         <li v-for='workout in workouts' v-bind:key='workout.workoutID' class='box'  @mouseover='displayExercises(workout.workoutID);' @mouseleave='hideall'>
-            {{workout.name}}  
-              <ul v-bind:id='workout.workoutID' class='hidden li'>
+        
+            {{workout.name}} 
+             </li>
+             </router-link> 
+              <!-- <ul v-bind:id='workout.workoutID' class='hidden li'>
               <li v-for='exercise in exercises' v-bind:key='exercise.exerciseID'>
                {{exercise.name}}
                </li> 
-            </ul> 
+            </ul>  -->
             
-            </li>
+           
       </ul>
     </div>
         
@@ -32,11 +35,10 @@ export default {
  
  data(){
   return{
+
     workouts: [],
     exercises: [],
-   
     
-
   };
 },
 methods:{
@@ -108,7 +110,7 @@ hideall() {
   padding-left: 5px;
 }
 li {
-  list-style: circle;
+  list-style-type: none;
 }
 
 .container{
