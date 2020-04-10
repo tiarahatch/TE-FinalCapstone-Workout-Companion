@@ -55,8 +55,8 @@ export default {
   name: "schedule",
   components: {
     ScheduleDay,
-    //ScheduleClassDetails,
-    //SimpleModal
+    ScheduleClassDetails,
+    SimpleModal
   },
 
   data() {
