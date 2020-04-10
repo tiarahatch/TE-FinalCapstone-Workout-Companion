@@ -44,7 +44,7 @@
 
 
 <script>
-// import SimpleModal from 'simple-modal-vue'
+import SimpleModal from 'simple-modal-vue'
 import ScheduleDay from "../components/ScheduleDay.vue";
 import ScheduleClassDetails from "../components/ScheduleClassDetails.vue";
 
