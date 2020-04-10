@@ -3,10 +3,18 @@
     <div>
         <div class='border'>
         <ul>
-            <li v-for='workout in workouts' v-bind:key='workout.workoutID' class='box'>
+            <li>
+                {{categories[id - 1].name}}
+                </li>
+        <ul>
+            <li v-for='workout in workouts' v-bind:key='workout.workoutID'>
+                {{workout.name}}
+                </li>
+            </ul>
+            <!-- <li v-for='category in categories' v-bind:key='category.categoryID' class='box'>
         
-            {{workout.name}} 
-             </li>
+            {{category.name}} 
+             </li> -->
         </ul>
         </div> 
     </div>
@@ -19,20 +27,59 @@ export default {
     data() {
        return {
         workouts: [],
+        categories: [],
+        category: '',
     }
 },
 props: {
+id: {
+    type: String,
+    required: false,
+}
+},
+
+methods: {
+displayWorkouts(id) {
+ fetch(`${process.env.VUE_APP_REMOTE_API}/api/workouts/${id}`,{
+     method: 'GET',
+     headers: {
+       "Content-Type": "application/json"
+     },
+   
+     
+   })
+   
+    .then((response)=> {
+      if(response.ok) {
+        return response.json();
+        
+        
+      } 
+
+    }) 
+    .then((json) => {
+      this.workouts = json;
+      console.log(this.workouts)
+    }) 
+},
 
 },
  created() {
-    fetch(`${process.env.VUE_APP_REMOTE_API}/api/getWorkouts`)
+      fetch(`${process.env.VUE_APP_REMOTE_API}/api/categories`)
       .then((response)=>{
         return response.json();
       })
       .then((json)=>{
-       this.workouts = json;
+       this.categories = json;
        console.log(json);
       })
+     
+       for(let i = 0; i < this.categories.length; i++) {
+           if (this.categories[i].categoryID == this.id) {
+               this.category = this.categories[i].name;
+           }
+       }
+   
   }
 }
 

@@ -4,10 +4,12 @@ import java.util.List;
 
 public interface WorkoutDao {
 
-	public List<Workout> retrieveWorkouts();
+	public List<Workout> retrieveWorkoutsByCategory(int categoryID);
 	
 	public List<Exercise> retrieveExercises();
 	
 	public List<Exercise> retrieveExercisesByWorkoutID(int workoutID);
+	
+	public List<Category> retrieveCategories();
 	
 }

@@ -1,7 +1,7 @@
 <template>
 <div>
     <category-navigation></category-navigation>
-    <category-workouts></category-workouts>
+    <category-workouts v-bind:id = 'this.id'></category-workouts>
 </div>
 </template>
 
@@ -11,6 +11,13 @@ import CategoryNavigation from '@/components/Category_Detail_Page/CategoryNaviga
 import CategoryWorkouts from '@/components/Category_Detail_Page/CategoryWorkouts.vue'
 
 export default {
+
+    props: {
+        id: {
+            type: Number,
+            required: false,
+        }
+    },
     name: 'category-details',
     components: {
         CategoryNavigation,

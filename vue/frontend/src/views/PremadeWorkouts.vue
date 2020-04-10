@@ -8,12 +8,14 @@
 
      <div>
       <ul class='container'>
-         <router-link to='category-details' tag='li' class='container'>
-        <li v-for='workout in workouts' v-bind:key='workout.workoutID' class='box'  @mouseover='displayExercises(workout.workoutID);' @mouseleave='hideall'>
-        
-            {{workout.name}} 
+          <router-link :to="{ name: 'category-details', params: {id: this.id } }" tag='li' class='container'> 
+        <li v-for='category in categories' v-bind:key='category.categoryID' class='box' @click='id = category.categoryID'>
+          
+            {{category.name}} 
              </li>
-             </router-link> 
+             <category-workouts v-bind:id = 'this.id' class='hidden'></category-workouts>
+              </router-link> 
+               
               <!-- <ul v-bind:id='workout.workoutID' class='hidden li'>
               <li v-for='exercise in exercises' v-bind:key='exercise.exerciseID'>
                {{exercise.name}}
@@ -30,14 +32,19 @@
 
 
 <script>
+import CategoryWorkouts from '@/components/Category_Detail_Page/CategoryWorkouts.vue'
 export default {
   name: 'premade-workouts',
- 
+ components: {
+   CategoryWorkouts,
+ },
  data(){
   return{
 
     workouts: [],
     exercises: [],
+    categories: [],
+    id: '',
     
   };
 },
@@ -80,14 +87,15 @@ hideall() {
 },
 
   created() {
-    fetch(`${process.env.VUE_APP_REMOTE_API}/api/getWorkouts`)
+   fetch(`${process.env.VUE_APP_REMOTE_API}/api/categories`)
       .then((response)=>{
         return response.json();
       })
       .then((json)=>{
-       this.workouts = json;
+       this.categories = json;
        console.log(json);
       })
+  
   }
 
 }
