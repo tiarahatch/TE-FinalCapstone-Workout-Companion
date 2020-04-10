@@ -3,7 +3,7 @@
   <div class="home">
     <div class="topnav">
       <router-link to='/premade-workouts'>Sign Up</router-link>
-      <router-link to='/login'>Login</router-link>
+      <router-link to='/schedule'>Login</router-link>
     </div>
     <div class="fullscreen-bg">>
       <!-- <img src ="../img/workout.jpeg"> -->
