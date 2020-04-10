@@ -1,9 +1,16 @@
 <template>
   <div>
     <nav>
-      <router-link to='/' tag='button'>Home</router-link>
+       
+      <router-link to="/" tag="button">Home</router-link>
+      <router-link to="/login" tag="button">Login</router-link>
+      <router-link to="/register" tag="button">Sign-Up</router-link>
+      <img src="../img/OurGym.jpg" alt="Gym logo">
+
+    
+
       </nav>
-    <h1 style='text-align: center'>Please Select a Category</h1>
+    <h1 style='text-align: center'>CHOOSE YOUR WORKOUT</h1>
    <!-- <p>You must be authenticated to see this</p> -->
 
      <div>
@@ -141,6 +148,7 @@ li {
     display:flex;
     align-items:center;
     justify-content:center;
+
     
   
   }
@@ -150,6 +158,25 @@ li {
   transition: all .2s ease-in-out;
   transform: scale(1.1);
  }
-
+button {
+   text-align: center;
+  font-size: 14px;
+  margin:95px;
+  border: none;
+  width: 200px;
+  background-color: black;
+  color: #7ac1ff;
+}
+h1 {
+  color:  #7ac1ff;
+  justify-content: center;
+}
+img {
+  width:128px;
+  height:128px;
+}
+template{
+  background-color: black;
+}
 
 </style>
