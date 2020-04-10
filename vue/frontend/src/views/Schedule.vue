@@ -3,17 +3,21 @@
   
   <div>
     
-    <!-- <simple-modal v-model="isShow" title="Modal Header">
+    <simple-modal v-model="isShow" title="Class Name">
       <template slot="body">
-        <h2>My modal</h2>
-        <input>
-        <p>Hello you</p>
+        <h2>Instructor: Seymour Buhzt</h2>
+        <h3>Time: 6 AM </h3>
+        <h4>Class Size: 0/10</h4>
+        <p>This is the class description. 
+          We should probably remember to update the DB to have 
+          some sort of stock description for each class type</p>
+         <button> Sign Up </button>
       </template>
-      <template slot="footer">
+      <!-- <template slot="footer">
         <button>OK</button>
-      </template>
+      </template> -->
     </simple-modal>
-    <button @click="isShow = !isShow">on off button</button> -->
+    <!-- <button @click="isShow = !isShow">on off button</button> -->
 
 
     <nav>
@@ -25,13 +29,16 @@
     <div id="scheduleHeading">
       <h2>This Week's Schedule</h2>
       <h3>{{getHeaderDates()[0]}} - {{getHeaderDates()[1]}}</h3>
+      <h1 v-if="show"> POOP</h1>
     </div>
     <div>
       <!-- <button @click = 'weekView()' class='button-margin'> Week View </button> -->
       <div class="show" id="weekList">
         <ul>
           <li v-for="day in weekSchedule" :key="day.classID" class="border">
-            <schedule-day v-bind:daySchedule="day" ></schedule-day>
+           
+            <schedule-day v-bind:daySchedule="day" v-bind:isShow="isShow" v-on:updateIsShow="switchIsShow($event)"></schedule-day>
+           
             <!-- <schedule-class-details v-if="showDetails" /> -->
            
           </li>
@@ -60,11 +67,20 @@ export default {
     return {
       weekSchedule: [],
       showDetails: false,
-      isShow: false
+      isShow: false,
+      show: false
     };
   },
   computed: {},
   methods: {
+   
+   switchIsShow: function(updatedIsShow){
+      this.isShow = updatedIsShow;
+    },
+
+    showToTrue(){
+      this.show = true;
+    },
     getHeaderDates() {
       let todayArray = this.weekSchedule[0];
       let today = todayArray[0].date;
