@@ -100,7 +100,7 @@ const router = new Router({
       path: "/StartWorkout",
       name: "startworkout",
       component: StartWorkout,
-      
+      props: true,
       
       meta: {
         requiresAuth: false
