@@ -1,9 +1,9 @@
 <template>
-
+<body>
   <div class="home">
     <nav>
       <h1> H.S.G FITNESS</h1><br>
-      <p> WHERE YOU TURN FAT INTO FINE! </p>
+      <p> WHERE YOU TURN FAT INTO FINE!!! </p>
       
     
 </nav>
@@ -18,15 +18,16 @@
       
       </div> 
   <h1>
-   <router-link to='/premade-workouts' tag='button'>Our Workouts</router-link>
-    <router-link to='/schedule' tag='button'>View Class Schedule</router-link>
-    <router-link to='/register' tag='button'>Sign Up</router-link>
+   <router-link to='/premade-workouts' tag='button'>Our Workouts</router-link><br>
+    <router-link to='/schedule' tag='button'>View Class Schedule</router-link><br>
+    <router-link to='/register' tag='button'>Sign Up</router-link><br>
       <router-link to='/login' tag='button'>Login</router-link>
+      <router-link to='/dashboard' tag='button'>Dashboard</router-link>
   </h1> 
 </header> 
   </div>
   </div>
-    
+    </body>
 </template>
 
 <script>
@@ -37,7 +38,7 @@ export default {
 
 
 <style scoped>
-.home img{
+ img{
   size: cover;
 }
 div {
@@ -68,6 +69,8 @@ router-link {
 h1, p{
   color: #7ac1ff;
   font-size: 50px;
+  font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
+  font-stretch: expanded;
 }
 .container {
   position: absolute;
@@ -85,13 +88,17 @@ h1, p{
 button {
   text-align: center;
   font-size: 14px;
-  margin:95px;
+  margin:25px;
   border: none;
   width: 200px;
   background-color: black;
   color: #7ac1ff;
   border-radius: 15px;
+  cursor: pointer;
   
+}
+button:hover span {
+  padding-right: 25px;
 }
 .topnav {
   overflow: hidden;
