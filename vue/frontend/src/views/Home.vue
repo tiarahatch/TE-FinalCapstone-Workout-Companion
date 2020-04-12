@@ -17,13 +17,12 @@
       
       
       </div> 
-  <h1>
-   <router-link to='/premade-workouts' tag='button'>Our Workouts</router-link><br>
+  
+   
     <router-link to='/schedule' tag='button'>View Class Schedule</router-link><br>
     <router-link to='/register' tag='button'>Sign Up</router-link><br>
-      <router-link to='/login' tag='button'>Login</router-link>
-      <router-link to='/dashboard' tag='button'>Dashboard</router-link>
-  </h1> 
+    <router-link to='/dashboard' tag='button'>My Dashboard</router-link>
+  
 </header> 
   </div>
   </div>

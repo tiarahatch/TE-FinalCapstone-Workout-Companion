@@ -5,6 +5,7 @@
       <router-link to="/" tag="button">Home</router-link>
       <router-link to="/login" tag="button">Login</router-link>
       <router-link to="/register" tag="button">Sign-Up</router-link>
+      <router-link to='/dashboard' tag='button'>Dashboard</router-link>
      <img src="../img/logo.png" alt="Gym logo">
 
     
@@ -165,9 +166,9 @@ button {
    font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 14px;
-  margin:95px;
+  margin:80px;
   border: none;
-  width: 200px;
+  width: 150px;
   background-color: black;
   color: #7ac1ff;
   border-radius: 25px;
