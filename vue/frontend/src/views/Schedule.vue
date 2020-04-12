@@ -3,14 +3,13 @@
   
   <div>
     
-    <simple-modal v-model="isShow" title="Class Name">
+    <simple-modal v-model="isShow" title="Class Description">
       <template slot="body">
-        <h2>Instructor: Seymour Buhzt</h2>
-        <h3>Time: 6 AM </h3>
-        <h4>Availability: 0/10</h4>
-        <p>This is the class description. 
-          We should probably remember to update the DB to have 
-          some sort of stock description for each class type</p>
+        <h2>Class: {{classToShowDetails.className}}</h2>
+        <h3>Time: {{timeSlotFormat(classToShowDetails.timeSlot)}} </h3>
+        <h4>Availability: {{classToShowDetails.reservedSpaces}}/{{classToShowDetails.maxOccupancy}}</h4>
+        <p>{{classToShowDetails.classDescription}}</p>
+         
          <button> Sign Up </button>
       </template>
       <!-- <template slot="footer">
@@ -23,7 +22,7 @@
     <nav>
       <router-link to="/" tag="button">Home</router-link>
     </nav>
-    <h1>Upcoming Events</h1>
+    <!-- <h1>Upcoming Events</h1> -->
 
     <!-- <p>You must be authenticated to see this</p> -->
     <div id="scheduleHeading">
@@ -37,7 +36,7 @@
         <ul>
           <li v-for="day in weekSchedule" :key="day.classID" class="border">
            
-            <schedule-day v-bind:daySchedule="day" v-bind:isShow="isShow" v-on:updateIsShow="switchIsShow($event)"></schedule-day>
+            <schedule-day v-bind:daySchedule="day" v-bind:isShow="isShow" v-on:updateIsShow="switchIsShow($event[0]), classToShowDetails = $event[1]"></schedule-day>
            
             <!-- <schedule-class-details v-if="showDetails" /> -->
            
@@ -53,13 +52,13 @@
 <script>
 import SimpleModal from 'simple-modal-vue'
 import ScheduleDay from "../components/ScheduleDay.vue";
-import ScheduleClassDetails from "../components/ScheduleClassDetails.vue";
+
 
 export default {
   name: "schedule",
   components: {
     ScheduleDay,
-    ScheduleClassDetails,
+    
     SimpleModal
   },
 
@@ -68,7 +67,7 @@ export default {
       weekSchedule: [],
       showDetails: false,
       isShow: false,
-      show: false
+      classToShowDetails: ''
     };
   },
   computed: {},

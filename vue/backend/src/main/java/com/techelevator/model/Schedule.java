@@ -11,6 +11,7 @@ public class Schedule {
 	private int timeSlot;
 	private int maxOccupancy;
 	private int reservedSpaces;
+	private String classDescription;
 	
 	
 	
@@ -18,7 +19,12 @@ public class Schedule {
 	
 	
 	
-	
+	public String getClassDescription() {
+		return classDescription;
+	}
+	public void setClassDescription(String classDescription) {
+		this.classDescription = classDescription;
+	}
 	public int getClassID() {
 		return classID;
 	}
