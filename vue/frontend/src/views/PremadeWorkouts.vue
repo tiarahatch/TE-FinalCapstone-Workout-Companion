@@ -16,15 +16,16 @@
 
      <div>
       <ul class='container'>
-          <router-link :to="{ name: 'category-details', params: {id: id } }" tag='li' class='container' > 
+          <router-link :to="{ name: 'category-details', params: {id: id.toString()} }" tag='li' class='container' > 
         <li v-for='category in categories' v-bind:key='category.categoryID' class='box' @click='id = category.categoryID, setWorkouts(id)'>
             
             {{category.name}} 
              </li>
              
-             <category-workouts v-bind:id = 'this.id' :v-bind:workouts = 'this.workouts' class='hidden'></category-workouts>
+             
               </router-link> 
-               
+               <category-workouts v-bind:workoutLists = 'workouts' class='hidden'></category-workouts>
+               <category-details v-bind:workoutLists = 'workouts' class='hidden'></category-details>
               <!-- <ul v-bind:id='workout.workoutID' class='hidden li'>
               <li v-for='exercise in exercises' v-bind:key='exercise.exerciseID'>
                {{exercise.name}}
@@ -42,10 +43,12 @@
 
 <script>
 import CategoryWorkouts from '@/components/Category_Detail_Page/CategoryWorkouts.vue'
+import CategoryDetails from '@/views/CategoryDetails.vue'
 export default {
   name: 'premade-workouts',
  components: {
    CategoryWorkouts,
+   CategoryDetails,
  },
  data(){
   return{
@@ -59,42 +62,22 @@ export default {
   };
 },
 methods:{
-setWorkouts(id) {
-   fetch(`${process.env.VUE_APP_REMOTE_API}/api/workouts/${id}`,{
-     method: 'GET',
-     headers: {
-       "Content-Type": "application/json"
-     },
-   
+// setWorkouts(id) {
+//    fetch(`${process.env.VUE_APP_REMOTE_API}/api/workouts/${id}`,{
+//      method: 'GET',
+//      headers: {
+//        "Content-Type": "application/json"
+//      },
+//    })
+//     .then((response)=> {
      
-   })
-    .then((response)=> {
-     
-        return response.json();
-        
-        
-       
-
-    }) 
-    .then((json) => {
-      this.workouts = json;
-      console.log(this.workouts)
-    }) 
-  let showElements = document.getElementsByClassName('show');
-  for (let i = 0; i < showElements.length; i++) {
-    showElements[i].className = 'hidden'
-  }
-  let ul = document.getElementById(id);
-  ul.className = 'show'; 
-},
-
-hideall() {
-  let showElements = document.getElementsByClassName('show');
-  for (let i = 0; i < showElements.length; i++) {
-    showElements[i].className = 'hidden';
-  }
-}
-
+//         return response.json();
+//     }) 
+//     .then((json) => {
+//       this.workouts = json;
+//       console.log(this.workouts)
+//     }) 
+// }
 },
 
   created() {
