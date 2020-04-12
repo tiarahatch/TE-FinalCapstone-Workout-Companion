@@ -70,6 +70,9 @@ h1, p{
   font-size: 50px;
   font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
   font-stretch: expanded;
+  -webkit-text-stroke: 3px black;
+  text-decoration-style: solid;
+  text-decoration-color: black;
 }
 .container {
   position: absolute;

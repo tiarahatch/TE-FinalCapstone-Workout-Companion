@@ -9,6 +9,7 @@ import Schedule from './views/Schedule.vue'
 import CategoryDetails from './views/CategoryDetails.vue'
 import Dashboard from './views/Dashboard.vue'
 import NewUser from './views/NewUser.vue'
+import StartWorkout from './views/StartWorkout.vue'
 
 Vue.use(Router)
 
@@ -92,7 +93,17 @@ const router = new Router({
       
       
       meta: {
-        requiresAuth: true
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/StartWorkout",
+      name: "startworkout",
+      component: StartWorkout,
+      
+      
+      meta: {
+        requiresAuth: false
       }
     },
   

@@ -1,7 +1,8 @@
 <template>
     <div>
         <nav>
-          <router-link to='/' tag='button'>Home</router-link>  
+          <router-link to='/' tag='button'>Home</router-link> 
+          <router-link to='/premade-workouts' tag='button'>Choose Workout</router-link>
         </nav>
     <div>
         <ul class='container'>
