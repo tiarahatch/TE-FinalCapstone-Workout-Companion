@@ -6,7 +6,9 @@
     <div class="daySchedule">
       
       <li v-for="item in daySchedule" v-bind:key="item.classID" >
-       <button  v-on:click="changeIsShow">
+      
+       <!-- <button  v-on:click="changeIsShow"> -->
+        <button v-on:click="emit_event(item)">
         <p>{{item.className}}</p>
         <p>{{timeSlotFormat(item.timeSlot)}}</p>
         <p>Signed Up: {{item.reservedSpaces}}/{{item.maxOccupancy}}</p>
@@ -45,12 +47,20 @@ export default {
   },
 
   methods: {
-    timeSlotFormat(timeSlot) {
+   
+   
+   timeSlotFormat(timeSlot) {
       if (timeSlot < 12) {
         return timeSlot + " AM";
       } else {
         return timeSlot + " PM";
       }
+    },
+
+    emit_event: function (item){
+     
+        
+        this.$emit('updateIsShow', [true, item])
     },
 
     changeIsShow: function(){

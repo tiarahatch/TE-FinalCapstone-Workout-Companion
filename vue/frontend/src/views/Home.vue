@@ -1,37 +1,32 @@
 <template>
-
+<body>
   <div class="home">
+    <nav>
+      <h1> H.S.G FITNESS</h1><br>
+      <p> WHERE YOU TURN FAT INTO FINE!!! </p>
+      
     
-
-      <router-link to='/register' tag='button' class="homescreenbutton">Sign Up</router-link>
-      <router-link to='/login' tag='button'>Login</router-link>
-      <p> HSG FITNESS. WHERE YOU TURN FAT INTO FINE! </p>
-       <h1>
-   <router-link to='/premade-workouts' tag='button'>Our Workouts</router-link>
-    <router-link to='/schedule' tag='button'>View Class Schedule</router-link>
-  </h1> 
-      <img src="../img/logo.png" alt="Gym logo">
-    
-
+</nav>
+  
     
     <div class="fullscreen-bg">>
       <!-- <img src ="../img/workout.jpeg"> -->
-      <video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
-        <source src="../img/clip.webm" type="video/webm">
-      </video>
+      <img src="../img/lift.jpg" alt="Gym">
      <header class="viewport-header">
        <div class="container">
-     <p>Welcome to our Gym!</p>
       
-       </div> 
-  <!-- <h1>
-   <router-link to='/premade-workouts' tag='button'>Our Workouts</router-link>
-    <router-link to='/schedule' tag='button'>View Class Schedule</router-link>
-  </h1>  -->
+      
+      </div> 
+  
+   
+    <router-link to='/schedule' tag='button'>View Class Schedule</router-link><br>
+    <router-link to='/register' tag='button'>Sign Up</router-link><br>
+    <router-link to='/dashboard' tag='button'>My Dashboard</router-link>
+  
 </header> 
-  </div> 
   </div>
-    
+  </div>
+    </body>
 </template>
 
 <script>
@@ -42,7 +37,9 @@ export default {
 
 
 <style scoped>
-
+ img{
+  size: cover;
+}
 div {
   text-align: center;
 }
@@ -60,13 +57,19 @@ router-link {
     overflow: hidden;
     z-index: -100;
 }
-.fullscreen-bg video {
+.fullscreen-bg img {
   position: fixed;
   size: cover;
     top: 0;
     left: 0;
     width: 100%;
     height: auto;
+}
+h1, p{
+  color: #7ac1ff;
+  font-size: 50px;
+  font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
+  font-stretch: expanded;
 }
 .container {
   position: absolute;
@@ -83,16 +86,18 @@ router-link {
 }
 button {
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  
   font-size: 14px;
-  margin:95px;
+  margin:25px;
   border: none;
   width: 200px;
   background-color: black;
   color: #7ac1ff;
+  border-radius: 15px;
+  cursor: pointer;
   
+}
+button:hover span {
+  padding-right: 25px;
 }
 .topnav {
   overflow: hidden;
@@ -104,21 +109,12 @@ button {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
 }
 img {
   width:128px;
   height:128px;
-  justify-content: center;
-  position:sticky;
-  outline-color: #7ac1ff;
-}
-p {
-  color: #7ac1ff;
-  justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
+  background-color: none;
+  
 }
 
 </style>

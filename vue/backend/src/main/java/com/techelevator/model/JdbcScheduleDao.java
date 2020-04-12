@@ -88,6 +88,7 @@ public class JdbcScheduleDao implements ScheduleDao {
 		
 		String sqlRetrieveDaySchedule = "SELECT * " +
 				"FROM schedule " +
+				"JOIN class_options ON class_option = class_options.class_option_id " +
 				"WHERE date = ? ORDER BY timeslot";
 		
 		for(int i = 0; i < 7; i++) {
@@ -135,6 +136,7 @@ public class JdbcScheduleDao implements ScheduleDao {
 		schedule.setTimeSlot(results.getInt("timeslot"));
 		schedule.setMaxOccupancy(results.getInt("max_occupancy"));
 		schedule.setReservedSpaces(results.getInt("reserved_spaces"));
+		schedule.setClassDescription(results.getString("class_description"));
 		
 		return schedule;
 	}
