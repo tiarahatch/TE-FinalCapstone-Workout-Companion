@@ -22,6 +22,7 @@
     <router-link to='/schedule' tag='button'>View Class Schedule</router-link><br>
     <router-link to='/register' tag='button'>Sign Up</router-link><br>
     <router-link to='/dashboard' tag='button'>My Dashboard</router-link>
+    <router-link to='/StartWorkout' tag='button'>Start Workout</router-link>
   
 </header> 
   </div>

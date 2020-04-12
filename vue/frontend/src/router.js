@@ -94,7 +94,7 @@ const router = new Router({
       
       meta: {
         requiresAuth: false
-      }
+      },
     },
     {
       path: "/StartWorkout",
@@ -106,6 +106,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
+
   
 
 

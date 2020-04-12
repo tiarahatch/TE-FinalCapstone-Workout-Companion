@@ -10,40 +10,15 @@
                 {{categories[id - 1].name}}
                  </li>
         </ul>
-             <ul>
-                 <li>
-                     
-                    <button v-on:click='fetchExercises1(workouts[0].workoutID)'>{{workouts[0].name}}</button>
-                    <ul>
-                        
-                        <li v-for='exercise1 in exercises1' v-bind:key='exercise1.exerciseID'>
-                            {{exercise1.name}}
-                        </li>
-                        </ul>
-                 </li>
-                  <li>
-                     
-                    <button v-on:click='fetchExercises2(workouts[1].workoutID)'>{{workouts[1].name}}</button>
-                    <ul>
-                        
-                        <li v-for='exercise2 in exercises2' v-bind:key='exercise2.exerciseID'>
-                            {{exercise2.name}}
-                        </li>
-                        </ul>
-                 </li>
-                 
-                 <li>
-                     
-                    <button v-on:click='fetchExercises3(workouts[2].workoutID)'>{{workouts[2].name}}</button>
-                    <ul>
-                        
-                        <li v-for='exercise3 in exercises3' v-bind:key='exercise3.exerciseID'>
-                            {{exercise3.name}}
-                        </li>
-                        </ul>
-                 </li>
-             </ul>
-           
+        
+
+        <li v-for="item in workouts" v-bind:key="item.workoutID" >
+    
+        <button v-on:click='fetchExercises(item.workoutID)'>{{item.name}}</button>
+       
+        
+      </li>
+     
         </div> 
     </div>
     </div>
@@ -61,11 +36,7 @@ export default {
        return {
         categories: [],
         workouts: [],
-        exercises1: [],
-        exercises2: [],
-        exercises3: [],
-       
-       
+       exercises: [], 
         
     }
 },
@@ -75,6 +46,32 @@ props: {
 },
 
 methods: {
+   
+   fetchExercises(id) {
+       
+           
+        fetch(`${process.env.VUE_APP_REMOTE_API}/api/exercise/${id}`,{
+     method: 'GET',
+     headers: {
+       "Content-Type": "application/json"
+     },
+   })
+    .then((response)=> {
+     
+        return response.json();
+    }) 
+    .then((json) => {
+      this.$emit('exerciseEmit', json)
+      //this.exercises = json;
+      //console.log(this.exercises)
+     // this.$emit('exerciseEmit', this.exercises)
+
+    }) 
+       
+   },
+   
+   
+   
    fetchExercises1(id) {
        
            
