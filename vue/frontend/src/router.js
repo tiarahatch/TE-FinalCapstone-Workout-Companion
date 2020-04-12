@@ -7,10 +7,7 @@ import Register from './views/Register.vue'
 import PremadeWorkouts from './views/PremadeWorkouts.vue'
 import Schedule from './views/Schedule.vue'
 import CategoryDetails from './views/CategoryDetails.vue'
-<<<<<<< HEAD
-=======
 import Dashboard from './views/Dashboard.vue'
->>>>>>> 048e7701a4c068216eda22199557d65b8cfc9929
 import NewUser from './views/NewUser.vue'
 
 Vue.use(Router)
@@ -81,15 +78,14 @@ const router = new Router({
       }
     },
     {
-<<<<<<< HEAD
       path: "/new-user",
       name: "new-user",
       component: NewUser,
       meta:{
         requiresAuth: false
       },
-
-=======
+    },
+    {
       path: "/dashboard",
       name: "dashboard",
       component: Dashboard,
@@ -99,16 +95,7 @@ const router = new Router({
         requiresAuth: true
       }
     },
-    {
-      path: "/NewUser",
-      name: "newUser",
-      component: NewUser,
-
-      meta: {
-        requiresAuth: false
-      }
->>>>>>> 048e7701a4c068216eda22199557d65b8cfc9929
-    }
+  
 
 
   ]
