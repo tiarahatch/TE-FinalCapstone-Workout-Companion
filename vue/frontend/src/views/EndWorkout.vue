@@ -1,7 +1,9 @@
 <template>
     <div>
-       
-
+      <div>
+       <h1> WORKOUT COMPLETE!!</h1>
+       <img src="../img/gif.gif" alt=gif/>
+        </div>
         <h1> How do you feel after your workout?</h1>
         <div class='howYouFeel'>
           
@@ -45,7 +47,7 @@
       
       </nav>
       <div id='start-workout' :disabled='selected == false' class='not-selected' :class='selected && "chosen"'> 
-        <button id='start'>End Workout</button>
+        <button id='start' :disabled="!radioValue">End Workout</button>
       </div>
       </div>
 </template>
@@ -147,5 +149,11 @@ input[type=radio]:not(:checked) + label>img {
 }
 .chosen {
   opacity: 100%;
+}
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
 }
 </style>
