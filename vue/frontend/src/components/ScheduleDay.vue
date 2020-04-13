@@ -8,7 +8,9 @@
       <li v-for="item in daySchedule" v-bind:key="item.classID" >
       
        <!-- <button  v-on:click="changeIsShow"> -->
-        <button v-on:click="emit_event(item)">
+
+        <button v-on:click="emit_event(item)" v-bind:style= '{ backgroundImage: `url( ${ "../img/" + item.className + ".png" } )` }' class ='classButton'>
+        <!-- <button v-on:click="emit_event(item)" class ='classButton'> -->
         <p>{{item.className}}</p>
         <p>{{timeSlotFormat(item.timeSlot)}}</p>
         <p>Signed Up: {{item.reservedSpaces}}/{{item.maxOccupancy}}</p>
@@ -42,12 +44,17 @@ export default {
   },
   data(){
       return{
-          
+         
+         imageName: ''
+
       };
   },
 
   methods: {
-   
+   classURL(){
+     
+     return '../img/' + this.imageName + '.png';
+   },
    
    timeSlotFormat(timeSlot) {
       if (timeSlot < 12) {
@@ -92,5 +99,13 @@ h3{
   display: flex;
   justify-content: space-around;
   padding-bottom: 2%;
+}
+.classButton{
+  /* background-image: url("../img/Kick Boxing.png" ); */
+  
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  
 }
 </style>
