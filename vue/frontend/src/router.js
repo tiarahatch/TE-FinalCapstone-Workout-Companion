@@ -10,6 +10,7 @@ import CategoryDetails from './views/CategoryDetails.vue'
 import Dashboard from './views/Dashboard.vue'
 import NewUser from './views/NewUser.vue'
 import StartWorkout from './views/StartWorkout.vue'
+import EndWorkout from './views/EndWorkout.vue'
 
 Vue.use(Router)
 
@@ -106,7 +107,14 @@ const router = new Router({
         requiresAuth: false
       }
     },
-
+    {
+      path: "/EndWorkout",
+      name: "endWorkout",
+      component: EndWorkout,
+      meta: {
+        requiresAuth: false
+      }
+    }
   
 
 
