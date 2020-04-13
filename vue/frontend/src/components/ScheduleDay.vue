@@ -1,7 +1,7 @@
 <template>
   <div>
    <!-- <h4 v-on:click="changeIsShow"> click for details </h4>  -->
-    <h3>{{daySchedule[0].date}}</h3>
+    <h3 id='dayHeading' >{{daySchedule[0].date}}</h3>
     <br />
     <div class="daySchedule">
       
@@ -9,8 +9,8 @@
       
        <!-- <button  v-on:click="changeIsShow"> -->
 
-        <!-- <button v-on:click="emit_event(item)" v-bind:style= '{ backgroundImage: `url( ${ "../img/" + item.className + ".png" } )`, backgroundSize: "contain", backgroudRepeat: "no-repeat" }' class ='classButton'> -->
-        <button v-on:click="emit_event(item)" class ='classButton' :id="item.className.split(' ').join('')">
+        <button v-on:click="emit_event(item)" v-bind:style= '{ backgroundImage: `url( ${ "../img/" + item.className + ".png" } )`, backgroundSize: "contain", backgroudRepeat: "no-repeat" }' class ='classButton'>
+        <!-- <button v-on:click="emit_event(item)" class ='classButton' :id="item.className.split(' ').join('')"> -->
         <p>{{item.className}}</p>
         <p>{{timeSlotFormat(item.timeSlot)}}</p>
         <p>Signed Up: {{item.reservedSpaces}}/{{item.maxOccupancy}}</p>
@@ -86,7 +86,7 @@ export default {
 
 
 <style scoped>
-h3{
+#dayHeading{
     text-align: center;
     background-color: lightgrey;
 }
@@ -103,14 +103,28 @@ h3{
 }
 .classButton{
 
-  /* background-image: url("../img/Kick Boxing.png" ); */
   width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
   background-color: rgb(236, 234, 234);
   background-position: center;
-  opacity: .75;
+  opacity: .5;
+  border-radius: 10px;
 
+}
+
+.classButton:hover{
+  opacity: .8;
+  box-shadow:
+       3px 3px 0  rgb(209, 209, 209),
+     -1px -1px 0  rgb(209, 209, 209),  
+      1px -1px 0  rgb(209, 209, 209),
+      -1px 1px 0  rgb(209, 209, 209),
+       1px 1px 0  rgb(209, 209, 209);
+
+}
+.classButton:active{
+  opacity: .35;
 }
 
 #WaterAerobics{
@@ -130,6 +144,6 @@ background-image: url("../img/Pilates.png" );
 }
 p{
   background-color: rgb(236, 234, 234);
-  opacity: .8;
+  opacity: .75;
 }
 </style>
