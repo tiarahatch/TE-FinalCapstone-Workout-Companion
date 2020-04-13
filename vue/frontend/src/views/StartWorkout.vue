@@ -44,8 +44,8 @@
      <nav>
       
       </nav>
-      <div id='start-workout' :disabled='selected == false' class='not-selected' :class='selected && "chosen"'> 
-        <button id='start'>Start Workout!</button>
+      <div id='start-workout' class='not-selected' :class='selected && "chosen"'> 
+        <router-link to='/dashboard' :disabled='selected == false' id='start' tag='button'>Start Workout!</router-link>
       </div>
       </div>
 </template>
