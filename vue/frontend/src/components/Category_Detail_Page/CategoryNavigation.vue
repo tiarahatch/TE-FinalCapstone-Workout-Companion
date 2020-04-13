@@ -6,9 +6,11 @@
         </nav>
     <div>
         <ul class='container'>
+            
             <li v-for='category in categories' v-bind:key='category.categoryID' :class='category.name'>
-        
+              <router-link :to="{ name: 'category-details', params: {id: category.categoryID.toString()} }" tag='li' class='container' >
             {{category.name}} 
+              </router-link>
              </li>
         </ul>
         </div>
@@ -16,6 +18,7 @@
 </template>
 
 <script>
+import auth from '@/auth'
 export default {
 name: 'category-navigation',
 data() {
@@ -28,7 +31,11 @@ props: {
 
 },
  created() {
-       fetch(`${process.env.VUE_APP_REMOTE_API}/api/categories`)
+       fetch(`${process.env.VUE_APP_REMOTE_API}/api/categories`,{
+         headers: {
+           'Authorization' : 'Bearer ' + auth.getToken(),
+         }
+       })
       .then((response)=>{
         return response.json();
       })
