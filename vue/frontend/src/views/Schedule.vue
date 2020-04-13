@@ -50,6 +50,7 @@
 
 
 <script>
+// import auth from '@/auth'
 import SimpleModal from 'simple-modal-vue'
 import ScheduleDay from "../components/ScheduleDay.vue";
 

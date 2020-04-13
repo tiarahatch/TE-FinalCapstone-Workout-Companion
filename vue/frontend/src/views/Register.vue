@@ -1,9 +1,22 @@
 <template>
  <div>
+
+<simple-modal v-model="isShow" title="Class Description">
+      <template slot="body">
+        <new-user></new-user>
+         
+         <button> Sign Up </button>
+      </template>
+      <!-- <template slot="footer">
+        <button>OK</button>
+      </template> -->
+    </simple-modal>
+
      <nav>
       <router-link to='/' tag='button'>Home</router-link>
       </nav>
   <div id="register" class="text-center">
+    
     <form class="form-register" @submit.prevent="register">
       <h1 class="h3 mb-3 font-weight-normal"></h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
@@ -39,7 +52,7 @@
       <router-link :to="{ name: 'login' }">
         Have an account?
       </router-link>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">
+      <button class="btn btn-lg btn-primary btn-block" @click="isShow = !isShow" type="submit">
         Create Account
       </button>
     </form>
@@ -48,10 +61,13 @@
 </template>
 
 <script>
+import SimpleModal from 'simple-modal-vue'
+import NewUser from '@/components/NewUser.vue'
 export default {
   name: 'register',
   data() {
     return {
+      isShow: false,
       user: {
         username: '',
         password: '',
@@ -60,6 +76,10 @@ export default {
       },
       registrationErrors: false,
     };
+  },
+  components:{
+    SimpleModal,
+    NewUser,
   },
   methods: {
     register() {

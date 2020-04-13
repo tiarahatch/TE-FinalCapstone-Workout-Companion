@@ -92,6 +92,15 @@
 
 
 <script>
+export default {
+  name: 'new-user',
+  data(){
+    return{
+      
+    }
+  }
+}
+
 </script>
 
 <style scoped>
