@@ -1,23 +1,20 @@
 <template>
   <div>
-    <nav>
-       
-      <router-link to="/" tag="button">Home</router-link>
-      <router-link to="/login" tag="button">Login</router-link>
-      <router-link to="/register" tag="button">Sign-Up</router-link>
-      <router-link to='/dashboard' tag='button'>Dashboard</router-link>
-     <img src="../img/logo.png" alt="Gym logo">
-
     
-
-      </nav>
-    <h1 style='text-align: center'>CHOOSE YOUR WORKOUT</h1>
+    <div class="table">
+      <ul id="horizontal-list">
+      <li><router-link to="/schedule" tag="button">Class Schedule</router-link></li>
+      <li><router-link to='/dashboard' tag='button'>Dashboard</router-link></li>
+      </ul>
+      
+    </div>
    <!-- <p>You must be authenticated to see this</p> -->
 
      <div>
-      <ul class='container'>
-          <router-link :to="{ name: 'category-details', params: {id: id.toString()} }" tag='li' class='container' > 
-        <li v-for='category in categories' v-bind:key='category.categoryID' class='box' @click='id = category.categoryID, setWorkouts(id)'>
+       <p style='text-align: center'>CHOOSE YOUR WORKOUT</p>
+      
+        <router-link :to="{ name: 'category-details', params: {id: id.toString()} }" tag='li' class='container' > 
+        <li v-for='category in categories' v-bind:key='category.categoryID' :class='category.name' @click='id = category.categoryID, setWorkouts(id)'>
             
             {{category.name}} 
              </li>
@@ -33,7 +30,7 @@
             </ul>  -->
             
            
-      </ul>
+     
     </div>
         
   </div>
@@ -98,6 +95,7 @@ methods:{
 
 
 <style scoped>
+
 .hidden {
   display: none;
 }
@@ -124,18 +122,20 @@ li {
   grid-row: auto auto;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+  justify-content:center;
   
 }
   .box{
     background-color:#777;
-    color: #7ac1ff;
+    color: #c4c6c7;
     padding:20px;
     border-radius:10px;
     display:flex;
     align-items:center;
     justify-content:center;
-
-    
+    background-image: url("../img/Strength.jpeg");
+    background-size: cover;
+    text-align: center;
   
   }
 
@@ -145,8 +145,8 @@ li {
   transform: scale(1.1);
  }
 button {
-   text-align: center;
-   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 14px;
   margin:80px;
@@ -155,8 +155,9 @@ button {
   background-color: black;
   color: #7ac1ff;
   border-radius: 25px;
+ 
 }
-h1 {
+p {
   color:  #7ac1ff;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
@@ -165,9 +166,92 @@ h1 {
 img {
   width:150px;
   height:150px;
+  
 }
-template{
-  background-color: black;
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
 }
+ul#horizontal-list {
+min-width: 696px;
+	list-style: none;
+	padding-top: 20px;
+	}
+	ul#horizontal-list li {
+		display: inline;
+	}
+  .Strength{
+    background-image: url("../img/Strength.jpeg");
+    background-size: cover;
+    text-align: center;
+    background-color:#777;
+    color: #7ac1ff;
+    padding:20px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  -webkit-text-stroke: .5px black;
+  text-decoration-style: solid;
+  text-decoration-color: black;
+  }
+  .Cardio {
+    background-image: url("../img/cardio.jpeg");
+    background-size: cover;
+    text-align: center;
+    background-color:#777;
+    color: #7ac1ff;
+    padding:20px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    -webkit-text-stroke: .5px black;
+  text-decoration-style: solid;
+  text-decoration-color: black;
+  }
+   .Flexibility{
+  background-image: url("../img/yoga.jpg");
+    background-size: cover;
+    text-align: center;
+     background-color:#777;
+    color: #7ac1ff;
+    padding:20px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    -webkit-text-stroke: .5px black;
+  text-decoration-style: solid;
+  text-decoration-color: black;
+  }
+    .Crossfit{
+  background-image: url("../img/crossfit.jpeg");
+    background-size: cover;
+    text-align: center;
+    background-color:black;
+    color:black;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    -webkit-text-stroke: .5px black;
+  text-decoration-style: solid;
+  text-decoration-color: black;
+  }
+  
 
 </style>
