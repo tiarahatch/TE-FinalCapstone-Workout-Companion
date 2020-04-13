@@ -11,16 +11,10 @@
    <!-- <p>You must be authenticated to see this</p> -->
 
      <div>
-<<<<<<< HEAD
-      <ul class='container'>
-          <router-link :to="{ name: 'category-details', params: {id: id.toString()} }" tag='li' class='container' > 
-        <li v-for='category in categories' v-bind:key='category.categoryID' class="box" @click='id = category.categoryID, setWorkouts(id)'>
-=======
        <p style='text-align: center'>CHOOSE YOUR WORKOUT</p>
       
         <router-link :to="{ name: 'category-details', params: {id: id.toString()} }" tag='li' class='container' > 
         <li v-for='category in categories' v-bind:key='category.categoryID' :class='category.name' @click='id = category.categoryID, setWorkouts(id)'>
->>>>>>> 732ed0c0ecbdb353507b7b4b6b2ae7c654c92a03
             
             {{category.name}} 
              </li>
