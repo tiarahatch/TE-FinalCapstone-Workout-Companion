@@ -25,7 +25,7 @@
 </template>
 
 <script>
-
+import auth from '@/auth'
 export default {
     name: 'category-workouts',
     components: {
@@ -36,7 +36,7 @@ export default {
        return {
         categories: [],
         workouts: [],
-       exercises: [], 
+      
         
     }
 },
@@ -53,6 +53,7 @@ methods: {
         fetch(`${process.env.VUE_APP_REMOTE_API}/api/exercise/${id}`,{
      method: 'GET',
      headers: {
+       'Authorization' : 'Bearer ' + auth.getToken(),
        "Content-Type": "application/json"
      },
    })
@@ -69,78 +70,17 @@ methods: {
     }) 
        
    },
-   
-   
-   
-   fetchExercises1(id) {
-       
-           
-        fetch(`${process.env.VUE_APP_REMOTE_API}/api/exercise/${id}`,{
-     method: 'GET',
-     headers: {
-       "Content-Type": "application/json"
-     },
-   })
-    .then((response)=> {
-     
-        return response.json();
-    }) 
-    .then((json) => {
-      this.exercises1 = json;
-      console.log(this.exercises1)
       
-    }) 
-       
-       
-   },
-   fetchExercises2(id) {
-       
-           
-        fetch(`${process.env.VUE_APP_REMOTE_API}/api/exercise/${id}`,{
-     method: 'GET',
-     headers: {
-       "Content-Type": "application/json"
-     },
-   })
-    .then((response)=> {
-     
-        return response.json();
-    }) 
-    .then((json) => {
-      this.exercises2 = json;
-      console.log(this.exercises2)
-      
-    }) 
-       
-       
-   },
-   fetchExercises3(id) {
-       
-           
-        fetch(`${process.env.VUE_APP_REMOTE_API}/api/exercise/${id}`,{
-     method: 'GET',
-     headers: {
-       "Content-Type": "application/json"
-     },
-   })
-    .then((response)=> {
-     
-        return response.json();
-    }) 
-    .then((json) => {
-      this.exercises3 = json;
-      console.log(this.exercises3)
-      
-    }) 
-       
-       
-   },
 },
 computed: {
     
 },
  created() {
-      fetch(`${process.env.VUE_APP_REMOTE_API}/api/categories`)
+      fetch(`${process.env.VUE_APP_REMOTE_API}/api/categories`,{
+        headers:{
+          'Authorization' : 'Bearer ' + auth.getToken(),
+        }
+      })
       .then((response)=>{
         return response.json();
       })
@@ -151,6 +91,7 @@ computed: {
         fetch(`${process.env.VUE_APP_REMOTE_API}/api/workouts/${this.id}`,{
      method: 'GET',
      headers: {
+       'Authorization' : 'Bearer ' + auth.getToken(),
        "Content-Type": "application/json"
      },
    })
@@ -170,11 +111,23 @@ computed: {
 </script>
 
 
-<style>
-.border {
+<style scoped>
+/* .border {
     border: 1px solid black;
-}
+} */
 .hidden {
   display: none;
+}
+button {
+  text-align: center;
+  font-size: 14px;
+  margin:25px;
+  border: none;
+  width: 200px;
+  background-color: black;
+  color: #7ac1ff;
+  border-radius: 15px;
+  cursor: pointer;
+  
 }
 </style>

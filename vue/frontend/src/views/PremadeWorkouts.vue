@@ -23,11 +23,7 @@
               </router-link> 
                <category-workouts v-bind:workoutLists = 'workouts' class='hidden'></category-workouts>
                <category-details v-bind:workoutLists = 'workouts' class='hidden'></category-details>
-              <!-- <ul v-bind:id='workout.workoutID' class='hidden li'>
-              <li v-for='exercise in exercises' v-bind:key='exercise.exerciseID'>
-               {{exercise.name}}
-               </li> 
-            </ul>  -->
+              
             
            
      
@@ -39,6 +35,7 @@
 
 
 <script>
+import auth from '@/auth'
 import CategoryWorkouts from '@/components/Category_Detail_Page/CategoryWorkouts.vue'
 import CategoryDetails from '@/views/CategoryDetails.vue'
 export default {
@@ -59,26 +56,15 @@ export default {
   };
 },
 methods:{
-// setWorkouts(id) {
-//    fetch(`${process.env.VUE_APP_REMOTE_API}/api/workouts/${id}`,{
-//      method: 'GET',
-//      headers: {
-//        "Content-Type": "application/json"
-//      },
-//    })
-//     .then((response)=> {
-     
-//         return response.json();
-//     }) 
-//     .then((json) => {
-//       this.workouts = json;
-//       console.log(this.workouts)
-//     }) 
-// }
+
 },
 
   created() {
-   fetch(`${process.env.VUE_APP_REMOTE_API}/api/categories`)
+   fetch(`${process.env.VUE_APP_REMOTE_API}/api/categories`,{
+     headers: {
+       'Authorization': 'Bearer ' + auth.getToken()
+     },
+   })
       .then((response)=>{
         return response.json();
       })

@@ -8,7 +8,7 @@ import PremadeWorkouts from './views/PremadeWorkouts.vue'
 import Schedule from './views/Schedule.vue'
 import CategoryDetails from './views/CategoryDetails.vue'
 import Dashboard from './views/Dashboard.vue'
-import NewUser from './views/NewUser.vue'
+
 import StartWorkout from './views/StartWorkout.vue'
 import EndWorkout from './views/EndWorkout.vue'
 
@@ -56,7 +56,7 @@ const router = new Router({
       name: "premade-workouts",
       component: PremadeWorkouts,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {
@@ -76,17 +76,10 @@ const router = new Router({
         true,
       
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
-    {
-      path: "/new-user",
-      name: "new-user",
-      component: NewUser,
-      meta:{
-        requiresAuth: false
-      },
-    },
+    
     {
       path: "/dashboard",
       name: "dashboard",
@@ -94,7 +87,7 @@ const router = new Router({
       
       
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       },
     },
     {
@@ -104,7 +97,7 @@ const router = new Router({
       props: true,
       
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {
