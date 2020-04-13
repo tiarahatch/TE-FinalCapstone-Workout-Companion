@@ -19,69 +19,12 @@ public class JdbcScheduleDao implements ScheduleDao {
 
 	private JdbcTemplate jdbcTemplate;
 	private SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
-	private Date todaysDate = Date.valueOf(LocalDate.now());
-	
-	
 	
 	@Autowired
 	public JdbcScheduleDao(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
-	@Override
-	public List<Schedule> retrieveFullSchedule() {
-		List<Schedule> fullSchedule = new ArrayList<Schedule>();
-		
-		String sqlRetrieveFullSchedule = "SELECT * FROM schedule ORDER BY date, timeslot";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlRetrieveFullSchedule);
-		
-		while(results.next()) {
-			
-			fullSchedule.add(mapRowToSchedule(results));
-		}
-		
-		return fullSchedule;
-	}
-	
-	@Override
-	public List<Schedule> retrieveDaySchedule() {
-	List<Schedule> fullSchedule = new ArrayList<Schedule>();
-		
-		
-		
-		String sqlRetrieveDaySchedule = "SELECT * " +
-				"FROM schedule " +
-				"WHERE date = ?";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlRetrieveDaySchedule, todaysDate);
-		
-		while(results.next()) {
-			
-			fullSchedule.add(mapRowToSchedule(results));
-		}
-		
-		return fullSchedule;
-	}
-	@Override
-	public List<Schedule> retrieveWeekSchedule() {
-		
-		List<Schedule> fullSchedule = new ArrayList<Schedule>();
-		
-		Date weekDate = Date.valueOf(LocalDate.now().plusDays(7));
-				
-		String sqlRetrieveDaySchedule = "SELECT * " +
-						"FROM schedule " + 
-						"WHERE date BETWEEN ? AND ? ORDER BY date, timeslot";
-				SqlRowSet results = jdbcTemplate.queryForRowSet(sqlRetrieveDaySchedule, todaysDate, weekDate);
-				
-				while(results.next()) {
-					
-					fullSchedule.add(mapRowToSchedule(results));
-				}
-				
-				return fullSchedule;
-			}
-
-	
 	public List<List<Schedule>> retreieveWeekScheduleByDay(){
 		
 		List<List<Schedule>> fullSchedule = new ArrayList<List<Schedule>>();
@@ -106,26 +49,6 @@ public class JdbcScheduleDao implements ScheduleDao {
 		
 		return fullSchedule;
 	}
-	
-	@Override
-	public List<Schedule> retrieveMonthSchedule() {
-	List<Schedule> fullSchedule = new ArrayList<Schedule>();
-		
-		Date monthDate = Date.valueOf(LocalDate.now().plusDays(30));
-				String sqlRetrieveDaySchedule = "SELECT * " +
-						"FROM schedule " + 
-						"WHERE date BETWEEN ? AND ?";
-				SqlRowSet results = jdbcTemplate.queryForRowSet(sqlRetrieveDaySchedule, todaysDate, monthDate);
-				
-				while(results.next()) {
-					
-					fullSchedule.add(mapRowToSchedule(results));
-				}
-				
-				return fullSchedule;
-			}
-	
-	
 	
 	private Schedule mapRowToSchedule(SqlRowSet results) {
 		Schedule schedule = new Schedule();
