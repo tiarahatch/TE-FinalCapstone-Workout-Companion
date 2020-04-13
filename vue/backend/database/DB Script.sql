@@ -85,7 +85,8 @@ CONSTRAINT fk_workout FOREIGN KEY (workout_id) REFERENCES premade_workout (worko
 CREATE TABLE user_profile (
 profile_id serial,
 user_id int,
-fullName varchar,
+firstName varchar,
+lastName varchar,
 birthdate date,
 height int,
 currentWeight int,
