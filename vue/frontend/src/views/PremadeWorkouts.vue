@@ -94,6 +94,7 @@ methods:{
 </script>
 
 
+
 <style scoped>
 
 .hidden {
@@ -216,6 +217,7 @@ min-width: 696px;
     -webkit-text-stroke: .5px black;
   text-decoration-style: solid;
   text-decoration-color: black;
+
   }
    .Flexibility{
   background-image: url("../img/yoga.jpg");
