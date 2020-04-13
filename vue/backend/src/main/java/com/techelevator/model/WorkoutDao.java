@@ -6,7 +6,6 @@ public interface WorkoutDao {
 
 	public List<Workout> retrieveWorkoutsByCategory(int categoryID);
 	
-	public List<Exercise> retrieveExercises();
 	
 	public List<Exercise> retrieveExercisesByWorkoutID(int workoutID);
 	

@@ -57,23 +57,7 @@ public List<Category> retrieveCategories() {
 		}
 		return workouts;
 	}
-
-	@Override
-	public List<Exercise> retrieveExercises() {
-	List<Exercise> exercises = new ArrayList<Exercise>();
 		
-		String sqlRetrieveExercises = "SELECT * FROM exercise";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlRetrieveExercises);
-		
-		while(results.next()) {
-			
-			exercises.add(mapRowToExercise(results));
-			
-		}
-		return exercises;
-	}
-	
-	
 	@Override
 	public List<Exercise> retrieveExercisesByWorkoutID(int workoutID) {
 		List<Exercise> exercises = new ArrayList<Exercise>();

@@ -47,13 +47,6 @@ public class ApiController {
     	return categories;
     }
     
-	@GetMapping(path= "/schedule", produces = "application/json")
-	public List<Schedule> getSchedule() {
-
-		List<Schedule> fullSchedule = jdbcScheduleDao.retrieveFullSchedule();
-
-		return fullSchedule;
-	}
 	
 	@GetMapping(path = "/workouts/{id}")
     public List<Workout> getWorkoutsByCategory(@PathVariable String id) {
@@ -62,14 +55,6 @@ public class ApiController {
 		List<Workout> workouts = jdbcWorkoutDao.retrieveWorkoutsByCategory(categoryIDInt);
 		
 		return workouts;
-	}
-	
-	@GetMapping(path = "/exercises", produces = "application/json")
-	public List<Exercise> getExercises() {
-		
-		List<Exercise> exercises = jdbcWorkoutDao.retrieveExercises();
-		
-		return exercises;
 	}
 	
 	
@@ -83,17 +68,9 @@ public class ApiController {
 		
 	}
 	
-	@GetMapping(path="/dailyschedule")
-	public List<Schedule> getDailySchedule() {
-		List<Schedule> dailySchedule = jdbcScheduleDao.retrieveDaySchedule();
-		
-		return dailySchedule;
-	}
-	
 	@GetMapping(path="/weeklyschedule")
 	public List<List<Schedule>> getWeeklySchedule() {
 		
-		//List<Schedule> weeklySchedule = jdbcScheduleDao.retrieveWeekSchedule();
 		
 		List<List<Schedule>> weeklySchedule = jdbcScheduleDao.retreieveWeekScheduleByDay();
 		
@@ -101,12 +78,7 @@ public class ApiController {
 		return weeklySchedule;
 	}
 	
-	@GetMapping(path="/monthlyschedule")
-	public List<Schedule> getMonthlySchedule() {
-		List<Schedule> monthlySchedule = jdbcScheduleDao.retrieveMonthSchedule();
-		
-		return monthlySchedule;
-	}
+
     
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String authorizedOnly() throws UnauthorizedException {
