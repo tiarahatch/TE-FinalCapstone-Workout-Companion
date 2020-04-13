@@ -170,11 +170,23 @@ computed: {
 </script>
 
 
-<style>
-.border {
+<style scoped>
+/* .border {
     border: 1px solid black;
-}
+} */
 .hidden {
   display: none;
+}
+button {
+  text-align: center;
+  font-size: 14px;
+  margin:25px;
+  border: none;
+  width: 200px;
+  background-color: black;
+  color: #7ac1ff;
+  border-radius: 15px;
+  cursor: pointer;
+  
 }
 </style>
