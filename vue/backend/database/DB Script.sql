@@ -5,6 +5,7 @@ DROP TABLE exercise;
 DROP TABLE premade_workout;
 DROP TABLE category;
 DROP TABLE class_options;
+DROP TABLE user_profile;
 
 Create table category (
 category_id serial,
@@ -80,7 +81,21 @@ workout_id INT,
 CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES category (category_id), 
 CONSTRAINT fk_workout FOREIGN KEY (workout_id) REFERENCES premade_workout (workout_id)
 );
-  
+
+CREATE TABLE user_profile (
+profile_id serial,
+user_id int,
+fullName varchar,
+birthdate date,
+height int,
+currentWeight int,
+goalWeight int, 
+gender varchar,
+
+CONSTRAINT pk_user_profile primary key (profile_id),
+CONSTRAINT fk_user foreign key (user_id) REFERENCES users (id)
+);
+
 INSERT INTO category_workout (category_id, workout_id)
 VALUES (1,1), (1,2), (1,3), (2,4), (2,5), (2,6), (3,7), (3,8), (3,9), (4,10), (4,11), (4,12);          
 
