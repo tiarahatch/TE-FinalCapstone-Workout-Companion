@@ -22,6 +22,7 @@
     <router-link to='/schedule' tag='button'>View Class Schedule</router-link><br>
     <router-link to='/register' tag='button'>Sign Up</router-link><br>
     <router-link to='/dashboard' tag='button'>My Dashboard</router-link>
+    <router-link to='/StartWorkout' tag='button'>Start Workout</router-link>
   
 </header> 
   </div>
@@ -70,6 +71,9 @@ h1, p{
   font-size: 50px;
   font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
   font-stretch: expanded;
+  -webkit-text-stroke: 3px black;
+  text-decoration-style: solid;
+  text-decoration-color: black;
 }
 .container {
   position: absolute;

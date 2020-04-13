@@ -1,8 +1,14 @@
 <template>
 <div>
+    <div class = "categoryNav">
     <category-navigation></category-navigation>
-    <category-workouts v-bind:id = 'this.id' v-bind:workouts = 'this.workouts'></category-workouts>
-    <workouts-exercises v-bind:exercises1 = 'exercises1' v-bind:exerises2 = 'exercises2' v-bind:exercises3 = 'exercises3'></workouts-exercises>
+    </div>
+    <div class = "mainBody">
+    <!-- emit exercises[] from category-workouts -->
+    <category-workouts v-bind:id = 'this.id' v-bind:workouts = 'this.workouts' v-on:exerciseEmit="exercises=$event" class = "categoryWorkouts" ></category-workouts>
+    <!-- push in exercies[] that was pulled from cat-workouts -->
+    <workouts-exercises v-bind:exercises = 'exercises' class = "workoutExercises"></workouts-exercises>
+    </div>
 </div>
 </template>
 
@@ -14,6 +20,14 @@ import WorkoutsExercises from '@/components/Category_Detail_Page/WorkoutsExercis
 
 export default {
 
+    data(){
+        return{
+            exercises: [],
+
+
+        };
+    },
+    
     props: {
         id: {type: String},
         // id: {
@@ -34,5 +48,7 @@ export default {
 </script>
 
 <style>
-
+.mainBody{
+    display: flex;
+}
 </style>
