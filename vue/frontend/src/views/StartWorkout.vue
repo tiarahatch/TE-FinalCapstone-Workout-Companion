@@ -120,6 +120,9 @@ input[type=radio]:checked + label>img {
     border: 3px solid rgba(11, 157, 241, 0.863);
   transform: scale(1.3)
 }
+input[type=radio]:not(:checked) + label>img {
+  opacity: 50%;
+}
 .input-hidden {
   position: absolute;
   left: -9999px;
