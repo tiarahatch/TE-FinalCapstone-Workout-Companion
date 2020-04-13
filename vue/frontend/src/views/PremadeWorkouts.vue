@@ -17,7 +17,7 @@
      <div>
       <ul class='container'>
           <router-link :to="{ name: 'category-details', params: {id: id.toString()} }" tag='li' class='container' > 
-        <li v-for='category in categories' v-bind:key='category.categoryID' class='box' @click='id = category.categoryID, setWorkouts(id)'>
+        <li v-for='category in categories' v-bind:key='category.categoryID' class="box" @click='id = category.categoryID, setWorkouts(id)'>
             
             {{category.name}} 
              </li>

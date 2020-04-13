@@ -9,8 +9,8 @@
       
        <!-- <button  v-on:click="changeIsShow"> -->
 
-        <button v-on:click="emit_event(item)" v-bind:style= '{ backgroundImage: `url( ${ "../img/" + item.className + ".png" } )`, backgroundSize: "contain", backgroudRepeat: "no-repeat" }' class ='classButton'>
-        <!-- <button v-on:click="emit_event(item)" class ='classButton' :id="item.className.split(' ').join('')"> -->
+        <!-- <button v-on:click="emit_event(item)" v-bind:style= '{ backgroundImage: `url( ${ "../img/" + item.className + ".png" } )`, backgroundSize: "contain", backgroudRepeat: "no-repeat" }' class ='classButton'> -->
+        <button v-on:click="emit_event(item)" class ='classButton' :id="item.className.split(' ').join('')">
         <p>{{item.className}}</p>
         <p>{{timeSlotFormat(item.timeSlot)}}</p>
         <p>Signed Up: {{item.reservedSpaces}}/{{item.maxOccupancy}}</p>
