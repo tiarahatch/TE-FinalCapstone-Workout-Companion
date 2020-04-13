@@ -5,7 +5,8 @@
             <li v-for='item in exercises' v-bind:key='item.exerciseID'>
                 <h3>{{item.name}}</h3>
                 <h4>Sets: {{item.sets}}</h4>
-                <h4>Reps: {{item.reps}}</h4>
+                <h4 v-if='item.reps < 15'>Reps: {{item.reps}}</h4>
+                <h4 v-if='item.reps > 15'>Reps: {{item.reps}} Seconds</h4>
             </li>
         </ul>
 

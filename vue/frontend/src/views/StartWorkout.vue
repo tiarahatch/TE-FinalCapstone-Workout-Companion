@@ -4,34 +4,49 @@
 
         <h1> How do you feel pre-workout?</h1>
         <div class='howYouFeel'>
-        <div class="circle1">
+          
+        <div>
+         
+          <input  v-on:click="selected = true" type="radio" id="circle1" name="choice" value="1" class='input-hidden'/>
+            <label for='circle1'>
           <img class="circle1" src="../img/feeling1.png">
-          <input id="feelingCheckbox" type='checkbox'/>
+          </label>
           </div> 
-        <div class="circle2">
+       <div>
+           
+          <input v-on:click="selected = true" type="radio" id="circle2" name="choice" value="2" class='input-hidden'/>
+          <label for='circle2'>
           <img class="circle2" src="../img/feeling2.png">
-          <input id="feelingCheckbox" type='checkbox'/>
-        </div>
-        <div class="circle3">
+          </label>
+          </div> 
+        <div>
+           
+          <input  v-on:click="selected = true" type="radio" id="circle3" name="choice" value="3" class='input-hidden'/>
+          <label for='circle3'>
           <img class="circle3" src="../img/feeling3.png">
-          <input id="feelingCheckbox" type='checkbox'/>
-        </div>
-        <div class="circle4">
-          <img class="circle4" src="../img/feeling4.png"> 
-          <input id="feelingCheckbox" type='checkbox'/>
-        </div>
-        <div class="circle5">
-          <img class="circle5" src="../img/feeling5.png"> 
-          <input id="feelingCheckbox" type='checkbox'/>
-        </div>
-
+          </label>
+          </div> 
+        <div>
+          
+          <input  v-on:click="selected = true" type="radio" id="circle4" name="choice" value="4" class='input-hidden'/>
+           <label for='circle4'>
+          <img class="circle4" src="../img/feeling4.png">
+          </label>
+          </div> 
+       <div>
+           
+          <input  v-on:click="selected = true" type="radio" id="circle5" name="choice" value="5" class='input-hidden'/>
+          <label for='circle5'>
+          <img class="circle5" src="../img/feeling5.png">
+          </label>
+          </div> 
         </div>
      <nav>
       
       </nav>
-
-        
-
+      <div id='start-workout' :disabled='selected == false' class='not-selected' :class='selected && "chosen"'> 
+        <button id='start'>Start Workout!</button>
+      </div>
       </div>
 </template>
 
@@ -40,6 +55,14 @@ export default {
 
 props:{
     exercises:[]
+},
+data() {
+  return {
+    selected: false
+  }
+},
+methods: {
+
 }
 
 }
@@ -63,32 +86,63 @@ h1 {
 .circle1 {
   height: 50px;
   width: 50px;
-  background-color: rgb(248, 48, 75);
+  background-color: rgb(243, 115, 115);
   border-radius: 50%;
+  
 }
 .circle2 {
   height: 50px;
   width: 50px;
-  background-color: rgb(255, 160, 71);
+  background-color: rgb(248, 178, 113);
   border-radius: 50%;
 }
 
 .circle3 {
   height: 50px;
   width: 50px;
-  background-color: rgb(223, 222, 222);
+  background-color: rgb(245, 243, 132);
   border-radius: 50%;
 }
 .circle4 {
   height: 50px;
   width: 50px;
-  background-color: rgb(253, 251, 108);
+  background-color: rgb(176, 245, 87);
   border-radius: 50%;
 }
 .circle5 {
   height: 50px;
   width: 50px;
-  background-color: rgb(140, 255, 73);
+  background-color: rgb(36, 247, 46);
   border-radius: 50%;
+}
+
+input[type=radio]:checked + label>img {
+    border: 3px solid rgba(11, 157, 241, 0.863);
+  transform: scale(1.3)
+}
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+#start-workout {
+  text-align: center;
+  margin: auto;
+  display: block;
+  margin-top: 10%;
+ 
+}
+#start {
+  padding-top: 1.2%;
+  padding-bottom: 1.2%;
+  padding-left: 7%;
+  padding-right: 7%;
+   font-size: 20px;
+
+}
+.not-selected {
+  opacity: 30%;
+}
+.chosen {
+  opacity: 100%;
 }
 </style>
