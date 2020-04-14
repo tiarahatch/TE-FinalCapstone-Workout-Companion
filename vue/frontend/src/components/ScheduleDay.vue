@@ -1,13 +1,13 @@
 <template>
   <div>
-   <!-- <h4 v-on:click="changeIsShow"> click for details </h4>  -->
-    <h3 id='dayHeading' >{{daySchedule[0].date}}</h3>
-    <br />
+  <div id='dayHeading'>
+    <p> {{daySchedule[0].date}} </p>
+  </div>
     <div class="daySchedule">
       
       <li v-for="item in daySchedule" v-bind:key="item.classID" >
       
-       <!-- <button  v-on:click="changeIsShow"> -->
+       
 
         <!-- <button v-on:click="emit_event(item)" v-bind:style= '{ backgroundImage: `url( ${ "../img/" + item.className + ".png" } )`, backgroundSize: "contain", backgroudRepeat: "no-repeat" }' class ='classButton'> -->
         <button v-on:click="emit_event(item)" class ='classButton' :id="item.className.split(' ').join('')">
@@ -86,20 +86,33 @@ export default {
 
 
 <style scoped>
+
 #dayHeading{
+    margin-top: 0;
+    margin-bottom: 0;
+    
     text-align: center;
-    background-color: lightgrey;
+    background-color: rgba(37, 37, 37, 0.2);
+
+}
+
+#dayHeading p{
+    font-size: 150%;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .class {
     /* width: 10%; */
   border: 1px solid black;
+  
 }
 .daySchedule {
-    padding-left: none;
-    list-style-type: none;
+  padding-left: none;
+  list-style-type: none;
   display: flex;
   justify-content: space-around;
   padding-bottom: 2%;
+  padding-top: 2%;
 }
 .classButton{
 
@@ -111,6 +124,9 @@ export default {
   opacity: .5;
   border-radius: 10px;
 
+  background-color: rgb(236, 234, 234);
+  opacity: .75;
+  transition-duration: 0.5s;
 }
 
 .classButton:hover{
@@ -142,8 +158,5 @@ background-image: url("../img/Spinning.png" );
 #Pilates{
 background-image: url("../img/Pilates.png" );
 }
-p{
-  background-color: rgb(236, 234, 234);
-  opacity: .75;
-}
+
 </style>

@@ -28,12 +28,11 @@
     <div id="scheduleHeading">
       <h2>This Week's Schedule</h2>
       <h3>{{getHeaderDates()[0]}} - {{getHeaderDates()[1]}}</h3>
-      <h1 v-if="show"> POOP</h1>
     </div>
     <div>
-      <!-- <button @click = 'weekView()' class='button-margin'> Week View </button> -->
+
       <div class="show" id="weekList">
-        <ul>
+        <div>
           <li v-for="day in weekSchedule" :key="day.classID" class="border">
            
             <schedule-day v-bind:daySchedule="day" v-bind:isShow="isShow" v-on:updateIsShow="switchIsShow($event[0]), classToShowDetails = $event[1]"></schedule-day>
@@ -41,8 +40,11 @@
             <!-- <schedule-class-details v-if="showDetails" /> -->
            
           </li>
-        </ul>
+        </div>
       </div>
+    </div>
+    <div class='background-img'>
+      <span></span>
     </div>
   </div>
 </template>
@@ -140,6 +142,22 @@ export default {
 </script>
 
 <style scoped>
+
+.background-img { 
+    background-image: url(../img/BackgroundImages/signuppage2.jpg); 
+    width: 100%;
+    height: 100%; 
+    position: fixed;
+    color: transparent;
+    background-size: cover;
+    background-repeat: none;
+    opacity: 0.4;
+    z-index: -10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #scheduleHeading {
   text-align: center;
   background-color: grey;
@@ -154,12 +172,17 @@ export default {
   border: 1px solid black;
   margin-top: 2px;
   padding-left: 5px;
+  background-color: rgba(37, 37, 37, 0.2);
+  margin-bottom: 2%;
+  transition-duration: .75s;
+}
+
+.border:hover{
+  background-color: rgba(37, 37, 37, 0.35);
 }
 li {
   list-style: none;
 }
 
-.button-margin {
-  margin-bottom: 20px;
-}
+
 </style>
