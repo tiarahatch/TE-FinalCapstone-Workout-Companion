@@ -45,7 +45,8 @@
       
       </nav>
       <div id='start-workout' class='not-selected' :class='selected && "chosen"'> 
-        <router-link to='/dashboard' :disabled='selected == false' id='start' tag='button'>Start Workout!</router-link>
+
+        <router-link :to="{ name: 'workoutMain', params: {exercises} }" :disabled='selected == false' id='start' tag='button'>Start Workout!</router-link>
       </div>
       </div>
 </template>
