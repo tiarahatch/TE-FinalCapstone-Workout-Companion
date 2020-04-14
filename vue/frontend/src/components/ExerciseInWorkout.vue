@@ -14,7 +14,7 @@ export default {
     name: 'exercise-in-workout',
     data(){
         return{
-            
+     
         }
     }
 }
