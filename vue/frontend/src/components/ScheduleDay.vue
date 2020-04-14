@@ -92,11 +92,12 @@ export default {
     margin-bottom: 0;
     
     text-align: center;
-    background-color: rgba(37, 37, 37, 0.2);
-
+    background-image:linear-gradient(rgba(219, 219, 219, 0.5),rgba(117, 117, 117, 0.8));
+    
 }
 
 #dayHeading p{
+    
     font-size: 150%;
     margin-top: 0;
     margin-bottom: 0;
@@ -107,30 +108,32 @@ export default {
   
 }
 .daySchedule {
+  height:auto;
   padding-left: none;
   list-style-type: none;
   display: flex;
   justify-content: space-around;
-  padding-bottom: 2%;
-  padding-top: 2%;
+  margin-bottom: 2%;
+  margin-top: 2%;
 }
 .classButton{
 
   width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
-  background-color: rgb(236, 234, 234);
+
   background-position: center;
   opacity: .5;
   border-radius: 10px;
 
-  background-color: rgb(236, 234, 234);
-  opacity: .75;
-  transition-duration: 0.5s;
+  transition-duration: 0.6s;
 }
 
 .classButton:hover{
+  
   opacity: .8;
+  height:115%;
+  width: 115%;
   box-shadow:
        3px 3px 0  rgb(209, 209, 209),
      -1px -1px 0  rgb(209, 209, 209),  

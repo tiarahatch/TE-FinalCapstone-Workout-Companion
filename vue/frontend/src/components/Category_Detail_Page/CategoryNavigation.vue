@@ -4,12 +4,12 @@
     <div>
         <div class='container'>
             
-            <li v-for='category in categories' v-bind:key='category.categoryID' id='categoryLinks' :class='category.name'>
+            <div v-on:click='emitId(category.categoryID)' v-for='category in categories' v-bind:key='category.categoryID' id='categoryLinks' :class='category.name'>
               
-              <!-- <router-link :to="{ name: 'category-details', params: {id: category.categoryID.toString()} }" tag='li' > -->
-            <h2 v-on:click='emitId(category.categoryID)'> {{category.name}} </h2>
-              <!-- </router-link> -->
-             </li>
+
+            <h2 > {{category.name}} </h2>
+
+             </div>
         </div>
         </div>
     </div>
@@ -58,35 +58,30 @@ emitId(id){
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* width: 90%; */
   margin: auto;
+  
   
 }
 #categoryLinks{
    background-size: cover;
-    background-color:#777;
+   background-position: center;
     color: white;
     width: 15%;
     padding: 40px;
     border-radius:10px;
     display:block;
     text-align: center;
-    list-style: none;
     font-size: 150%;
+    cursor: pointer;
+    transition: .6s;
 }
 
-button {
-  text-align: center;
-  font-size: 14px;
-  margin:25px;
-  border: none;
-  width: 200px;
-  background-color: black;
-  color: #7ac1ff;
-  border-radius: 15px;
-  cursor: pointer;
-  
-}
+  #categoryLinks:hover{
+    width: 17%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    
+  }
+
   .Strength{
     background-image: url("../../img/Strength.jpeg");  
   }
