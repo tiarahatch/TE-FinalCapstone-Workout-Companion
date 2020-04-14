@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="meter">
-  <span style="width: 25%"></span>
+  <span style="width: 100%"></span>
 </div>
       <div>
        <h1> WORKOUT COMPLETE!!</h1>
@@ -176,7 +176,7 @@ img{
   border-bottom-right-radius: 8px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  background-color: rgb(43,194,83);
+  background-color: rgb(36, 247, 46);
   background-image: linear-gradient(
     center bottom,
     rgb(43,194,83) 37%,
