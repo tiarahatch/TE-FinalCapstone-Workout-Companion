@@ -8,6 +8,8 @@ import PremadeWorkouts from './views/PremadeWorkouts.vue'
 import Schedule from './views/Schedule.vue'
 import CategoryDetails from './views/CategoryDetails.vue'
 import Dashboard from './views/Dashboard.vue'
+
+
 import StartWorkout from './views/StartWorkout.vue'
 import EndWorkout from './views/EndWorkout.vue'
 import WorkoutMain from './views/WorkoutMain.vue'

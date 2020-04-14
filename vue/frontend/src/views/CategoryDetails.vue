@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="wholepage">
     <nav>
           <router-link to='/dashboard' tag='button'>My Dashboard</router-link> 
           <router-link to='/premade-workouts' tag='button'>Choose Workout</router-link>
@@ -16,6 +16,7 @@
     <!-- push in exercies[] that was pulled from cat-workouts -->
     <workouts-exercises v-bind:exercises = 'exercises' class = "workoutExercises" ></workouts-exercises>
     </div>
+
 </div>
 </template>
 
@@ -66,8 +67,6 @@ export default {
     }) 
     .then((json) => {
       this.workouts = json;
-      console.log(this.workouts)
-      console.log('pppoooooppppp')
     }) 
  }
  }
@@ -76,26 +75,37 @@ export default {
 </script>
 
 <style>
+
 .mainBody{
+    background-color:rgb(211, 211, 211);
     display: flex;
     width: 90%;
+    /* height: 100%; */
     margin: auto;
+    border-radius: 10px;
+    padding-bottom: 5%;
+    padding-top:2%;
 }
 
 .categoryNavigation{
-    background-color: blue;
+    /* background-color: blue; */
     width:90%;
+    /* height:25%; */
     margin:auto;
+    margin-bottom:2%
 }
 
 .categoryWorkouts{
-    background-color: red;
+    /* background-color: red; */
+    /* display: block; */
     width: 30%;
+
 }
 
 .workoutExercises{
-    background-color: green;
+    /* background-color: green; */
     width: 70%;
+    /* height: auto; */
 }
 
 

@@ -1,5 +1,6 @@
 <template>
 <body>
+    
   <div class="home">
     
     <div class="welcome">
@@ -18,6 +19,8 @@
         <router-link to="/register" tag="button">Sign Up</router-link>
         <br />
         <router-link to="/dashboard" tag="button">My Dashboard</router-link>
+        <br />
+        <button v-on:click='logout'> LogOut</button>
 
       </div>
       
@@ -38,13 +41,27 @@
 </template>
 
 <script>
+import auth from '@/auth'
 export default {
   name: "home"
-};
+,
+methods: {
+    logout() {
+        auth.logout();
+        localStorage.removeItem('Authorization');
+        this.$router.go('/')
+  }
+}
+}
+
 </script>
 
 
 <style scoped>
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
  .home{
    display: flex;
    justify-content: center;
@@ -153,6 +170,11 @@ export default {
     17% { opacity: 1 }
     40% { opacity: 0 }
     100% { opacity: 0 }
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* router-link {

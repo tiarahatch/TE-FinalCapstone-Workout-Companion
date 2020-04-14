@@ -27,7 +27,7 @@
     <!-- <p>You must be authenticated to see this</p> -->
     <div id="scheduleHeading">
       <h2>This Week's Schedule</h2>
-      <h3>{{getHeaderDates()[0]}} - {{getHeaderDates()[1]}}</h3>
+      <h2>{{getHeaderDates()[0]}} - {{getHeaderDates()[1]}}</h2>
     </div>
     <div>
 
@@ -42,7 +42,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>``
     <div class='background-img'>
       <span></span>
     </div>
@@ -144,7 +144,8 @@ export default {
 <style scoped>
 
 .background-img { 
-    background-image: url(../img/BackgroundImages/signuppage2.jpg); 
+    background-image:linear-gradient( rgba(27, 27, 27, 0.5),rgba(19, 107, 158, 0.966)), url(../img/BackgroundImages/signuppage2.jpg); 
+    background-blend-mode: screen;
     width: 100%;
     height: 100%; 
     position: fixed;
@@ -159,29 +160,33 @@ export default {
 }
 
 #scheduleHeading {
+  border: 1px solid black;
+  width: 30%;
+  background-image:linear-gradient(rgba(219, 219, 219, 0.5),rgba(117, 117, 117, 0.8));
+  display:flex;
+  flex-direction: column;
+  margin:auto;
+  margin-bottom: 2%;
+  
+}
+#scheduleHeading h2{
   text-align: center;
-  background-color: grey;
+
+  /* margin:auto; */
 }
-.show {
-  display: block;
-}
-.hidden {
-  display: none;
-}
+
 .border {
   border: 1px solid black;
   margin-top: 2px;
-
-  background-color: rgba(37, 37, 37, 0.2);
+  height:auto;
+   background-image:linear-gradient(rgba(219, 219, 219, 0.4),rgba(117, 117, 117, 0.5));
+  /* background-color: rgba(37, 37, 37, 0.2); */
   margin-bottom: 2%;
   transition-duration: .75s;
 }
 
 .border:hover{
-  background-color: rgba(37, 37, 37, 0.35);
-}
-li {
-  list-style: none;
+  background-color: rgba(37, 37, 37, 0.4);
 }
 
 
