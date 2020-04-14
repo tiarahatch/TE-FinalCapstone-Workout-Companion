@@ -58,6 +58,10 @@ methods: {
 
 
 <style scoped>
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
  .home{
    display: flex;
    justify-content: center;
@@ -166,6 +170,11 @@ methods: {
     17% { opacity: 1 }
     40% { opacity: 0 }
     100% { opacity: 0 }
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* router-link {
