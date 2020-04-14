@@ -1,14 +1,14 @@
 <template>
     <div>
         
-        <ul>
-            <li v-for='item in exercises' v-bind:key='item.exerciseID'>
+        <div>
+            <li v-for='item in exercises' v-bind:key='item.exerciseID' class='exerciseLists'>
                 <h3>{{item.name}}</h3>
                 <h4>Sets: {{item.sets}}</h4>
                 <h4 v-if='item.reps < 15'>Reps: {{item.reps}}</h4>
                 <h4 v-if='item.reps > 15'>Reps: {{item.reps}} Seconds</h4>
             </li>
-        </ul>
+        </div>
 
          <router-link :to="{ name: 'startworkout', params: {exercises} }" tag='button' class='container' >Start Workout!</router-link> 
          
@@ -32,6 +32,9 @@ name: 'workout-exercises',
 </script>
 
 <style scoped>
+.exerciseLists{
+    list-style: none;
+}
 button {
   text-align: center;
   font-size: 14px;

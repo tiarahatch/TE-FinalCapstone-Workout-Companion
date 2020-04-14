@@ -1,18 +1,16 @@
 <template>
     <div>
-        <nav>
-          <router-link to='/dashboard' tag='button'>My Dashboard</router-link> 
-          <router-link to='/premade-workouts' tag='button'>Choose Workout</router-link>
-        </nav>
+        
     <div>
-        <ul class='container'>
+        <div class='container'>
             
-            <li v-for='category in categories' v-bind:key='category.categoryID' :class='category.name'>
-              <router-link :to="{ name: 'category-details', params: {id: category.categoryID.toString()} }" tag='li' class='container' >
-            {{category.name}} 
-              </router-link>
+            <li v-for='category in categories' v-bind:key='category.categoryID' id='categoryLinks' :class='category.name'>
+              
+              <!-- <router-link :to="{ name: 'category-details', params: {id: category.categoryID.toString()} }" tag='li' > -->
+            <h2 v-on:click='emitId(category.categoryID)'> {{category.name}} </h2>
+              <!-- </router-link> -->
              </li>
-        </ul>
+        </div>
         </div>
     </div>
 </template>
@@ -30,6 +28,14 @@ data() {
 props: {
 
 },
+methods:{
+
+emitId(id){
+  this.$emit('workoutIdChange', id)
+}
+
+},
+
  created() {
        fetch(`${process.env.VUE_APP_REMOTE_API}/api/categories`,{
          headers: {
@@ -41,7 +47,6 @@ props: {
       })
       .then((json)=>{
        this.categories = json;
-       console.log(json);
       })
   }
 }
@@ -52,10 +57,24 @@ props: {
 .container{
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 87%;
+  justify-content: space-between;
+  /* width: 90%; */
   margin: auto;
+  
 }
+#categoryLinks{
+   background-size: cover;
+    background-color:#777;
+    color: white;
+    width: 15%;
+    padding: 40px;
+    border-radius:10px;
+    display:block;
+    text-align: center;
+    list-style: none;
+    font-size: 150%;
+}
+
 button {
   text-align: center;
   font-size: 14px;
@@ -69,69 +88,15 @@ button {
   
 }
   .Strength{
-    background-image: url("../../img/Strength.jpeg");
-    background-size: cover;
-    background-color:#777;
-    color: white;
-    width: 20%;
-    margin: 2%;
-    padding: 40px;
-    border-radius:10px;
-    border-width: 100%;
-    display:block;
-    align-items:center;
-    justify-content:center;
-    text-align: center;
-  
+    background-image: url("../../img/Strength.jpeg");  
   }
-  
   .Cardio{
-    background-image: url("../../img/cardio.jpeg");
-    background-size: cover;
-    background-color:#777;
-    color: white;
-    width: 20%;
-    margin: 2%;
-    padding: 40px;
-    border-radius:10px;
-    border-width: 100%;
-    display:block;
-    align-items:center;
-    justify-content:center;
-    text-align: center;
-  
+    background-image: url("../../img/cardio.jpeg"); 
   }
    .Flexibility{
-    background-image: url("../../img/yoga.jpg");
-    background-size: cover;
-    background-color:#777;
-    color: white;
-    width: 20%;
-    margin: 2%;
-    padding: 40px;
-    border-radius:10px;
-    border-width: 100%;
-    display:block;
-    align-items:center;
-    justify-content:center;
-    text-align: center;
-  
+    background-image: url("../../img/yoga.jpg");  
   }
     .Crossfit{
-    background-image: url("../../img/crossfit.jpeg");
-    background-size: cover;
-    background-color:#777;
-    color: white;
-    width: 20%;
-    margin: 2%;
-    padding: 40px;
-    border-radius:10px;
-    border-width: 100%;
-    display:block;
-    align-items:center;
-    justify-content:center;
-    text-align: center;
-    
-  
+    background-image: url("../../img/crossfit.jpeg");   
   }
 </style>

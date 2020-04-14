@@ -21,8 +21,6 @@
              
              
               </router-link> 
-               <category-workouts v-bind:workoutLists = 'workouts' class='hidden'></category-workouts>
-               <category-details v-bind:workoutLists = 'workouts' class='hidden'></category-details>
               
             
            
@@ -36,13 +34,10 @@
 
 <script>
 import auth from '@/auth'
-import CategoryWorkouts from '@/components/Category_Detail_Page/CategoryWorkouts.vue'
-import CategoryDetails from '@/views/CategoryDetails.vue'
 export default {
   name: 'premade-workouts',
  components: {
-   CategoryWorkouts,
-   CategoryDetails,
+  
  },
  data(){
   return{
