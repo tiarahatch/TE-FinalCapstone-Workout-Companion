@@ -33,13 +33,13 @@
 
       <div class="show" id="weekList">
         <div>
-          <li v-for="day in weekSchedule" :key="day.classID" class="border">
+          <div v-for="day in weekSchedule" :key="day.classID" class="border">
            
             <schedule-day v-bind:daySchedule="day" v-bind:isShow="isShow" v-on:updateIsShow="switchIsShow($event[0]), classToShowDetails = $event[1]"></schedule-day>
            
             <!-- <schedule-class-details v-if="showDetails" /> -->
            
-          </li>
+          </div>
         </div>
       </div>
     </div>
@@ -171,7 +171,7 @@ export default {
 .border {
   border: 1px solid black;
   margin-top: 2px;
-  padding-left: 5px;
+
   background-color: rgba(37, 37, 37, 0.2);
   margin-bottom: 2%;
   transition-duration: .75s;

@@ -100,20 +100,21 @@ methods: {
 
 }
 .pageLinks button{
-  background-color: rgb(126, 126, 126);
+  background-color: rgba(126, 126, 126,.5);
   height: 75%;
   width: 25%;
-  opacity: .6;
+  opacity: .8;
   font-size: 125%;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   border: none;
-  transition-duration: 0.5s;
+  transition-duration: 0.6s;
    color: white;
   /* -webkit-text-stroke: 1px rgb(97, 97, 97); */
 
 }
 .pageLinks button:hover{
   opacity: .9;
+  width:30%;
   background-color: rgb(177, 177, 177);
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
