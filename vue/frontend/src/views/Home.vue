@@ -1,5 +1,6 @@
 <template>
 <body>
+    
   <div class="home">
     
     <div class="welcome">
@@ -18,6 +19,8 @@
         <router-link to="/register" tag="button">Sign Up</router-link>
         <br />
         <router-link to="/dashboard" tag="button">My Dashboard</router-link>
+        <br />
+        <button v-on:click='logout'> LogOut</button>
 
       </div>
       
@@ -38,9 +41,19 @@
 </template>
 
 <script>
+import auth from '@/auth'
 export default {
   name: "home"
-};
+,
+methods: {
+    logout() {
+        auth.logout();
+        localStorage.removeItem('Authorization');
+        this.$router.go('/')
+  }
+}
+}
+
 </script>
 
 
