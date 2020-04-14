@@ -12,9 +12,9 @@
 
     <div class = "mainBody">
     <!-- emit exercises[] from category-workouts -->
-    <category-workouts v-bind:id ='this.id'  v-bind:workoutLists='this.workouts' v-on:exerciseEmit="exercises=$event" class = "categoryWorkouts" ></category-workouts>
+    <category-workouts v-bind:id ='this.id' v-bind:workoutLists='this.workouts' v-on:exerciseEmit="exercises=$event" class = "categoryWorkouts" ></category-workouts>
     <!-- push in exercies[] that was pulled from cat-workouts -->
-    <workouts-exercises v-bind:exercises = 'exercises' class = "workoutExercises"></workouts-exercises>
+    <workouts-exercises v-bind:exercises = 'exercises' class = "workoutExercises" ></workouts-exercises>
     </div>
 </div>
 </template>
@@ -30,7 +30,6 @@ export default {
     data(){
         return{
 
-
         };
     },
     
@@ -38,7 +37,7 @@ export default {
         id: {type: String},
         workouts: {type:Array},
         exercises: {type:Array},
-
+        
     },
     name: 'category-details',
     components: {
@@ -53,6 +52,7 @@ export default {
  methods:{
       getWorkouts(id){
       this.id=id;
+        this.showExercises = false;
 
       fetch(`${process.env.VUE_APP_REMOTE_API}/api/workouts/${id}`,{
      method: 'GET',

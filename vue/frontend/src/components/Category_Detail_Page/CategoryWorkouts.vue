@@ -70,6 +70,7 @@ methods: {
 },
 
 beforeUpdate(){
+  
   this.fetchExercises(this.workoutLists[0].workoutID);
 },
 
@@ -88,23 +89,7 @@ beforeUpdate(){
       })
   },
   
-  // beforeMount() {
-  //       fetch(`${process.env.VUE_APP_REMOTE_API}/api/workouts/${this.id}`,{
-  //    method: 'GET',
-  //    headers: {
-  //      'Authorization' : 'Bearer ' + auth.getToken(),
-  //      "Content-Type": "application/json"
-  //    },
-  //  })
-  //   .then((response)=> {
-  //       return response.json();
-  //   }) 
-  //   .then((json) => {
-  //     this.workouts = json;
-  //     console.log(this.workouts)
-  //     console.log('pppoooooppppp')
-  //   }) 
-  // },
+  
   
 }
 

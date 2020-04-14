@@ -5,7 +5,7 @@
   </div>
     <div class="daySchedule">
       
-      <li v-for="item in daySchedule" v-bind:key="item.classID" >
+      <div v-for="item in daySchedule" v-bind:key="item.classID" >
       
        
 
@@ -17,7 +17,7 @@
         
         <!-- <h4 v-on:click= 'changeIsShow'> click for details </h4> -->
         </button>
-      </li>
+      </div>
 
      
     </div>
