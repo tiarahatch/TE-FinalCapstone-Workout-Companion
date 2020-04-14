@@ -2,8 +2,8 @@
 
 <div>
     
-        <h1>Welcome back: FirstName LastName</h1>
-     <div class='side'>
+    <h1>Welcome back: FirstName LastName</h1>
+    <div class='side'>
         <router-link to='/premade-workouts' tag='button'>Choose Workout</router-link><br>
         <router-link to='/schedule' tag='button'>Sign Up for Class</router-link><br>
         <router-link to='/NewUser' tag='button'>Edit Profile</router-link><br>
@@ -14,6 +14,7 @@
     <div class='motivational-image'>
         <img src='../img/motivation.jpg'>
     </div>
+
 </div>
 </template>
 
@@ -40,18 +41,21 @@ methods: {
  position: absolute;
     top: 100px;
     left: 300px;
+    right:300px;
+    margin: auto;
        
 }
 button {
-  text-align: center;
-  font-size: 14px;
-  margin:25px;
+   background-color: rgba(126, 126, 126,.5);
+  height: 75%;
+  width: 25%;
+  opacity: .8;
+  font-size: 125%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   border: none;
-  width: 200px;
-  background-color: black;
-  color: #7ac1ff;
-  border-radius: 15px;
-  cursor: pointer;
+  transition-duration: 0.6s;
+   color: white;
+   margin: 5px;
 }
 h1{
     text-align: center;
