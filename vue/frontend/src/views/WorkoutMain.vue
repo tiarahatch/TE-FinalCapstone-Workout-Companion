@@ -1,10 +1,12 @@
 <template>
     <div>
 
-        <div v-for='item in exercises' v-bind:key='item.exerciseID' class='exercisePage'>
+        <!-- <div v-for='item in exercises' v-bind:key='item.exerciseID' class='exercisePage'> -->
 
-        <exercise-in-workout v-bind:exercise = 'item'></exercise-in-workout>
-        </div>
+        <exercise-in-workout v-bind:exercise = 'currentExercise'></exercise-in-workout>
+        
+        <button id="buttonMain" v-on:click='changeExercise()'>Done </button>
+        <!-- </div> -->
 
     </div>
 </template>
@@ -15,11 +17,21 @@ import ExerciseInWorkout from '@/components/ExerciseInWorkout'
 export default {
     data(){
         return{
-
-      
+        currentExercise:[],
+        currentArrayPosition: 0
       }
     },
-    
+    methods:{
+        changeExercise(){
+           if(this.currentArrayPosition == this.exercises.length-1){
+                this.$router.push({path:"/EndWorkout"});
+           }else if(this.currentArrayPosition < this.exercises.length){
+                this.currentArrayPosition++;
+                this.currentExercise = this.exercises[this.currentArrayPosition];
+            }
+
+        },
+    },
 
     components:{
         ExerciseInWorkout,
@@ -27,8 +39,11 @@ export default {
 
     props:{
         exercises: []
-    }
-
+    },
+created(){
+    this.currentExercise = this.exercises[0];
+    this.currentArrayPosition = 0
+}
 
 }
 </script>
