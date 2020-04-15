@@ -53,16 +53,21 @@ name VARCHAR,
 reps INT,
 sets INT, 
 description VARCHAR,
+yt_link VARCHAR,
 CONSTRAINT pk_exercise PRIMARY KEY (exercise_id)
 );
 
+INSERT INTO exercise (name, reps, sets, description, yt_link)
+VALUES
+('Bicep Curls', 10, 3, 'Stand holding a dumbbell in each hand with your arms hanging by your sides. Ensure your elbows are close to your torso and your palms facing forward. Keeping your upper arms stationary, exhale as you curl the weights up to shoulder level while contracting your biceps', 'Nkl8WnH6tDU'), 
+('Pull Ups', 3, 3, 'Grab the pullup bar with your palms down shoulder-width grip, hang to the pullup-bar with straight arms and your legs off the floor. Pull yourself up by pulling your elbows down to the floor, go all the way up until your chin passes the bar. Lower yourself until your arms are straight', 'nJrDnZp2LOo'), 
+('Dips', 10, 2, 'Grab the parallel bars and jump up, straighten your arms. Lower your body by bending your arms while leaning forward, dip down until your shoulders are below your elbows. Lift your body up by straightening your arms, lock your elbows at the top', 'dX_nSOOJIsE'), 
+
+
 INSERT INTO exercise (name, reps, sets, description)
 VALUES 
-('Bicep Curls', 10, 3, 'Stand holding a dumbbell in each hand with your arms hanging by your sides. Ensure your elbows are close to your torso and your palms facing forward. Keeping your upper arms stationary, exhale as you curl the weights up to shoulder level while contracting your biceps'), 
-('Pull Ups', 3, 3, 'Grab the pullup bar with your palms down shoulder-width grip, hang to the pullup-bar with straight arms and your legs off the floor. Pull yourself up by pulling your elbows down to the floor, go all the way up until your chin passes the bar. Lower yourself until your arms are straight'), 
-('Dips', 10, 2, 'Grab the parallel bars and jump up, straighten your arms. Lower your body by bending your arms while leaning forward, dip down until your shoulders are below your elbows. Lift your body up by straightening your arms, lock your elbows at the top'), 
-('Squats', 5, 4, 'Stand with your head facing forward and your chest held up and out. Place your feet shoulder-width apart or slightly wider. Extend your hands straight out in front of you to help keep your balance. Sit back and down like youre sitting into an imaginary chair. Keep your head facing forward as your upper body bends forward a bit. Rather than allowing your back to round, let your lower back arch slightly as you descend. Keep your body tight, and push through your heels to bring yourself back to the starting position'),
- ('Lunges', 10, 4, 'Keep your upper body straight, with your shoulders back and relaxed and chin up (pick a point to stare at in front of you so you dont keep looking down). Always engage your core. Step forward with one leg, lowering your hips until both knees are bent at about a 90-degree angle. Keep the weight in your heels as you push back up to the starting position'), 
+('Squats', 5, 4, 'Stand with your head facing forward and your chest held up and out. Place your feet shoulder-width apart or slightly wider. Extend your hands straight out in front of you to help keep your balance. Sit back and down like youre sitting into an imaginary chair. Keep your head facing forward as your upper body bends forward a bit. Rather than allowing your back to round, let your lower back arch slightly as you descend. Keep your body tight, and push through your heels to bring yourself back to the starting position', 'aclHkVaku9U'),
+ ('Lunges', 10, 4, 'Keep your upper body straight, with your shoulders back and relaxed and chin up (pick a point to stare at in front of you so you dont keep looking down). Always engage your core. Step forward with one leg, lowering your hips until both knees are bent at about a 90-degree angle. Keep the weight in your heels as you push back up to the starting position', 'QOVaHwm-Q6U'), 
  ('Box Step Ups', 8, 3, 'Hold dumbbells in your hands or a barbell across your shoulders. Step up with the right foot, pressing through the heel to straighten your right leg. Bring the left foot to meet your right foot on top of the step. Bend your right knee and step down with the left foot. Bring the right foot down to meet the left foot on the ground'), 
  ('Dead Lifts', 3, 2, 'Stand with your mid-foot under the barbell. Bend over and grab the bar with a shoulder-width grip, and bend your knees until your shins touch the bar. Lift your chest up and straighten your lower back. Take a big breath, hold it, and stand up with the weight'), 
  ('Dumbbell Rows', 5, 3, 'Grip the barbell with a grip that’s similar in width to your deadlift, or slightly wider. Once you’ve established your grip, lift the bar off the ground and bend over maintaining a strong set back and hip hinge'),
