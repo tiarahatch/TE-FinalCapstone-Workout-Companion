@@ -21,7 +21,7 @@
          </div>
 
         <div class='instructions'>
-         <h3 style='text-decoration: underline'>Instructions</h3>
+         <h3 style='text-decoration: underline'>{{exercise.description}}</h3>
         <p>exercise instructions</p>
         </div>
 </div>
