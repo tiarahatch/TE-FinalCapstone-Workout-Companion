@@ -1,7 +1,6 @@
 <template>
-
+<div class="hero-image" >
  <div id="signup">
-   <div class="hero-image" >
 <h1 class="h3 mb-3 font-weight-normal">Sign-Up</h1>
 <simple-modal v-model="isShow" title="Member Details" class="modal">
       <template slot="body">
