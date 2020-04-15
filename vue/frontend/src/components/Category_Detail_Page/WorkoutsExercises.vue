@@ -4,7 +4,7 @@
       <div v-for="item in exercises" v-bind:key="item.exerciseID" class="exercise">
         <h3>{{item.name}}</h3>
         <h4>Sets: {{item.sets}}</h4>
-        <h4 v-if="item.reps < 15">Reps: {{item.reps}}</h4>
+        <h4 v-if="item.reps <= 15">Reps: {{item.reps}}</h4>
         <h4 v-if="item.reps > 15">Reps: {{item.reps}} Seconds</h4>
       </div>
     </div>

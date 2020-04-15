@@ -33,8 +33,8 @@
     </div>
 
     <div class="notes">
-      <h4 style="text-align: left">Notes:</h4>
-      <p style="text-align: right">notes here</p>
+      <h4 id='noteHeading'>Notes:</h4>
+      <textarea id="textBox" placeholder="Exercise Notes Here"/> 
     </div>
   </div>
 </template>
@@ -110,6 +110,7 @@ export default {
   text-align: center;
   font-size: 250%;
   margin-bottom:0;
+  margin-top: 2%;
   background-image: radial-gradient(
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.1),
@@ -121,7 +122,7 @@ export default {
   color:white;
   display: flex;
   flex-direction: column;
-  height: 49%;
+  height: 30%;
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 5px;
 }
@@ -135,6 +136,7 @@ export default {
   /* background-color:black; */
   width:40%;
   font-size: 200%;
+  margin:2%;
   background-image: radial-gradient(
     rgba(0, 0, 0, 0.7),
     rgba(0, 0, 0, 0.2),
@@ -143,7 +145,7 @@ export default {
   );
 }
 .img {
-  background-color: blue;
+  /* background-color: blue; */
   height: 100%;
   width: 46%;
 }
@@ -151,21 +153,38 @@ export default {
 #myIframe {
   height: 100%;
   width:100%;
+  border-radius:5px;
 }
 
 .notes {
-  background-color: green;
+  /* background-color: green; */
   display: flex;
-  margin-top: 8%;
-  width: 18%;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  width: 84%;
+  margin:auto;
+  margin-top: 2%;
+  padding:1%;
+  justify-content: space-around;
+}
+#noteHeading{
+  font-size: 200%;
+  margin:0;
+  text-align: center;
+  color:white;
+}
+#textBox{
+  font-size: 100%;
+  width:70% !important;
 }
 .instructions {
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 5px;
   width: 100%;
-  height: 50%;
+  height: 67%;
   text-align: center;
   color:white;
+  font-size: 100%;
 
 }
 .exercise-img-instructions {

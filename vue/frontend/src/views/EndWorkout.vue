@@ -9,7 +9,7 @@
     </div>
     <div>
       <h1>WORKOUT COMPLETE!!</h1>
-      <img src="../img/gif.gif" alt="gif" />
+
     </div>
     <h1>How do you feel after your workout?</h1>
     <div class="feelingForm">
@@ -52,7 +52,12 @@
       </div>
 
     </div>
-    <nav></nav>
+
+      <div>
+      
+      <img id="inspGif" src="../img/gif.gif" alt="gif" />
+    </div>
+
      <div id="start-workout" class="not-selected" :class="selected && 'chosen' ">
       <router-link to="/dashboard" tag="button" :disabled="selected == false" id="start" >
         Finish Workout!
@@ -87,16 +92,20 @@ export default {
 </script>
 
 <style scoped>
+#inspGif{
+  width:25%;
+  margin-top:5%;
+}
 
 .feelingForm{
   background-color:rgb(211, 211, 211);
   margin:auto;
   border-radius: 10px;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   width: 90%;
+  margin-bottom:5%;
 }
-
 
 #feelingCheckbox {
   text-align: center;
@@ -115,18 +124,7 @@ h1 {
   width: 60%;
   margin: auto;
 }
-/* .howYouFeel {
-  display: flex;
-  justify-content: space-around;
-  width: 60%;
-  margin: auto;
-  background-color: rgb(211, 211, 211);
-  margin: auto;
-  border-radius: 10px;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  width: 90%;
-} */
+
 .circle1 {
   height: 50px;
   width: 50px;
@@ -172,9 +170,10 @@ input[type="radio"]:not(:checked) + label > img {
 }
 #start-workout {
   text-align: center;
-  margin: auto;
+  margin-left: auto;
+  margin-right:auto;
   display: block;
-  margin-top: 10%;
+  margin-top: 4%;
 }
 #start {
   background-color: rgba(0, 0, 0, 0.5);
@@ -242,7 +241,7 @@ img {
   padding: 0;
   margin: 0;
   width: 100%;
-  min-height: 100vh;
+  min-height: 110vh;
   background-image: url("../img/workoutBackground4.png");
 }
 

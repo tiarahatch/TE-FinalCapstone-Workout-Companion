@@ -1,7 +1,7 @@
 <template>
 <div id="wholepage">
     <nav class='navButtons'>
-          <router-link to='/premade-workouts' tag='button'>Back to</router-link>
+          <router-link to='/premade-workouts' tag='button'>Back to Categories</router-link>
           <router-link to='/dashboard' tag='button'>My Dashboard</router-link> 
           <button v-on:click='logout'> LogOut</button>
     </nav>

@@ -7,7 +7,7 @@
 
         <exercise-in-workout v-bind:exercise = 'currentExercise'></exercise-in-workout>
         
-        <button id="buttonMain" v-on:click='changeExercise()' @click="randomValue" >Done </button>
+        <button id="nextButton" v-on:click='changeExercise()' @click="randomValue" >Done </button>
         <!-- </div> -->
 
     </div>
@@ -64,27 +64,26 @@ created(){
 
 }
 
-/* .navButtons{
-    display:flex;
-    justify-content: flex-end;
-    margin-bottom:1%;
+#nextButton{
+justify-content: center;
+  display: flex;
+  font-size: 200%;
+  border: none;
+  width: 25%;
+  height: 25%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left:62.5%;
+  margin-top:2%;
+
+  transition: 0.6s;
     
 }
-.navButtons button{
-    width: 10%;
-    height: 30px; 
-    background-color: rgba(0, 0, 0, 0.5);
-    color:white;
-    font-family: 'Oswald', sans-serif;
-    border: none;
-    transition: .6s;
-}
-
-.navButtons button:hover {
-  width: 12%;
-  height: 30px;
-  cursor: pointer;
+#nextButton:hover {
   background-color: rgba(0, 0, 0, 0.75);
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-} */
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
 </style>
