@@ -102,7 +102,7 @@ methods: {
   font-size: 200%;
   margin-bottom: 0;
   margin-top: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.205),rgba(0, 0, 0, 0));  
+  background-image: radial-gradient(rgba(0, 0, 0, 0.849),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));  
 
 }
 #tagLine2{
