@@ -142,6 +142,7 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
 .background-img { 
     background-image: url(../img/BackgroundImages/signuppage2.jpg); 
@@ -160,6 +161,7 @@ export default {
 }
 
 #scheduleHeading {
+  font-family: 'Oswald', sans-serif;
   border: 1px solid black;
   width: 30%;
   background-image:linear-gradient(rgba(219, 219, 219, 0.5),rgba(117, 117, 117, 0.8));

@@ -86,18 +86,19 @@ export default {
 
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
 
 #dayHeading{
     margin-top: 0;
     margin-bottom: 0;
-    
     text-align: center;
     background-image:linear-gradient(rgba(219, 219, 219, 0.5),rgba(117, 117, 117, 0.8));
     
 }
 
 #dayHeading p{
-    
+    font-family: 'Oswald', sans-serif;
     font-size: 150%;
     margin-top: 0;
     margin-bottom: 0;
@@ -117,20 +118,19 @@ export default {
   margin-top: 2%;
 }
 .classButton{
-
+  /* background-color:rgb(211, 211, 211, .5); */
   width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
-
   background-position: center;
   opacity: .5;
   border-radius: 10px;
+
 
   transition-duration: 0.6s;
 }
 
 .classButton:hover{
-  
   opacity: .8;
   height:115%;
   width: 115%;

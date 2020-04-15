@@ -72,9 +72,8 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
-* {
-  font-family: "Oswald", sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
 
 #wholepage {
   padding: 0;
@@ -96,7 +95,10 @@ export default {
   vertical-align: middle;
 }
 h1 {
+  font-family: 'Black Ops One';
   text-align: center;
+  color:white;
+  -webkit-text-stroke: 1px black;
 }
 .smileyFaces {
   /* background-color:red; */
@@ -110,12 +112,14 @@ h1 {
   width: 50px;
   background-color: rgb(243, 115, 115);
   border-radius: 50%;
+  transition: .3s;
 }
 .circle2 {
   height: 50px;
   width: 50px;
   background-color: rgb(248, 178, 113);
   border-radius: 50%;
+  transition: .3s;
 }
 
 .circle3 {
@@ -123,18 +127,21 @@ h1 {
   width: 50px;
   background-color: rgb(245, 243, 132);
   border-radius: 50%;
+  transition: .3s;
 }
 .circle4 {
   height: 50px;
   width: 50px;
   background-color: rgb(176, 245, 87);
   border-radius: 50%;
+  transition: .3s;
 }
 .circle5 {
   height: 50px;
   width: 50px;
   background-color: rgb(36, 247, 46);
   border-radius: 50%;
+  transition: .3s;
 }
 
 input[type="radio"]:checked + label > img {
@@ -163,19 +170,23 @@ input[type="radio"]:not(:checked) + label > img {
   font-size: 20px;
   cursor: pointer;
   border-radius: 8px;
-  transition: 0.6s;
+  color:white;
+  font-family: "Oswald", sans-serif;
+
+  transition: 0.8s;
 }
 .not-selected {
   opacity: 30%;
 }
 .chosen {
   opacity: 100%;
-  
+  border:none;
 }
-.chosen button:hover {
+.chosen #start:hover {
   background-color: rgba(0, 0, 0, 0.75);
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  border:none;
 }
 
 </style>

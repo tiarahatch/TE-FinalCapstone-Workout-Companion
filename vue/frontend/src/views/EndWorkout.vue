@@ -6,7 +6,7 @@
           <router-link to='/dashboard' tag='button'>My Dashboard</router-link> 
           <button v-on:click='logout'> LogOut</button>
     </nav>
-      <div class="meter">
+<div class="meter">
   <span style="width: 100%"></span>
 </div>
       <div>
@@ -201,7 +201,8 @@ img{
 .meter { 
 	height: 10px;  /* Can be anything */
 	width: 50%;
-  align: center;
+  margin:auto;
+  align-items: center;
 	background: blue;
 	-moz-border-radius: 25px;
 	-webkit-border-radius: 25px;
