@@ -34,7 +34,7 @@ const router = new Router({
       name: 'home',
       component: Home,
       meta: {
-        requiresAuth: false //This was changed to move past login 
+        requiresAuth: false 
       }
     },
     {
