@@ -179,7 +179,7 @@ export default {
 
 
 .background-img { 
-    background-image: url(../img/BackgroundImages/signuppage.jpg); 
+    background-image: url(../img/BackgroundImages/signuppage2.jpg); 
     background-blend-mode: screen;
     width: 100%;
     height: 100%; 
