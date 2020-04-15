@@ -4,9 +4,9 @@
   <div class="home">
     
     <div class="welcome">
-      <h1>H.S.G FITNESS</h1>
-
-      <p>WHERE YOU TURN FAT INTO FINE!!!</p>
+      <h1 id="logoText">H.S.G. FITNESS</h1>
+      <p id='tagLine1'> Join today so we can help you</p>
+      <p id='tagLine2'>TURN FAT INTO FINE!</p>
     </div>
 
     <div class="pageLinks">
@@ -58,6 +58,15 @@ methods: {
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+/* * { 
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Black Ops One';
+} */
+
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -70,20 +79,35 @@ methods: {
  }
 
 .welcome{
+  font-family: 'Black Ops One';
   position: fixed;
   width: 90%;
   text-align:center;
   z-index: 1000;
-  color: #7ac1ff;
+  color: #045499;
   font-size: 250%;
-  font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
-  font-stretch: expanded;
-  -webkit-text-stroke: 3px black;
-  text-decoration-style: solid;
-  text-decoration-color: black;
+  -webkit-text-stroke: 1px rgb(226, 226, 226);
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+#logoText{
+  /* font-family: 'Oswald', sans-serif; */
+  font-style: italic;
+  
+  margin-bottom: 0;
+}
+#tagLine1{
+  font-family: 'Oswald', sans-serif;
+  font-size: 200%;
+  margin-bottom: 0;
+  margin-top: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.205),rgba(0, 0, 0, 0));  
+
+}
+#tagLine2{
+  /* font-family: 'Oswald', sans-serif; */
+  margin-bottom: 0;
 }
 
  .pageLinks {
@@ -98,7 +122,7 @@ methods: {
   position: fixed;
   top: 65%;
   left: 50%;
- 
+ font-family: 'Oswald', sans-serif;
 
   transform: translate(-50%, -50%);
 
@@ -124,6 +148,7 @@ methods: {
 }
 
 .cb-slideshow { 
+    opacity: .85;
     background-color: black;
     position: fixed;
     width: 100%;
@@ -145,24 +170,27 @@ methods: {
     background-repeat: none;
     opacity: 0;
     z-index: 0;
-    animation: imageAnimation 18s linear infinite 0s; 
+    animation: imageAnimation 36s linear infinite 0s; 
 }
 .cb-slideshow li:nth-child(1) span { 
-    background-image: url(../img/lift.jpg); 
+    background-image: url(../img/lift.jpg);
+    background-color: black; 
 }
 .cb-slideshow li:nth-child(2) span { 
-    background-image: url(../img/BackgroundImages/homeBackground2.jpg);
-    animation-delay: 6s; 
+    background-image: url(../img/BackgroundImages/homeBackground4.jpg);
+    background-color: black; 
+    animation-delay: 12s; 
 }
 .cb-slideshow li:nth-child(3) span { 
-    background-image: url(../img/BackgroundImages/homeBackground3.jpg);
-    animation-delay: 12s; 
+    background-image: url(../img/BackgroundImages/homeBackground5.jpg);
+    background-color: black; 
+    animation-delay: 24s; 
 }
 .cb-slideshow li:nth-child(2) div { 
-    animation-delay: 6s; 
+    animation-delay: 12s; 
 }
 .cb-slideshow li:nth-child(3) div { 
-    animation-delay: 12s; 
+    animation-delay: 24s; 
 }
 @keyframes imageAnimation { 
     0% { opacity: 0; animation-timing-function: ease-in; }
@@ -176,70 +204,5 @@ ul {
   margin: 0;
   padding: 0;
 }
-
-/* router-link {
-  position: fixed;
-  height: 10px;
-  width: 100%;
-} */
-
-/* .fullscreen-bg img {
-  position: fixed;
-  size: cover;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  animation-delay: 6s;
-}  */
-
-/* h1,
-p {
-  color: #7ac1ff;
-  font-size: 50px;
-  font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
-  font-stretch: expanded;
-  -webkit-text-stroke: 3px black;
-  text-decoration-style: solid;
-  text-decoration-color: black;
-}
-.container {
-  position: absolute;
-  margin: 20px;
-  width: auto;
-}
-    .viewport-header {
-      position: relative;
-      height: 100vh;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-button {
-  text-align: center;
-  font-size: 14px;
-  margin: 25px;
-  border: none;
-  width: 200px;
-  background-color: black;
-  color: #7ac1ff;
-  border-radius: 15px;
-  cursor: pointer;
-}
-button:hover span {
-  padding-right: 25px;
-}
-.topnav {
-  overflow: hidden;
-}
-.topnav router-link {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-} */
 
 </style>

@@ -2,7 +2,7 @@
   <div id="body">
     
     
-    <div class="categoryName">{{categories[id - 1].name}}</div>
+    <div class="categoryName">{{categories[id - 1].name.toUpperCase()}}</div>
 
     <div id="workoutList">
       <!-- <li v-for="item in workoutLists" v-bind:key="item.workoutID"> -->
@@ -81,11 +81,20 @@ export default {
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* { 
+  font-family: 'Oswald', sans-serif;
+}
+
 #body {
   height: 400px;
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
+  
 }
 
 #workoutList {
@@ -106,7 +115,10 @@ export default {
   height: 25%;
   width: 65%;
   background-color: rgba(0, 0, 0, 0.75);
-  color: #7ac1ff;
+  color: white;
+  /* color: #7ac1ff; */
+
+  
 
   transition: 0.6s;
 }
@@ -121,12 +133,14 @@ export default {
 
 .categoryName {
   margin-top: 5%;
-  color: #7ac1ff;
+  color: white;
+  /* color: #7ac1ff; */
   font-size: 200%;
   width: 70%;
   height: 20%;
   padding-top: 10%;
   text-align: center;
+  /* font-family: 'Black Ops One'; */
 
   background-color: black;
 }
