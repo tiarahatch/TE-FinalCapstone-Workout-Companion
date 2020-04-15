@@ -12,7 +12,15 @@ public class Exercise {
 	
 	private String description;
 	
+	private String ytLink;
 	
+	
+	public String getYtLink() {
+		return ytLink;
+	}
+	public void setYtLink(String ytLink) {
+		this.ytLink = ytLink;
+	}
 	public String getDescription() {
 		return description;
 	}
