@@ -7,7 +7,7 @@
       <h1>MY DASHBOARD</h1>
     <h2>Welcome Back</h2>
     <div class='side'>
-        <router-link to='/premade-workouts' tag='button'>Choose Workout</router-link><br>
+        <router-link to='/category-details' tag='button'>Choose Workout</router-link><br>
         <router-link to='/schedule' tag='button'>Sign Up for Class</router-link><br>
         <router-link to='/NewUser' tag='button'>Edit Profile</router-link><br>
         <button>My Metrics</button><br>

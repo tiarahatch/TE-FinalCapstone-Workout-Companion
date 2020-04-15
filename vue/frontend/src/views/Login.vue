@@ -31,7 +31,7 @@
      
       <router-link :to="{ name: 'register' }" class="need-account">Need an account?</router-link>
       
-      <button type="submit" to="/dashboard">Sign in</button>
+      <button type="submit">Sign in</button>
     </form>
   </div>
   </div>
@@ -75,7 +75,7 @@ export default {
               token = token.replace(/"/g, '');
             }
             auth.saveToken(token);
-            this.$router.push('/');
+            this.$router.push('/dashboard');
           }
         })
         .catch((err) => console.error(err));
