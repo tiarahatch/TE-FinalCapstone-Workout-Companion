@@ -1,42 +1,42 @@
 <template>
-<div>
+  <div>
+    <div class="exercise-img-instructions">
+      
+      <div class="exercise-instructions">
+        
+        <div class="exercise">
+          
+          <h3 id="exercise-name">{{exercise.name}}</h3>
 
+          <div class="setsReps">
+            <p> Sets: {{exercise.sets}}</p>
+            <p  v-if="exercise.reps > 20">Reps: {{exercise.reps}} Seconds</p>
+            <p  v-if="exercise.reps < 20">Reps: {{exercise.reps}}</p>
+            
+          </div>
 
-<div class='exercise-img-instructions'>
-
-    <div class='exercise'>
-    <h3 style='text-decoration: underline'> {{exercise.name}}</h3> 
-    <ul>
-    <li class='unordered' v-if='exercise.reps > 20'> Reps: {{exercise.reps}} Seconds </li>
-    <li class='unordered' v-if='exercise.reps < 20'> Reps: {{exercise.reps}} </li>
-    <li> Sets: {{exercise.sets}} </li>
-    </ul>
-    </div>
-
-<div class='img-instructions'>
-        <div class='img'>
-        <p>image goes here</p>
-         </div>
-
-        <div class='instructions'>
-         <h3 style='text-decoration: underline'>Instructions</h3>
-        <ol class='ordered'>
-            <li v-for='item in createInstructions' v-bind:key='item'>
-                {{item}}
-                </li>
-        </ol>
         </div>
-</div>
-   
-</div>
 
-    
-         <div class='notes'>
-    <h4 style='text-align: left'>Notes: </h4>
-    <p style='text-align: right'>notes here</p>
-    </div>    
+        <div class="instructions">
+          <h3 style="text-decoration: underline">Instructions</h3>
+          <ol class="ordered">
+            <li v-for="item in createInstructions" v-bind:key="item">{{item}}</li>
+          </ol>
+        </div>
+      </div>
 
+      <div class="img">
+        <!-- <img id='exerciseImage' src="../img/placeHolder.jpg"/> -->
+
+        <iframe width="420" height="315" id="myIframe" :src="videoLink"></iframe>
+      </div>
     </div>
+
+    <div class="notes">
+      <h4 style="text-align: left">Notes:</h4>
+      <p style="text-align: right">notes here</p>
+    </div>
+  </div>
 </template>
 
 
@@ -45,25 +45,38 @@ export default {
   name: "exercise-in-workout",
   data() {
     return {
-        instructions: [],
-        value: 33.333333333,
-        max: 100,
+      instructions: [],
+      value: 33.333333333,
+      max: 100
     };
   },
   props: {
     exercise: Object
   },
-  computed: {
-      createInstructions() {
-         let instructions = this.exercise.description.split('.');
-          return instructions;
-      }
-  }
+  methods: {
+  },
 
+  computed: {
+    createInstructions() {
+      let instructions = this.exercise.description.split(".");
+      return instructions;
+    },
+     videoLink() {
+      let link = "https://www.youtube.com/embed/" + this.exercise.ytLink;
+
+      return link;
+    }
+  },
+  
 };
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* { 
+  font-family: 'Oswald', sans-serif;
+}
 .meter {
   height: 20px; /* Can be anything */
   position: relative;
@@ -92,21 +105,54 @@ export default {
   position: relative;
   overflow: hidden;
 }
-.unordered {
-  list-style-type: none;
-  text-align: left;
+#exercise-name{
+  text-decoration: underline white;
+  text-align: center;
+  font-size: 250%;
+  margin-bottom:0;
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
 }
 .exercise {
-  background-color: red;
+  color:white;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  height: 49%;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+}
+.setsReps{
+  /* background-color:green; */
+  display:flex;
+  justify-content: space-around;
+}
+.setsReps p{
+  text-align:center;
+  /* background-color:black; */
+  width:40%;
+  font-size: 200%;
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
 }
 .img {
   background-color: blue;
-  width: 100%;
-  height: 50%;
+  height: 100%;
+  width: 46%;
 }
+
+#myIframe {
+  height: 100%;
+  width:100%;
+}
+
 .notes {
   background-color: green;
   display: flex;
@@ -114,30 +160,31 @@ export default {
   width: 18%;
 }
 .instructions {
-  background-color: cyan;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
   width: 100%;
   height: 50%;
   text-align: center;
+  color:white;
+
 }
 .exercise-img-instructions {
   display: flex;
-  /* justify-content: space-between;
-  
-  margin-left: auto;
-  margin-right: auto; */
   margin: auto;
-  margin-top: 4%;
+  padding-top: 4%;
   width: 90%;
   height: 450px;
-  background-color: yellow;
+  justify-content: space-around;
+  /* background-color: yellow; */
 }
-.img-instructions {
+.exercise-instructions {
+  /* background-color: green; */
   display: flex;
   flex-direction: column;
-  
-  width: 50%;
+  justify-content: space-between;
+  width: 46%;
 }
 .ordered {
- text-align: left;
+  text-align: left;
 }
 </style>

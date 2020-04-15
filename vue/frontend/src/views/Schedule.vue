@@ -2,12 +2,7 @@
   
   
   <div>
-     <nav class='navButtons'>
-          <router-link to='/premade-workouts' tag='button'>Back to</router-link>
-          <router-link to='/dashboard' tag='button'>My Dashboard</router-link> 
-          <button v-on:click='logout'> LogOut</button>
-          <router-link to='/' tag ='button'>Home</router-link>
-    </nav>
+    
     <simple-modal v-model="isShow" title="Class Description">
       <template slot="body">
         <h2>Class: {{classToShowDetails.className}}</h2>
@@ -17,17 +12,24 @@
          
          <button> Sign Up </button>
       </template>
-      <!-- <template slot="footer">
-        <button>OK</button>
-      </template> -->
     </simple-modal>
-    <!-- <button @click="isShow = !isShow">on off button</button> -->
+
 
 
    
-    <!-- <h1>Upcoming Events</h1> -->
+   
 
     <!-- <p>You must be authenticated to see this</p> -->
+
+    <div class='navButtons'>
+          <router-link to='/' tag ='button'>Home</router-link>
+          <router-link to='/dashboard' tag='button'>My Dashboard</router-link> 
+          <button v-on:click='logout'> LogOut</button>
+           
+    </div>
+    
+
+
     <div id="scheduleHeading">
       <h2>This Week's Schedule</h2>
       <h2>{{getHeaderDates()[0]}} - {{getHeaderDates()[1]}}</h2>
@@ -40,7 +42,6 @@
            
             <schedule-day v-bind:daySchedule="day" v-bind:isShow="isShow" v-on:updateIsShow="switchIsShow($event[0]), classToShowDetails = $event[1]"></schedule-day>
            
-            <!-- <schedule-class-details v-if="showDetails" /> -->
            
           </div>
         </div>
@@ -49,13 +50,14 @@
     <div class='background-img'>
       <span></span>
     </div>
+    
   </div>
 </template>
 
 
 
 <script>
-// import auth from '@/auth'
+import auth from '@/auth'
 import SimpleModal from 'simple-modal-vue'
 import ScheduleDay from "../components/ScheduleDay.vue";
 
@@ -71,14 +73,17 @@ export default {
   data() {
     return {
       weekSchedule: [],
-      showDetails: false,
       isShow: false,
       classToShowDetails: ''
     };
   },
   computed: {},
   methods: {
-   
+   logout() {
+        auth.logout();
+        localStorage.removeItem('Authorization');
+        this.$router.go('/')
+  },
    switchIsShow: function(updatedIsShow){
       this.isShow = updatedIsShow;
     },
@@ -146,6 +151,8 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+
 .navButtons{
     display:flex;
     justify-content: flex-end;
@@ -169,6 +176,8 @@ export default {
   background-color: rgba(0, 0, 0, 0.75);
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+
 .background-img { 
     background-image: url(../img/BackgroundImages/signuppage2.jpg); 
     background-blend-mode: screen;

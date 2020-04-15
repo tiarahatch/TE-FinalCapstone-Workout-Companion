@@ -1,6 +1,6 @@
 <template>
 
-    <div>
+    <div id="wholePage">
         
     <b-progress :value="value" :max="max" :precision="2" show-value class="mb-3"></b-progress>
         <!-- <div v-for='item in exercises' v-bind:key='item.exerciseID' class='exercisePage'> -->
@@ -57,7 +57,14 @@ created(){
 
 <style scoped>
 
-.navButtons{
+#wholePage{
+    width:100%;
+    min-height:100vh;
+    background-image: url('../img/workoutBackground4.png');
+
+}
+
+/* .navButtons{
     display:flex;
     justify-content: flex-end;
     margin-bottom:1%;
@@ -79,5 +86,5 @@ created(){
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.75);
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+} */
 </style>
