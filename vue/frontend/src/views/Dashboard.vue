@@ -1,12 +1,6 @@
 <template>
 
 <div id="wholepage">
-    <div class="progress-bar">
-
-    </div>
-
-
-    
     <h1>MY DASHBOARD</h1>
     <h2>Welcome Back</h2>
     <div class='side'>
