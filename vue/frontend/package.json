@@ -10,9 +10,11 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "chart.js": "^2.9.3",
     "core-js": "^2.6.5",
     "simple-modal-vue": "^1.0.12",
     "vue": "^2.6.10",
+    "vue-chartjs": "^3.5.0",
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
