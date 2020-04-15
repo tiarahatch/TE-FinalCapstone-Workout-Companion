@@ -1,6 +1,6 @@
 <template>
+<div id="wholepage">
 
-<div>
     
     <h1>MY DASHBOARD</h1>
     <h2>Welcome Back</h2>
@@ -51,6 +51,14 @@ methods: {
     margin: auto;
        
 }
+#wholepage{
+    padding:0;
+    margin:0;
+    width:100%;
+    min-height:100vh;
+    background-image: url('../img/workoutBackground4.png');
+
+}
 button {
  text-align: center;
   font-size: 100%;
@@ -65,7 +73,7 @@ button {
 }
 button:hover {
 height: 30%;
-  width: 40%;
+  width: 35%;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.75);
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -73,13 +81,13 @@ height: 30%;
 h1{
     text-align: center;
     font-family: 'Black Ops One';
-    color: #7ac1ff;
+    color: white;
     text-decoration: underline overline; 
 }
 h2 {
     text-align: center;
     font-family: 'Black Ops One';
-    color: #7ac1ff;
+    color: white;
     text-decoration: underline overline; 
     margin: 10px;
 }

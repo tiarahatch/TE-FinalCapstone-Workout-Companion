@@ -1,5 +1,11 @@
 <template>
-    <div>
+<div id="wholepage">
+    
+      <nav class='navButtons'>
+          <router-link to='/premade-workouts' tag='button'>Back to Categories</router-link>
+          <router-link to='/dashboard' tag='button'>My Dashboard</router-link> 
+          <button v-on:click='logout'> LogOut</button>
+    </nav>
       <div class="meter">
   <span style="width: 100%"></span>
 </div>
@@ -56,6 +62,8 @@
 </template>
 
 <script>
+import auth from '@/auth'
+
 export default {
 
 props:{
@@ -67,13 +75,41 @@ data() {
   }
 },
 methods: {
-
+logout() {
+        auth.logout();
+        localStorage.removeItem('Authorization');
+        this.$router.go('/')
+  }
 }
 
 }
 </script>
 
 <style scoped>
+.navButtons{
+    display:flex;
+    justify-content: flex-end;
+    margin-bottom:1%;
+    
+}
+.navButtons button{
+    width: 10%;
+    height: 30px; 
+    background-color: rgba(0, 0, 0, 0.5);
+    color:white;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    transition: .6s;
+}
+
+.navButtons button:hover {
+  width: 12%;
+  height: 30px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 #feelingCheckbox{
  text-align: center;
  vertical-align: middle;
@@ -81,6 +117,7 @@ methods: {
 }
 h1 {
     text-align: center;
+    font-family: 'Black Ops One';
 }
 .howYouFeel{
     display:flex;
@@ -137,6 +174,7 @@ input[type=radio]:not(:checked) + label>img {
   margin: auto;
   display: block;
   margin-top: 10%;
+  
  
 }
 #start {
@@ -145,6 +183,7 @@ input[type=radio]:not(:checked) + label>img {
   padding-left: 7%;
   padding-right: 7%;
    font-size: 20px;
+   background-color: rgba(0, 0, 0, 0.5);
 
 }
 .not-selected {
@@ -160,14 +199,14 @@ img{
   border-radius: 10px;
 }
 .meter { 
-	height: 20px;  /* Can be anything */
-	position: relative;
-	background: #555;
+	height: 10px;  /* Can be anything */
+	width: 50%;
+  align: center;
+	background: blue;
 	-moz-border-radius: 25px;
 	-webkit-border-radius: 25px;
 	border-radius: 25px;
-	padding: 10px;
-	box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+	
 }
 .meter > span {
   display: block;
@@ -187,5 +226,13 @@ img{
     inset 0 -2px 6px rgba(0,0,0,0.4);
   position: relative;
   overflow: hidden;
+}
+#wholepage{
+    padding:0;
+    margin:0;
+    width:100%;
+    min-height:100vh;
+    background-image: url('../img/workoutBackground4.png');
+
 }
 </style>
