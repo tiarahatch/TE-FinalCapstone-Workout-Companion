@@ -1,7 +1,14 @@
 <template>
   <div id="wholepage">
-    <router-link to="/premade-workouts" tag="button">Change Workout</router-link>
-    <br />
+    
+    
+     <div class='navButtons'>
+
+          <router-link to='/category-details' tag='button'>Change Workout</router-link> 
+          <router-link to='/dashboard' tag='button'>My Dashboard</router-link> 
+          <button v-on:click='logout'> LogOut</button>
+
+    </div>
 
     <h1>How do you feel pre-workout?</h1>
    <div class="feelingForm"> 
@@ -57,6 +64,7 @@
 </template>
 
 <script>
+import auth from "@/auth"
 export default {
   props: {
     exercises: []
@@ -66,7 +74,13 @@ export default {
       selected: false
     };
   },
-  methods: {}
+  methods: {
+    logout() {
+        auth.logout();
+        localStorage.removeItem('Authorization');
+        this.$router.go('/')
+  }
+  }
 };
 </script>
 
@@ -187,6 +201,29 @@ input[type="radio"]:not(:checked) + label > img {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
   border:none;
+}
+.navButtons{
+    display:flex;
+    justify-content: flex-end;
+    margin-bottom:1%;
+    
+}
+.navButtons button{
+    width: 10%;
+    height: 30px; 
+    background-color: rgba(0, 0, 0, 0.5);
+    color:white;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    transition: .6s;
+}
+
+.navButtons button:hover {
+  width: 12%;
+  height: 30px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 </style>

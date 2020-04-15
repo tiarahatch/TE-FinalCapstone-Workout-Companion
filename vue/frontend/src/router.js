@@ -82,17 +82,17 @@ const router = new Router({
       }
     },
     
-    // {
-    //   path: "/category-details/" ,
-    //   name: "category-details",
-    //   component: CategoryDetails,
-    //   props: 
-    //     true,
+    {
+      path: "/category-details/" ,
+      name: "category-details",
+      component: CategoryDetails,
+      props: 
+        true,
       
-    //   meta: {
-    //     requiresAuth: true
-    //   }
-    // },
+      meta: {
+        requiresAuth: true
+      }
+    },
     
     {
       path: "/dashboard",
@@ -147,7 +147,7 @@ router.beforeEach((to, from, next) => {
 
   // If it does and they are not logged in, send the user to "/login"
   if (requiresAuth && !user) {
-    next("/login");
+    next("/");
   } else {
     // Else let them go to their next destination
     next();
