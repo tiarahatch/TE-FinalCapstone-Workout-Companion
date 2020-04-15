@@ -94,6 +94,7 @@ private Exercise mapRowToExercise(SqlRowSet results) {
 	exercise.setReps(results.getInt("reps"));
 	exercise.setSets(results.getInt("sets"));
 	exercise.setDescription(results.getString("description"));
+	exercise.setYtLink(results.getString("yt_link"));
 	return exercise;
 }
 
