@@ -5,7 +5,7 @@
 
         <exercise-in-workout v-bind:exercise = 'currentExercise'></exercise-in-workout>
         
-        <button id="buttonMain" v-on:click='changeExercise()'>Done </button>
+        <button id="buttonMain" v-on:click='changeExercise()' >Done </button>
         <!-- </div> -->
 
     </div>

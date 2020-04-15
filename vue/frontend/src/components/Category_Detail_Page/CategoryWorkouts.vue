@@ -2,7 +2,7 @@
   <div id="body">
     
     
-    <div class="categoryName">{{categories[id - 1].name}}</div>
+    <div class="categoryName">{{categories[id - 1].name.toUpperCase()}}</div>
 
     <div id="workoutList">
       <!-- <li v-for="item in workoutLists" v-bind:key="item.workoutID"> -->
@@ -81,11 +81,20 @@ export default {
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* { 
+  font-family: 'Oswald', sans-serif;
+}
+
 #body {
   height: 400px;
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
+  
 }
 
 #workoutList {
@@ -105,8 +114,11 @@ export default {
   border: none;
   height: 25%;
   width: 65%;
-  background-color: rgba(0, 0, 0, 0.75);
-  color: #7ac1ff;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 8px;
+
+  
 
   transition: 0.6s;
 }
@@ -115,18 +127,20 @@ export default {
   height: 30%;
   width: 70%;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.75);
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .categoryName {
   margin-top: 5%;
-  color: #7ac1ff;
+  color: white;
+
   font-size: 200%;
   width: 70%;
   height: 20%;
-  padding-top: 10%;
+  padding-top: 7%;
   text-align: center;
+  /* font-family: 'Black Ops One'; */
 
   background-color: black;
 }

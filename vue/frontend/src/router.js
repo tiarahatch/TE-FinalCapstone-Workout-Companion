@@ -82,6 +82,18 @@ const router = new Router({
       }
     },
     
+    // {
+    //   path: "/category-details/" ,
+    //   name: "category-details",
+    //   component: CategoryDetails,
+    //   props: 
+    //     true,
+      
+    //   meta: {
+    //     requiresAuth: true
+    //   }
+    // },
+    
     {
       path: "/dashboard",
       name: "dashboard",

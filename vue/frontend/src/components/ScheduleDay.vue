@@ -146,7 +146,7 @@ export default {
   opacity: .35;
 }
 
-#WaterAerobics{
+/* #WaterAerobics{
 background-image: url("../img/Water Aerobics.png" );
 }
 #Yoga{
@@ -160,6 +160,6 @@ background-image: url("../img/Spinning.png" );
 }
 #Pilates{
 background-image: url("../img/Pilates.png" );
-}
+} */
 
 </style>
