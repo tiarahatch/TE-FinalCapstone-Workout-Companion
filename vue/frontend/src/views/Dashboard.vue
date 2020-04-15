@@ -2,25 +2,28 @@
 
 <div>
     
-        <h1>Welcome back: FirstName LastName</h1>
-     <div class='side'>
+    <h1>MY DASHBOARD</h1>
+    <h2>Welcome Back</h2>
+    <div class='side'>
         <router-link to='/premade-workouts' tag='button'>Choose Workout</router-link><br>
         <router-link to='/schedule' tag='button'>Sign Up for Class</router-link><br>
         <router-link to='/NewUser' tag='button'>Edit Profile</router-link><br>
         <button>My Metrics</button><br>
         <button v-on:click='logout'> LogOut</button>
-    </div>
+        </div>
 
-    <div class='motivational-image'>
-        <img src='../img/motivation.jpg'>
+    <div class='images'>
+        <img src='../img/motivation.jpg' class='quote'><br>
+        <img src='../img/piechart.png' class='piechart'>
     </div>
+    
+
 </div>
 </template>
 
 
 <script>
 import auth from '@/auth'
-
 
 export default {
   
@@ -32,38 +35,71 @@ methods: {
   },
 }
 }
-</script>
+    </script>
+ 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 .side {
  position: absolute;
     top: 100px;
-    left: 300px;
+    left: 200px;
+    right:300px;
+    margin: auto;
        
 }
 button {
-  text-align: center;
-  font-size: 14px;
-  margin:25px;
+ text-align: center;
+  font-size: 100%;
   border: none;
-  width: 200px;
-  background-color: black;
-  color: #7ac1ff;
-  border-radius: 15px;
+  height: 25%;
+  width: 35%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 8px;
+  transition: 0.6s;
+  margin: 10px;
+}
+button:hover {
+height: 30%;
+  width: 40%;
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 h1{
     text-align: center;
+    font-family: 'Black Ops One';
     color: #7ac1ff;
     text-decoration: underline overline; 
 }
-.motivational-image {
+h2 {
+    text-align: center;
+    font-family: 'Black Ops One';
+    color: #7ac1ff;
+    text-decoration: underline overline; 
+    margin: 10px;
+}
+.quote {
     position: absolute;
     top: 100px;
     right: 300px;
     border-radius: 5px;
     
+}
+.piechart {
+    border-radius: 4px;
+    position:absolute;
+    padding: 5px;
+    width: 100px;
+    margin: auto;
+    right: 650px;
+    top: 220px;
+
+
 }
 
 

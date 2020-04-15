@@ -127,17 +127,23 @@ li {
   transform: scale(1.1);
  }
 button {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 14px;
-  margin:80px;
+ text-align: center;
+  font-size: 100%;
   border: none;
-  width: 150px;
-  background-color: black;
-  color: #7ac1ff;
-  border-radius: 25px;
- 
+  height: 25%;
+  width: 35%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 8px;
+  transition: 0.6s;
+  margin: 10px;
+}
+button:hover {
+height: 30%;
+  width: 40%;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 12px 16px 0 rgb
 }
 p {
   color:  #7ac1ff;
@@ -158,6 +164,7 @@ ul#horizontal-list {
 min-width: 696px;
 	list-style: none;
 	padding-top: 20px;
+  justify-content:center;
 	}
 	ul#horizontal-list li {
 		display: inline;
