@@ -1,5 +1,10 @@
 <template>
+
 <div id="wholepage">
+    <div class="progress-bar">
+
+    </div>
+
 
     
     <h1>MY DASHBOARD</h1>
