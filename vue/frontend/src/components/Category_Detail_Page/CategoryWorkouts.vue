@@ -114,9 +114,9 @@ export default {
   border: none;
   height: 25%;
   width: 65%;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  /* color: #7ac1ff; */
+  border-radius: 8px;
 
   
 
@@ -127,18 +127,18 @@ export default {
   height: 30%;
   width: 70%;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.75);
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .categoryName {
   margin-top: 5%;
   color: white;
-  /* color: #7ac1ff; */
+
   font-size: 200%;
   width: 70%;
   height: 20%;
-  padding-top: 10%;
+  padding-top: 7%;
   text-align: center;
   /* font-family: 'Black Ops One'; */
 
