@@ -1,8 +1,9 @@
 <template>
-<div class="hero-image" >
+
  <div id="signup">
+   <div class="hero-image" >
 <h1 class="h3 mb-3 font-weight-normal">Sign-Up</h1>
-<simple-modal v-model="isShow" title="Class Description">
+<simple-modal v-model="isShow" title="Member Details" class="modal">
       <template slot="body">
         <new-user></new-user>
          
@@ -108,7 +109,7 @@ export default {
 <style scoped>
 button {
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:  'Oswald', sans-serif;;
   font-weight: bold;
   font-size: 14px;
   margin:95px;
@@ -128,28 +129,27 @@ button {
   background-position: center;
 }
 #signup{
-  position: fixed;
+  position: relative;
   font-family: "Black Ops One";
   text-align: center;
-  z-index: 1000;
   color: #045499;
-  font-size: 250%;
+  font-size: 200%;
   -webkit-text-stroke: 1px rgb(226, 226, 226);
-  top: 35%;
+  top: 10%;
   justify-content: center;
-  display: inline-block;
 }
 .login {
-  font-family: "Black Ops One";
+  font-family:  'Oswald', sans-serif;
   color: #045499;
   -webkit-text-stroke: 1px rgb(226, 226, 226);
+
 }
 button {
   background-color: rgba(126, 126, 126, 0.5);
   height: 75%;
-  width: 30%;
+  width: 15%;
   opacity: 0.8;
-  font-size: 125%;
+  font-size: 100%;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border: none;
   transition-duration: 0.6s;
@@ -161,6 +161,13 @@ button:hover {
   background-color: rgb(177, 177, 177);
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.modal{
+  font-size: 25px;
+  font-family: 'Oswald', sans-serif;
+}
+.sr-only {
+  font-family: 'Oswald', sans-serif;
 }
 
 

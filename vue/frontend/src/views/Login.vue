@@ -31,7 +31,7 @@
      
       <router-link :to="{ name: 'register' }" class="need-account">Need an account?</router-link>
       
-      <button type="submit">Sign in</button>
+      <button type="submit" to="/dashboard">Sign in</button>
     </form>
   </div>
   </div>
