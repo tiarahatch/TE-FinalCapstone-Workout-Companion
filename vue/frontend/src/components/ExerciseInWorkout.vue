@@ -1,15 +1,20 @@
 <template>
   <div>
     <div class="exercise-img-instructions">
+      
       <div class="exercise-instructions">
+        
         <div class="exercise">
-          <h3 style="text-decoration: underline">{{exercise.name}}</h3>
+          
+          <h3 id="exercise-name">{{exercise.name}}</h3>
 
-          <ul>
-            <li class="unordered" v-if="exercise.reps > 20">Reps: {{exercise.reps}} Seconds</li>
-            <li class="unordered" v-if="exercise.reps < 20">Reps: {{exercise.reps}}</li>
-            <li>Sets: {{exercise.sets}}</li>
-          </ul>
+          <div class="setsReps">
+            <p> Sets: {{exercise.sets}}</p>
+            <p  v-if="exercise.reps > 20">Reps: {{exercise.reps}} Seconds</p>
+            <p  v-if="exercise.reps < 20">Reps: {{exercise.reps}}</p>
+            
+          </div>
+
         </div>
 
         <div class="instructions">
@@ -67,6 +72,11 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* { 
+  font-family: 'Oswald', sans-serif;
+}
 .meter {
   height: 20px; /* Can be anything */
   position: relative;
@@ -95,26 +105,54 @@ export default {
   position: relative;
   overflow: hidden;
 }
-.unordered {
-  list-style-type: none;
-  text-align: left;
+#exercise-name{
+  text-decoration: underline white;
+  text-align: center;
+  font-size: 250%;
+  margin-bottom:0;
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
 }
 .exercise {
-  background-color: red;
+  color:white;
   display: flex;
   flex-direction: column;
-  height: 50%;
+  height: 49%;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+}
+.setsReps{
+  /* background-color:green; */
+  display:flex;
+  justify-content: space-around;
+}
+.setsReps p{
+  text-align:center;
+  /* background-color:black; */
+  width:40%;
+  font-size: 200%;
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
 }
 .img {
   background-color: blue;
   height: 100%;
-  width: 50%;
+  width: 46%;
 }
+
 #myIframe {
   height: 100%;
   width:100%;
-
 }
+
 .notes {
   background-color: green;
   display: flex;
@@ -122,25 +160,29 @@ export default {
   width: 18%;
 }
 .instructions {
-  background-color: cyan;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
   width: 100%;
   height: 50%;
   text-align: center;
+  color:white;
+
 }
 .exercise-img-instructions {
   display: flex;
   margin: auto;
-  margin-top: 4%;
+  padding-top: 4%;
   width: 90%;
   height: 450px;
-  background-color: yellow;
+  justify-content: space-around;
+  /* background-color: yellow; */
 }
 .exercise-instructions {
-  background-color: green;
+  /* background-color: green; */
   display: flex;
   flex-direction: column;
-
-  width: 50%;
+  justify-content: space-between;
+  width: 46%;
 }
 .ordered {
   text-align: left;
