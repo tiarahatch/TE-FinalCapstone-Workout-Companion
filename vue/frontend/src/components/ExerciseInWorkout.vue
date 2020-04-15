@@ -109,17 +109,19 @@ li {
 .exercise-img-instructions {
   display: flex;
   /* justify-content: space-between;
-  margin-top: 4%;
+  
   margin-left: auto;
   margin-right: auto; */
   margin: auto;
+  margin-top: 4%;
   width: 90%;
-  height: 600px;
+  height: 450px;
   background-color: yellow;
 }
 .img-instructions {
   display: flex;
   flex-direction: column;
+  
   width: 50%;
 }
 </style>
