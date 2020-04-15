@@ -93,6 +93,7 @@ private Exercise mapRowToExercise(SqlRowSet results) {
 	exercise.setName(results.getString("name"));
 	exercise.setReps(results.getInt("reps"));
 	exercise.setSets(results.getInt("sets"));
+	exercise.setDescription(results.getString("description"));
 	return exercise;
 }
 
