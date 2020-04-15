@@ -1,18 +1,15 @@
 <template>
- <div>
-     <nav>
-      <router-link to='/' tag='button'>Home</router-link>
-      </nav>
+ <div class="hero-image" >
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
       <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
         Invalid username and password!
       </div>
       <div class="alert alert-success" role="alert" v-if="this.$route.query.registration">
         Thank you for registering, please sign in.
       </div>
-      <label for="username" class="sr-only">Username</label>
+      <label for="username" class="sr-only">Username</label><br>
       <input
         type="text"
         id="username"
@@ -21,8 +18,8 @@
         v-model="user.username"
         required
         autofocus
-      />
-      <label for="password" class="sr-only">Password</label>
+      /><br>
+      <label for="password" class="sr-only">Password</label><br>
       <input
         type="password"
         id="password"
@@ -30,8 +27,10 @@
         placeholder="Password"
         v-model="user.password"
         required
-      />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
+      /><br>
+     
+      <router-link :to="{ name: 'register' }" class="need-account">Need an account?</router-link>
+      
       <button type="submit">Sign in</button>
     </form>
   </div>
@@ -86,9 +85,12 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 button {
   text-align: center;
-   font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 14px;
   margin:95px;
@@ -98,4 +100,60 @@ button {
   color: #7ac1ff;
   border-radius: 25px;
 }
+.hero-image{
+  background-image: url('../img/BackgroundImages/login2.jpg');
+  padding:0;
+  margin:0;  
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  background-position: center;
+}
+#login{
+  position: fixed;
+  font-family: "Black Ops One";
+  text-align: center;
+  z-index: 1000;
+  color: #045499;
+  font-size: 250%;
+  -webkit-text-stroke: 1px rgb(226, 226, 226);
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sr-only {
+  font-family: 'Oswald', sans-serif;
+}
+.need-account{
+  font-family: 'Oswald', sans-serif;
+  color: #045499;
+  -webkit-text-stroke: 1px rgb(226, 226, 226);
+}
+.need-account:hover{
+  color: #045499;
+  -webkit-text-stroke: 1px rgb(226, 226, 226);
+  opacity: 0.9;
+  width: 33%;  
+}
+button {
+  background-color: rgba(126, 126, 126, 0.5);
+  height: 55%;
+  width: 30%;
+  opacity: 0.8;
+  font-size: 115%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  transition-duration: 0.6s;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+}
+button:hover {
+  opacity: 0.9;
+  width: 33%;
+  background-color: rgb(177, 177, 177);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+
 </style>
