@@ -9,8 +9,8 @@
     <div class='exercise'>
     <h3 style='text-decoration: underline'> {{exercise.name}}</h3> 
     <ul>
-    <li v-if='exercise.reps > 20'> Reps: {{exercise.reps}} Seconds </li>
-    <li v-if='exercise.reps < 20'> Reps: {{exercise.reps}} </li>
+    <li class='unordered' v-if='exercise.reps > 20'> Reps: {{exercise.reps}} Seconds </li>
+    <li class='unordered' v-if='exercise.reps < 20'> Reps: {{exercise.reps}} </li>
     <li> Sets: {{exercise.sets}} </li>
     </ul>
     </div>
@@ -21,8 +21,12 @@
          </div>
 
         <div class='instructions'>
-         <h3 style='text-decoration: underline'>{{exercise.description}}</h3>
-        <p>exercise instructions</p>
+         <h3 style='text-decoration: underline'>Instructions</h3>
+        <ol class='ordered'>
+            <li v-for='item in createInstructions' v-bind:key='item'>
+                {{item}}
+                </li>
+        </ol>
         </div>
 </div>
    
@@ -42,11 +46,20 @@
 export default {
   name: "exercise-in-workout",
   data() {
-    return {};
+    return {
+        instructions: []
+    };
   },
   props: {
     exercise: Object
+  },
+  computed: {
+      createInstructions() {
+         let instructions = this.exercise.description.split('.');
+          return instructions;
+      }
   }
+
 };
 </script>
 
@@ -79,7 +92,7 @@ export default {
   position: relative;
   overflow: hidden;
 }
-li {
+.unordered {
   list-style-type: none;
   text-align: left;
 }
@@ -103,8 +116,8 @@ li {
 .instructions {
   background-color: cyan;
   width: 100%;
-  text-align: center;
   height: 50%;
+  text-align: center;
 }
 .exercise-img-instructions {
   display: flex;
@@ -123,5 +136,8 @@ li {
   flex-direction: column;
   
   width: 50%;
+}
+.ordered {
+ text-align: left;
 }
 </style>
