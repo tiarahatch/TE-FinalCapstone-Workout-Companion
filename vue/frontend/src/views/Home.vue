@@ -4,11 +4,13 @@
       <router-link to="/login" tag="button">Login</router-link>
       </div>
   <div class="home">
-    <div class="welcome">
+    <div class="container">
+      <div class='welcome'>
       <h1 id="logoText">H.S.G. FITNESS</h1>
       <p id='tagLine1'> Join today so we can help you</p>
       <p id='tagLine2'>TURN FAT INTO FINE!</p>
-    </div>
+      </div>
+   
 
     <div class='signup'>
       
@@ -21,7 +23,7 @@
         <router-link to="/schedule" tag="button">View Class Schedule</router-link>
         <br />
     </div>
-        
+         </div>
 
       </div>
       
@@ -85,18 +87,13 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-/* #topLogo {
-  font-family: 'Black Ops One';
-  font-style: italic;
-  color: #045499;
-  -webkit-text-stroke: 1px rgb(226, 226, 226);
-  text-align: left;
-  font-size: 150%;
-} */
+.container {
+  display: flex;
+  flex-direction: column;
+}
 #logoText {
   /* font-family: 'Oswald', sans-serif; */
   font-style: italic;
-
   margin-bottom: 0;
 }
 #tagLine1 {
@@ -120,14 +117,14 @@ export default {
   justify-content: space-around;
   flex-direction: column;
   position: absolute;
+  top: 65%;
+  left: 50%;
   height: 12%;
   width: 90%;
   z-index: 1000;
   margin: auto;
   align-items: center;
   position: fixed;
-  top: 65%;
-  left: 50%;
   font-family: "Oswald", sans-serif;
 
   transform: translate(-50%, -50%);
@@ -142,6 +139,7 @@ export default {
   border: none;
   transition-duration: 0.6s;
   color: white;
+  position: inherit;
   /* -webkit-text-stroke: 1px rgb(97, 97, 97); */
 }
 .signup button:hover {
@@ -179,6 +177,7 @@ export default {
   border: none;
   transition-duration: 0.6s;
   color: white;
+  position: inherit;
   /* -webkit-text-stroke: 1px rgb(97, 97, 97); */
 }
 .view-schedule button:hover {
@@ -257,7 +256,6 @@ export default {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 1%;
-  
 }
 .navButtons button {
   width: 12%;
@@ -269,12 +267,11 @@ export default {
   transition: 0.6s;
   z-index: 1000;
   font-size: 100%;
-  
 }
 
 .navButtons button:hover {
   cursor: pointer;
-   background-color: rgb(177, 177, 177);
+  background-color: rgb(177, 177, 177);
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
