@@ -13,19 +13,20 @@
 
     <div class='images'>
         <img src='../img/motivation.jpg' class='quote'><br>
-        <img src='../img/piechart.png' class='piechart'>
+       
     </div>
-    
-
+  <category-percentage id='Doughnut'></category-percentage>
 </div>
 </template>
 
 
 <script>
 import auth from '@/auth'
-
+import CategoryPercentage from '@/components/PieChart.vue'
 export default {
-  
+  components: {
+      CategoryPercentage
+  },
 methods: {
     logout() {
         auth.logout();
@@ -109,6 +110,11 @@ h2 {
 
 }
 
-
+#Doughnut {
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    height: 35%;
+}
   
 </style>
