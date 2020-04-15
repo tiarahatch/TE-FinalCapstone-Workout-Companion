@@ -82,13 +82,13 @@ h1{
     text-align: center;
     font-family: 'Black Ops One';
     color: white;
-    text-decoration: underline overline; 
+    
 }
 h2 {
     text-align: center;
     font-family: 'Black Ops One';
     color: white;
-    text-decoration: underline overline; 
+  
     margin: 10px;
 }
 .quote {

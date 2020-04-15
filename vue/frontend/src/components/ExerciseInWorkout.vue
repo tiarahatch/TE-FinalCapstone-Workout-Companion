@@ -1,8 +1,6 @@
 <template>
 <div>
-     <div class="meter">
-  <span style="width: 100%"></span>
-</div>
+
 
 <div class='exercise-img-instructions'>
 
@@ -47,7 +45,9 @@ export default {
   name: "exercise-in-workout",
   data() {
     return {
-        instructions: []
+        instructions: [],
+        value: 33.333333333,
+        max: 100,
     };
   },
   props: {

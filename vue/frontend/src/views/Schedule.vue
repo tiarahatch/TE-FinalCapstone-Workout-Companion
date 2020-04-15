@@ -2,7 +2,12 @@
   
   
   <div>
-    
+     <nav class='navButtons'>
+          <router-link to='/premade-workouts' tag='button'>Back to</router-link>
+          <router-link to='/dashboard' tag='button'>My Dashboard</router-link> 
+          <button v-on:click='logout'> LogOut</button>
+          <router-link to='/' tag ='button'>Home</router-link>
+    </nav>
     <simple-modal v-model="isShow" title="Class Description">
       <template slot="body">
         <h2>Class: {{classToShowDetails.className}}</h2>
@@ -19,9 +24,7 @@
     <!-- <button @click="isShow = !isShow">on off button</button> -->
 
 
-    <nav>
-      <router-link to="/" tag="button">Home</router-link>
-    </nav>
+   
     <!-- <h1>Upcoming Events</h1> -->
 
     <!-- <p>You must be authenticated to see this</p> -->
@@ -143,7 +146,29 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+.navButtons{
+    display:flex;
+    justify-content: flex-end;
+    margin-bottom:1%;
+    
+}
+.navButtons button{
+    width: 10%;
+    height: 30px; 
+    background-color: rgba(0, 0, 0, 0.5);
+    color:white;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    transition: .6s;
+}
 
+.navButtons button:hover {
+  width: 12%;
+  height: 30px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
 .background-img { 
     background-image: url(../img/BackgroundImages/signuppage2.jpg); 
     background-blend-mode: screen;

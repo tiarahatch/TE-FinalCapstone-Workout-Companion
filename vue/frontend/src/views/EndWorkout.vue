@@ -116,14 +116,23 @@ logout() {
   
 }
 h1 {
-    text-align: center;
-    font-family: 'Black Ops One';
+  font-family: 'Black Ops One';
+  text-align: center;
+  color:white;
+  -webkit-text-stroke: 1px black;
 }
+
 .howYouFeel{
     display:flex;
     justify-content: space-around;
     width: 60%;
     margin:auto;
+    background-color:rgb(211, 211, 211);
+    margin:auto;
+    border-radius: 10px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 90%;
 }
 .circle1 {
   height: 50px;
@@ -173,9 +182,7 @@ input[type=radio]:not(:checked) + label>img {
   text-align: center;
   margin: auto;
   display: block;
-  margin-top: 10%;
-  
- 
+  margin-top: 5%;
 }
 #start {
   padding-top: 1.2%;
