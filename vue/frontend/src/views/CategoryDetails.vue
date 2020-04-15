@@ -1,8 +1,9 @@
 <template>
 <div id="wholepage">
-    <nav>
+    <nav class='navButtons'>
+          <router-link to='/premade-workouts' tag='button'>Back to Categories</router-link>
           <router-link to='/dashboard' tag='button'>My Dashboard</router-link> 
-          <router-link to='/premade-workouts' tag='button'>Choose Workout</router-link>
+          <button v-on:click='logout'> LogOut</button>
     </nav>
 
     <div class = "categoryNav">
@@ -68,13 +69,61 @@ export default {
     .then((json) => {
       this.workouts = json;
     }) 
- }
- }
+ },
+ logout() {
+        auth.logout();
+        localStorage.removeItem('Authorization');
+        this.$router.go('/')
+  }
+ 
+ 
+ 
+ },
+ 
+ logout() {
+        auth.logout();
+        localStorage.removeItem('Authorization');
+        this.$router.go('/')
+  }
 
 }
 </script>
 
-<style>
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.navButtons{
+    display:flex;
+    justify-content: flex-end;
+    margin-bottom:1%;
+    
+}
+.navButtons button{
+    width: 10%;
+    height: 30px; 
+    background-color: rgba(0, 0, 0, 0.5);
+    color:white;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    transition: .6s;
+}
+
+.navButtons button:hover {
+  width: 12%;
+  height: 30px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#wholepage{
+    padding:0;
+    margin:0;
+    width:100%;
+    min-height:100vh;
+    background-image: url('../img/workoutBackground4.png');
+
+}
 
 .mainBody{
     background-color:rgb(211, 211, 211);

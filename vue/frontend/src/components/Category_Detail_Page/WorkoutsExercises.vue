@@ -56,36 +56,41 @@ export default {
   color: white;
   /* color: #7ac1ff; */
   border-radius: 5px;
+ box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 
   transition: 0.6s;
+}
+.exercise h3{
+    text-decoration: underline white;
 }
 
 .exercise:hover {
   width: 26%;
-  background-color: rgba(0, 0, 0, 0.9);
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  /* background-color: rgba(0, 0, 0, 0.9); */
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.4),
+    0 17px 50px 0 rgba(0, 0, 0, 0.25);
 }
 
 .startButton {
   justify-content: center;
   display: flex;
   font-size: 200%;
-
   border: none;
   width: 50%;
   height: 25%;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  /* color: #7ac1ff; */
   cursor: pointer;
-
+  border-radius: 8px;
   transition: 0.6s;
 }
 
 .startButton:hover {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.75);
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
+
+
 </style>
