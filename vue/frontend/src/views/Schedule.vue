@@ -145,7 +145,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
 .background-img { 
-    background-image: url(../img/BackgroundImages/signuppage2.jpg); 
+    background-image: url(../img/BackgroundImages/signuppage.jpg); 
     background-blend-mode: screen;
     width: 100%;
     height: 100%; 
