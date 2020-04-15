@@ -1,26 +1,27 @@
 <template>
 <body>
-    
+    <div class='navButtons'>
+      <router-link to="/login" tag="button">Login</router-link>
+      </div>
   <div class="home">
-    
     <div class="welcome">
       <h1 id="logoText">H.S.G. FITNESS</h1>
       <p id='tagLine1'> Join today so we can help you</p>
       <p id='tagLine2'>TURN FAT INTO FINE!</p>
     </div>
 
-    <div class="pageLinks">
+    <div class='signup'>
       
-      <!-- <img src ="../img/workout.jpeg"> -->
-      <!-- <img src="../img/lift.jpg" alt="Gym" /> -->
 
+
+        <router-link to="/register" tag="button">Sign Up!</router-link>
+        <br />
+    </div>
+    <div class='view-schedule'>
         <router-link to="/schedule" tag="button">View Class Schedule</router-link>
         <br />
-        <router-link to="/register" tag="button">Sign Up</router-link>
-        <br />
-        <router-link to="/dashboard" tag="button">My Dashboard</router-link>
-        <br />
-        <button v-on:click='logout'> LogOut</button>
+    </div>
+        
 
       </div>
       
@@ -36,53 +37,46 @@
         </li>
       </div>
     
-  </div>
+  
 </body>
 </template>
 
 <script>
-import auth from '@/auth'
+import auth from "@/auth";
 export default {
-  name: "home"
-,
-methods: {
+  name: "home",
+  methods: {
     logout() {
-        auth.logout();
-        localStorage.removeItem('Authorization');
-        this.$router.go('/')
+      auth.logout();
+      localStorage.removeItem("Authorization");
+      this.$router.go("/");
+    }
   }
-}
-}
-
+};
 </script>
 
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
 /* * { 
   font-family: 'Oswald', sans-serif;
   font-family: 'Black Ops One';
 } */
 
-.topnav {
-  overflow: hidden;
-  background-color: #333;
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
- .home{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-  
- }
 
-.welcome{
-  font-family: 'Black Ops One';
+.welcome {
+  font-family: "Black Ops One";
   position: fixed;
   width: 90%;
-  text-align:center;
+  text-align: center;
   z-index: 1000;
   color: #045499;
   font-size: 250%;
@@ -91,30 +85,42 @@ methods: {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#logoText{
+/* #topLogo {
+  font-family: 'Black Ops One';
+  font-style: italic;
+  color: #045499;
+  -webkit-text-stroke: 1px rgb(226, 226, 226);
+  text-align: left;
+  font-size: 150%;
+} */
+#logoText {
   /* font-family: 'Oswald', sans-serif; */
   font-style: italic;
-  
+
   margin-bottom: 0;
 }
-#tagLine1{
-  font-family: 'Oswald', sans-serif;
+#tagLine1 {
+  font-family: "Oswald", sans-serif;
   font-size: 200%;
   margin-bottom: 0;
   margin-top: 0;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.849),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));  
-
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0.849),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
 }
-#tagLine2{
+#tagLine2 {
   /* font-family: 'Oswald', sans-serif; */
   margin-bottom: 0;
 }
 
- .pageLinks {
+.signup {
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   position: absolute;
-  height:12%;
+  height: 12%;
   width: 90%;
   z-index: 1000;
   margin: auto;
@@ -122,87 +128,154 @@ methods: {
   position: fixed;
   top: 65%;
   left: 50%;
- font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 
   transform: translate(-50%, -50%);
-
 }
-.pageLinks button{
-  background-color: rgba(126, 126, 126,.5);
+.signup button {
+  background-color: rgba(126, 126, 126, 0.5);
   height: 75%;
-  width: 25%;
-  opacity: .8;
+  width: 30%;
+  opacity: 0.8;
   font-size: 125%;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border: none;
   transition-duration: 0.6s;
-   color: white;
+  color: white;
   /* -webkit-text-stroke: 1px rgb(97, 97, 97); */
-
 }
-.pageLinks button:hover{
-  opacity: .9;
-  width:30%;
+.signup button:hover {
+  opacity: 0.9;
+  width: 33%;
   background-color: rgb(177, 177, 177);
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-.cb-slideshow { 
-    opacity: .85;
-    background-color: black;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: 0; 
-}
-.cb-slideshow li span { 
+.view-schedule {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  position: absolute;
+  height: 9%;
+  width: 80%;
+  z-index: 1000;
+  margin: auto;
+  align-items: center;
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  font-family: "Oswald", sans-serif;
 
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    color: transparent;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: none;
+  transform: translate(-50%, -50%);
+}
+.view-schedule button {
+  background-color: rgba(126, 126, 126, 0.5);
+  height: 75%;
+  width: 30%;
+  opacity: 0.8;
+  font-size: 125%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  transition-duration: 0.6s;
+  color: white;
+  /* -webkit-text-stroke: 1px rgb(97, 97, 97); */
+}
+.view-schedule button:hover {
+  opacity: 0.9;
+  width: 33%;
+  background-color: rgb(177, 177, 177);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cb-slideshow {
+  opacity: 0.85;
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+.cb-slideshow li span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 36s linear infinite 0s;
+}
+.cb-slideshow li:nth-child(1) span {
+  background-image: url(../img/lift.jpg);
+  background-color: black;
+}
+.cb-slideshow li:nth-child(2) span {
+  background-image: url(../img/BackgroundImages/homeBackground4.jpg);
+  background-color: black;
+  animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(3) span {
+  background-image: url(../img/BackgroundImages/homeBackground5.jpg);
+  background-color: black;
+  animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(2) div {
+  animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(3) div {
+  animation-delay: 24s;
+}
+@keyframes imageAnimation {
+  0% {
     opacity: 0;
-    z-index: 0;
-    animation: imageAnimation 36s linear infinite 0s; 
-}
-.cb-slideshow li:nth-child(1) span { 
-    background-image: url(../img/lift.jpg);
-    background-color: black; 
-}
-.cb-slideshow li:nth-child(2) span { 
-    background-image: url(../img/BackgroundImages/homeBackground4.jpg);
-    background-color: black; 
-    animation-delay: 12s; 
-}
-.cb-slideshow li:nth-child(3) span { 
-    background-image: url(../img/BackgroundImages/homeBackground5.jpg);
-    background-color: black; 
-    animation-delay: 24s; 
-}
-.cb-slideshow li:nth-child(2) div { 
-    animation-delay: 12s; 
-}
-.cb-slideshow li:nth-child(3) div { 
-    animation-delay: 24s; 
-}
-@keyframes imageAnimation { 
-    0% { opacity: 0; animation-timing-function: ease-in; }
-    8% { opacity: 1; animation-timing-function: ease-out; }
-    17% { opacity: 1 }
-    40% { opacity: 0 }
-    100% { opacity: 0 }
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+    animation-timing-function: ease-in;
+  }
+  8% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  17% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
+.navButtons {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1%;
+  
+}
+.navButtons button {
+  width: 12%;
+  height: 50px;
+  background-color: rgba(126, 126, 126, 0.5);
+  color: white;
+  font-family: "Oswald", sans-serif;
+  border: none;
+  transition: 0.6s;
+  z-index: 1000;
+  font-size: 100%;
+  
+}
+
+.navButtons button:hover {
+  cursor: pointer;
+   background-color: rgb(177, 177, 177);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
 </style>
