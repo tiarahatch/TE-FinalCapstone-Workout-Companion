@@ -1,8 +1,15 @@
 <template>
 <body>
     <div class='navButtons'>
-      <router-link to="/login" tag="button">Login</router-link>
+      
+      <router-link v-if="loggedIn" to="/dashboard" tag="button">My Dashboard</router-link>
+      <button v-if="loggedIn" v-on:click='logout'> LogOut</button>
+      <router-link v-if="!loggedIn" to="/login" tag="button">Login</router-link>
+      
+
       </div>
+  
+  
   <div class="home">
     <div class="container">
       <div class='welcome'>
@@ -45,8 +52,16 @@
 
 <script>
 import auth from "@/auth";
+
 export default {
   name: "home",
+  computed:{
+    loggedIn(){
+    return auth.loggedIn();
+
+    }
+  
+  },
   methods: {
     logout() {
       auth.logout();
@@ -55,6 +70,7 @@ export default {
     }
   }
 };
+
 </script>
 
 
@@ -103,7 +119,8 @@ export default {
   margin-top: 0;
   background-image: radial-gradient(
     rgba(0, 0, 0, 0.849),
-    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0),
     rgba(0, 0, 0, 0)
   );
 }

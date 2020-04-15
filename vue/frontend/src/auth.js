@@ -50,4 +50,17 @@ export default {
   logout() {
     localStorage.removeItem('Authorization');
   },
+
+  loggedIn(){
+    try {
+     if(localStorage.getItem('Authorization')===null){
+       return false;
+     }else{
+       return true;
+     }
+   } catch {
+     return false;
+   }
+   },
+
 };
