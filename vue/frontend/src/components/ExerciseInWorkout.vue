@@ -1,42 +1,37 @@
 <template>
-<div>
+  <div>
+    <div class="exercise-img-instructions">
+      <div class="exercise-instructions">
+        <div class="exercise">
+          <h3 style="text-decoration: underline">{{exercise.name}}</h3>
 
-
-<div class='exercise-img-instructions'>
-
-    <div class='exercise'>
-    <h3 style='text-decoration: underline'> {{exercise.name}}</h3> 
-    <ul>
-    <li class='unordered' v-if='exercise.reps > 20'> Reps: {{exercise.reps}} Seconds </li>
-    <li class='unordered' v-if='exercise.reps < 20'> Reps: {{exercise.reps}} </li>
-    <li> Sets: {{exercise.sets}} </li>
-    </ul>
-    </div>
-
-<div class='img-instructions'>
-        <div class='img'>
-        <p>image goes here</p>
-         </div>
-
-        <div class='instructions'>
-         <h3 style='text-decoration: underline'>Instructions</h3>
-        <ol class='ordered'>
-            <li v-for='item in createInstructions' v-bind:key='item'>
-                {{item}}
-                </li>
-        </ol>
+          <ul>
+            <li class="unordered" v-if="exercise.reps > 20">Reps: {{exercise.reps}} Seconds</li>
+            <li class="unordered" v-if="exercise.reps < 20">Reps: {{exercise.reps}}</li>
+            <li>Sets: {{exercise.sets}}</li>
+          </ul>
         </div>
-</div>
-   
-</div>
 
-    
-         <div class='notes'>
-    <h4 style='text-align: left'>Notes: </h4>
-    <p style='text-align: right'>notes here</p>
-    </div>    
+        <div class="instructions">
+          <h3 style="text-decoration: underline">Instructions</h3>
+          <ol class="ordered">
+            <li v-for="item in createInstructions" v-bind:key="item">{{item}}</li>
+          </ol>
+        </div>
+      </div>
 
+      <div class="img">
+        <!-- <img id='exerciseImage' src="../img/placeHolder.jpg"/> -->
+
+        <iframe width="420" height="315" id="myIframe" :src="videoLink()"></iframe>
+      </div>
     </div>
+
+    <div class="notes">
+      <h4 style="text-align: left">Notes:</h4>
+      <p style="text-align: right">notes here</p>
+    </div>
+  </div>
 </template>
 
 
@@ -45,21 +40,29 @@ export default {
   name: "exercise-in-workout",
   data() {
     return {
-        instructions: [],
-        value: 33.333333333,
-        max: 100,
+      instructions: [],
+      value: 33.333333333,
+      max: 100
     };
   },
   props: {
     exercise: Object
   },
-  computed: {
-      createInstructions() {
-         let instructions = this.exercise.description.split('.');
-          return instructions;
-      }
-  }
+  methods: {
+  },
 
+  computed: {
+    createInstructions() {
+      let instructions = this.exercise.description.split(".");
+      return instructions;
+    },
+     videoLink() {
+      let link = "https://www.youtube.com/embed/" + this.exercise.yt_link;
+      document.getElementById("myIframe").src = link;
+      return link;
+    }
+  },
+  
 };
 </script>
 
@@ -100,12 +103,16 @@ export default {
   background-color: red;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  height: 50%;
 }
 .img {
   background-color: blue;
-  width: 100%;
-  height: 50%;
+  height: 100%;
+  width: 50%;
+}
+#exerciseImage {
+  height: 100%;
+  object-fit: cover;
 }
 .notes {
   background-color: green;
@@ -121,23 +128,20 @@ export default {
 }
 .exercise-img-instructions {
   display: flex;
-  /* justify-content: space-between;
-  
-  margin-left: auto;
-  margin-right: auto; */
   margin: auto;
   margin-top: 4%;
   width: 90%;
   height: 450px;
   background-color: yellow;
 }
-.img-instructions {
+.exercise-instructions {
+  background-color: green;
   display: flex;
   flex-direction: column;
-  
+
   width: 50%;
 }
 .ordered {
- text-align: left;
+  text-align: left;
 }
 </style>
