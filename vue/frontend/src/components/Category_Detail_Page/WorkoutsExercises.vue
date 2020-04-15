@@ -27,6 +27,13 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* { 
+  font-family: 'Oswald', sans-serif;
+}
+
+
 .body {
   display: flex;
   flex-direction: column;
@@ -42,17 +49,19 @@ export default {
 
 .exercise {
   text-align: center;
+  font-size:150%;
   width: 25%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.75);
-  color: #7ac1ff;
+  color: white;
+  /* color: #7ac1ff; */
   border-radius: 5px;
 
   transition: 0.6s;
 }
 
 .exercise:hover {
-  width: 30%;
+  width: 26%;
   background-color: rgba(0, 0, 0, 0.9);
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
@@ -61,13 +70,14 @@ export default {
 .startButton {
   justify-content: center;
   display: flex;
-  font-size: 100%;
+  font-size: 200%;
 
   border: none;
   width: 50%;
   height: 25%;
   background-color: rgba(0, 0, 0, 0.75);
-  color: #7ac1ff;
+  color: white;
+  /* color: #7ac1ff; */
   cursor: pointer;
 
   transition: 0.6s;

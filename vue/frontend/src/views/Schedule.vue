@@ -144,7 +144,7 @@ export default {
 <style scoped>
 
 .background-img { 
-    background-image:linear-gradient( rgba(27, 27, 27, 0.5),rgba(19, 107, 158, 0.966)), url(../img/BackgroundImages/signuppage2.jpg); 
+    background-image: url(../img/BackgroundImages/signuppage2.jpg); 
     background-blend-mode: screen;
     width: 100%;
     height: 100%; 
