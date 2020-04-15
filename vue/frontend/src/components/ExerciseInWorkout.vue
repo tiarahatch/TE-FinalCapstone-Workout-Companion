@@ -23,7 +23,7 @@
       <div class="img">
         <!-- <img id='exerciseImage' src="../img/placeHolder.jpg"/> -->
 
-        <iframe width="420" height="315" id="myIframe" :src="videoLink()"></iframe>
+        <iframe width="420" height="315" id="myIframe" :src="videoLink"></iframe>
       </div>
     </div>
 
@@ -57,8 +57,8 @@ export default {
       return instructions;
     },
      videoLink() {
-      let link = "https://www.youtube.com/embed/" + this.exercise.yt_link;
-      document.getElementById("myIframe").src = link;
+      let link = "https://www.youtube.com/embed/" + this.exercise.ytLink;
+
       return link;
     }
   },
@@ -110,9 +110,10 @@ export default {
   height: 100%;
   width: 50%;
 }
-#exerciseImage {
+#myIframe {
   height: 100%;
-  object-fit: cover;
+  width:100%;
+
 }
 .notes {
   background-color: green;
