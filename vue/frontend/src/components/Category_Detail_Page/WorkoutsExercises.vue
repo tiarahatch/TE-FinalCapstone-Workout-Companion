@@ -50,7 +50,7 @@ export default {
 .exercise {
   text-align: center;
   font-size:150%;
-  width: 25%;
+  width: 29%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.75);
   color: white;
@@ -66,7 +66,7 @@ export default {
 }
 
 .exercise:hover {
-  width: 26%;
+  width: 30%;
   /* background-color: rgba(0, 0, 0, 0.9); */
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.4),
     0 17px 50px 0 rgba(0, 0, 0, 0.25);
