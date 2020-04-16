@@ -1,10 +1,10 @@
 <template>
 
- <div class="hero-image" >
-  <div id="login" class="text-center">
-    
-    <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
+ 
+  <div id="login">
+      <div id='signin' class="text-center">
+      <form class="form-signin" @submit.prevent="login">
+        <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
       <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
         Invalid username and password!
       </div>
@@ -29,14 +29,17 @@
         placeholder="Password"
         v-model="user.password"
         required
-      /><br>
+        />
+     <div class="account-create" >
      
       <router-link :to="{ name: 'register' }" class="need-account">Need an account?</router-link>
       
-      <button type="submit">Sign in</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </div>
     </form>
-    
   </div>
+  <div class="hero-image">
+    </div>
   </div>
 </template>
 
@@ -101,7 +104,7 @@ button {
   width: 200px;
   background-color: black;
   color: #7ac1ff;
-  border-radius: 25px;
+
 }
 .hero-image{
   background-image: url('../img/BackgroundImages/login2.jpg');
@@ -109,13 +112,14 @@ button {
   margin:0;  
   background-size: cover;
   width: 100%;
-  min-height: 100vh;
+  min-height: 110vh;
   background-position: center;
-  filter:grayscale(65%);
-  top: -7.3%;
-  z-index: -1000;
+  filter: grayscale(85%);
+ position: absolute;
+ top: -7.3%;
+ z-index: -1000;
 }
-#login{
+#signin{
   position: fixed;
   font-family: "Black Ops One";
   text-align: center;
@@ -135,34 +139,33 @@ button {
   font-family: 'Oswald', sans-serif;
   color: #045499;
   -webkit-text-stroke: 1px rgb(226, 226, 226);
+  font-size: 25px;
 }
-.need-account:hover{
-  color: #045499;
-  -webkit-text-stroke: 1px rgb(226, 226, 226);
-  opacity: 0.9;
-  width: 33%;  
-}
-.button{
-background-color: rgba(126, 126, 126, 0.5);
+button {
+background-color: rgba(126, 126, 126, 0.75);
   height: 75%;
-  width: 30%;
-  opacity: 0.8;
-  font-size: 125%;
+  width: 95%;
+  font-size: 100%;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: none;
   transition-duration: 0.6s;
   color: white;
-  position: inherit;
-  /* -webkit-text-stroke: 1px rgb(97, 97, 97); */
+  margin: 0;
+  margin-top: 2%;
 }
 button:hover {
   opacity: 0.9;
-  width: 33%;
+  width: 96%;
   background-color: rgb(177, 177, 177);
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
-
+.account-create {
+  display: flex;
+  flex-direction: column-reverse;
+ align-items: center;
+  
+  width: 100%;
+}
 
 
 </style>
