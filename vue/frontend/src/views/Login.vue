@@ -127,7 +127,7 @@ button {
   color: #045499;
   font-size: 200%;
   -webkit-text-stroke: 1px rgb(226, 226, 226);
-  top: 35%;
+  margin-top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
  
