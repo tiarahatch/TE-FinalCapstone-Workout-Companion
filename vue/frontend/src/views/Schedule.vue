@@ -32,7 +32,7 @@
 
     <div id="scheduleHeading">
       <h2>This Week's Schedule</h2>
-      <h2>{{getHeaderDates()[0]}} - {{getHeaderDates()[1]}}</h2>
+      <h2> ({{getHeaderDates()[0]}}) - {{getHeaderDates()[1]}}</h2>
     </div>
     <div>
 
@@ -75,9 +75,16 @@ export default {
       weekSchedule: [],
       isShow: false,
       classToShowDetails: ''
+
     };
   },
-  computed: {},
+  computed: {
+    dayInt(){
+      let d = new Date();
+      return d.getDay();
+    },
+
+  },
   methods: {
    logout() {
         auth.logout();
@@ -122,7 +129,7 @@ export default {
         return "Friday";
       } else if (dayInt === 6) {
         return "Saturday";
-      } else if (dayInt === 7) {
+      } else if (dayInt === 0) {
         return "Sunday";
       }
     },

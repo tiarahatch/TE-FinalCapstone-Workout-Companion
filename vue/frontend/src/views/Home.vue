@@ -111,6 +111,12 @@ export default {
   /* font-family: 'Oswald', sans-serif; */
   font-style: italic;
   margin-bottom: 0;
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
 }
 #tagLine1 {
   font-family: "Oswald", sans-serif;
@@ -118,7 +124,7 @@ export default {
   margin-bottom: 0;
   margin-top: 0;
   background-image: radial-gradient(
-    rgba(0, 0, 0, 0.849),
+    rgba(0, 0, 0, 0.75),
     rgba(0, 0, 0, 0.2),
     rgba(0, 0, 0, 0),
     rgba(0, 0, 0, 0)
@@ -127,6 +133,12 @@ export default {
 #tagLine2 {
   /* font-family: 'Oswald', sans-serif; */
   margin-bottom: 0;
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
 }
 
 .signup {
@@ -231,15 +243,18 @@ export default {
 }
 .cb-slideshow li:nth-child(1) span {
   background-image: url(../img/lift.jpg);
+  filter: grayscale(85%);
   background-color: black;
 }
 .cb-slideshow li:nth-child(2) span {
   background-image: url(../img/BackgroundImages/homeBackground4.jpg);
+  filter: grayscale(85%);
   background-color: black;
   animation-delay: 12s;
 }
 .cb-slideshow li:nth-child(3) span {
   background-image: url(../img/BackgroundImages/homeBackground5.jpg);
+  filter: grayscale(85%);
   background-color: black;
   animation-delay: 24s;
 }

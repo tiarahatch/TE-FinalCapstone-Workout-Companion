@@ -7,7 +7,7 @@
 
         <exercise-in-workout v-bind:exercise = 'currentExercise'></exercise-in-workout>
         
-        <button id="nextButton" v-on:click='changeExercise()' @click="randomValue" >Done </button>
+        <button id="nextButton" v-on:click='changeExercise()' @click="randomValue" >Next</button>
         <!-- </div> -->
 
     </div>
@@ -27,6 +27,10 @@ export default {
     },
     methods:{
         changeExercise(){
+            if (this.currentArrayPosition == this.exercises.length-2){
+                document.getElementById('nextButton').innerText= "Finish";
+            }
+
            if(this.currentArrayPosition == this.exercises.length-1){
                 this.$router.push({path:"/EndWorkout"});
            }else if(this.currentArrayPosition < this.exercises.length){
