@@ -2,16 +2,15 @@
 
  <div id="signup">
 <h1 class="h3 mb-3 font-weight-normal">Sign-Up</h1>
-<simple-modal v-model="isShow" title="Member Details" class="modal">
+
+<!-- <simple-modal v-model="isShow" title="Member Details" class="modal">
       <template slot="body">
         <new-user></new-user>
          
          <button> Sign Up </button>
       </template>
-      <!-- <template slot="footer">
-        <button>OK</button>
-      </template> -->
-    </simple-modal>
+     
+    </simple-modal> -->
 
      
   <div id="register" class="text-center">
@@ -64,8 +63,8 @@
 </template>
 
 <script>
-import SimpleModal from 'simple-modal-vue'
-import NewUser from '@/components/NewUser.vue'
+// import SimpleModal from 'simple-modal-vue'
+// import NewUser from '@/components/NewUser.vue'
 export default {
   name: 'register',
   data() {
@@ -81,8 +80,8 @@ export default {
     };
   },
   components:{
-    SimpleModal,
-    NewUser,
+    // SimpleModal,
+    // NewUser,
   },
   methods: {
     register() {
@@ -109,6 +108,19 @@ export default {
 </script>
 
 <style scoped>
+#username{
+  color:black;
+  -webkit-text-stroke: 0;
+}
+#password{
+  color:black;
+  -webkit-text-stroke: 0;
+}
+#confirmPassword{
+  color:black;
+  -webkit-text-stroke: 0;
+}
+
 button {
   text-align: center;
   font-family:  'Oswald', sans-serif;;

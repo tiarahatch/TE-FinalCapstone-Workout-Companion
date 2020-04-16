@@ -94,6 +94,17 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+#username{
+  color:black;
+  -webkit-text-stroke: 0;
+}
+#password{
+  color:black;
+  -webkit-text-stroke: 0;
+}
+
+
 button {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
