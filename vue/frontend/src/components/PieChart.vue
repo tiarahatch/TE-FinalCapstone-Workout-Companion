@@ -11,10 +11,10 @@ name: 'category-pecentage',
                     label: 'Data',
                     data: [40, 20, 20, 20],
                     backgroundColor: [
-                        '#f57ff5',
-                        '#678fcf',
-                        '#62d962',
-                        '#ed9880'
+                        '#022a4d',
+                        '#045499',
+                        '#000000',
+                        '#d3d3d3'
                     ]
                 },
          
