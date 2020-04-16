@@ -156,10 +156,9 @@ button {
 
 }
 button {
-  background-color: rgba(126, 126, 126, 0.5);
+  background-color: rgba(126, 126, 126, 0.75);
   height: 75%;
   width: 15%;
-  opacity: 0.8;
   font-size: 100%;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   
