@@ -24,11 +24,13 @@
     <!-- <p>You must be authenticated to see this</p> -->
 
     <div class='navButtons'>
-          <router-link to='/' tag ='button'>Home</router-link>
-          <router-link to='/dashboard' tag='button'>My Dashboard</router-link> 
-          <button v-on:click='logout'> LogOut</button>
-           
-    </div>
+      
+      <router-link v-if="loggedIn" to="/dashboard" tag="button">My Dashboard</router-link>
+      <button v-if="loggedIn" v-on:click='logout'> LogOut</button>
+      <router-link v-if="!loggedIn" to="/login" tag="button">Login</router-link>
+      
+
+      </div>
     
 
 
@@ -88,6 +90,10 @@ export default {
     classTitle(){
       let title = "Class: "+ this.classToShowDetails.className;
       return title
+    },
+    loggedIn(){
+    return auth.loggedIn();
+
     }
 
   },

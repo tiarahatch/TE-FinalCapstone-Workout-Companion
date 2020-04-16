@@ -8,7 +8,7 @@ import PremadeWorkouts from './views/PremadeWorkouts.vue'
 import Schedule from './views/Schedule.vue'
 import CategoryDetails from './views/CategoryDetails.vue'
 import Dashboard from './views/Dashboard.vue'
-
+// import NewUser from './components/NewUser.vue'
 
 import StartWorkout from './views/StartWorkout.vue'
 import EndWorkout from './views/EndWorkout.vue'
@@ -132,9 +132,21 @@ const router = new Router({
         true,
 
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
-    }
+    },
+    // {
+    //   path: "/NewUser",
+    //   name: "newUser",
+    //   component: NewUser,
+
+    //   props: 
+    //     true,
+
+    //   meta: {
+    //     requiresAuth: true
+    //   }
+    // }
 
 
   ]

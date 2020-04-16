@@ -114,6 +114,9 @@ export default {
   font-family: "Black Ops One";
   color: white;
   font-size: 300%;
+   /* color: #045499; */
+  font-size: 250%;
+  -webkit-text-stroke: 1px black;
 }
 #welcomeMessage {
   text-align: center;

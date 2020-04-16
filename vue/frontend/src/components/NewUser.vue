@@ -1,8 +1,8 @@
 <template>
   <div>
     <div>
-      <h2>Welcome New User!</h2>
-      <h3>We just need some basic information to get you started!</h3>
+      <!-- <h2>Welcome New User!</h2>
+      <h3>We just need some basic information to get you started!</h3> -->
     </div>
     <div>
       <form class="form-register">
