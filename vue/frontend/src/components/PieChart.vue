@@ -13,8 +13,8 @@ name: 'category-pecentage',
                     backgroundColor: [
                         '#022a4d',
                         '#045499',
-                        '#000000',
-                        '#d3d3d3'
+                        '#7ba4d4',
+                        '#4c9bf5'
                     ]
                 },
          
