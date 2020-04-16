@@ -1,6 +1,8 @@
 <template>
+
  <div class="hero-image" >
   <div id="login" class="text-center">
+    
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
       <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
@@ -33,6 +35,7 @@
       
       <button type="submit">Sign in</button>
     </form>
+    
   </div>
   </div>
 </template>
@@ -108,6 +111,9 @@ button {
   width: 100%;
   min-height: 100vh;
   background-position: center;
+  filter:grayscale(65%);
+  top: -7.3%;
+  z-index: -1000;
 }
 #login{
   position: fixed;
@@ -115,11 +121,12 @@ button {
   text-align: center;
   z-index: 1000;
   color: #045499;
-  font-size: 250%;
+  font-size: 200%;
   -webkit-text-stroke: 1px rgb(226, 226, 226);
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
+ 
 }
 .sr-only {
   font-family: 'Oswald', sans-serif;
@@ -135,17 +142,18 @@ button {
   opacity: 0.9;
   width: 33%;  
 }
-button {
-  background-color: rgba(126, 126, 126, 0.5);
-  height: 55%;
+.button{
+background-color: rgba(126, 126, 126, 0.5);
+  height: 75%;
   width: 30%;
   opacity: 0.8;
-  font-size: 115%;
+  font-size: 125%;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border: none;
   transition-duration: 0.6s;
   color: white;
-  font-family: 'Oswald', sans-serif;
+  position: inherit;
+  /* -webkit-text-stroke: 1px rgb(97, 97, 97); */
 }
 button:hover {
   opacity: 0.9;
@@ -154,6 +162,7 @@ button:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
+
 
 
 </style>
