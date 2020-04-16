@@ -1,5 +1,5 @@
 <template>
-<div class="hero-image" >
+
  <div id="signup">
 <h1 class="h3 mb-3 font-weight-normal">Sign-Up</h1>
 <simple-modal v-model="isShow" title="Member Details" class="modal">
@@ -48,15 +48,19 @@
         v-model="user.confirmPassword"
         required
       /><br>
+      <div class='account-create'>
       <router-link :to="{ name: 'login' }" class="login">Have an account?</router-link>
       
       <button class="btn btn-lg btn-primary btn-block"  @click="isShow = !isShow" type="submit">
         Create Account
       </button>
+      </div>
     </form>
   </div>
+   <div class="hero-image" >
   </div>
   </div>
+ 
 </template>
 
 <script>
@@ -110,12 +114,14 @@ button {
   font-family:  'Oswald', sans-serif;;
   font-weight: bold;
   font-size: 14px;
-  margin:95px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
   border: none;
   width: 200px;
   background-color: black;
   color: #7ac1ff;
-  border-radius: 25px;
+  
 }
 .hero-image{
   background-image: url('../img/BackgroundImages/login2.jpg');
@@ -125,6 +131,12 @@ button {
   width: 100%;
   min-height: 100vh;
   background-position: center;
+  filter: grayscale(85%);
+ position: absolute;
+ top: -7.3%;
+ z-index: -1000;
+ 
+ 
 }
 #signup{
   position: relative;
@@ -140,22 +152,22 @@ button {
   font-family:  'Oswald', sans-serif;
   color: #045499;
   -webkit-text-stroke: 1px rgb(226, 226, 226);
+  font-size: 25px;
 
 }
 button {
-  background-color: rgba(126, 126, 126, 0.5);
+  background-color: rgba(126, 126, 126, 0.75);
   height: 75%;
   width: 15%;
-  opacity: 0.8;
   font-size: 100%;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: none;
+  
   transition-duration: 0.6s;
   color: white;
 }
 button:hover {
   opacity: 0.9;
-  width: 33%;
+  width: 18%;
   background-color: rgb(177, 177, 177);
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
@@ -168,5 +180,12 @@ button:hover {
   font-family: 'Oswald', sans-serif;
 }
 
+.account-create {
+  display: flex;
+  flex-direction: column-reverse;
+ align-items: center;
+  
+  width: 100%;
+}
 
 </style>
