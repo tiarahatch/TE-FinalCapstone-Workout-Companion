@@ -34,3 +34,10 @@ mounted() {
 <style>
 
 </style>
+
+
+
+
+getWeekDay(date) {
+    let weekdays = new Array
+}
