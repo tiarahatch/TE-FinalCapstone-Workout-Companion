@@ -3,14 +3,16 @@
   
   <div>
     
-    <simple-modal v-model="isShow" title="Class Description">
+    <simple-modal id='modal' v-model="isShow" :title="classTitle">
       <template slot="body">
-        <h2>Class: {{classToShowDetails.className}}</h2>
+       <div id='modalBody'>
         <h3>Time: {{timeSlotFormat(classToShowDetails.timeSlot)}} </h3>
         <h4>Availability: {{classToShowDetails.reservedSpaces}}/{{classToShowDetails.maxOccupancy}}</h4>
-        <p>{{classToShowDetails.classDescription}}</p>
+        <p>Class Description: <br/>
+          {{classToShowDetails.classDescription}}</p>
          
-         <button> Sign Up </button>
+         <button class="signUpButton"> Sign Up </button>
+         </div>
       </template>
     </simple-modal>
 
@@ -83,6 +85,10 @@ export default {
       let d = new Date();
       return d.getDay();
     },
+    classTitle(){
+      let title = "Class: "+ this.classToShowDetails.className;
+      return title
+    }
 
   },
   methods: {
@@ -158,6 +164,47 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+*{
+  font-family: 'Oswald', sans-serif;
+}
+
+#modalBody{
+  /* background-color:rgb(211, 211, 211); */
+  padding:2%;
+  padding-top: 0;
+
+}
+#modalBody h3{
+  margin-top:0;
+}
+
+.signUpButton {
+  display: block;
+  text-align: center;
+  font-size: 100%;
+  border: none;
+  height: 50%;
+  width: 65%;
+  margin:auto;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 3px;
+
+  
+
+  transition: 0.6s;
+}
+
+.signUpButton:hover {
+  height: 51%;
+  width: 66%;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 
 
 .navButtons{

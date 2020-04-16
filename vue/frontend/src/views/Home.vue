@@ -15,7 +15,7 @@
       <div class='welcome'>
       <h1 id="logoText">H.S.G. FITNESS</h1>
       <p id='tagLine1'> Join today so we can help you</p>
-      <p id='tagLine2'>TURN FAT INTO FINE!</p>
+      <p id='tagLine2'>TURN FAT INTO FIT!</p>
       </div>
    
 
